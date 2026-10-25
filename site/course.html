@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>课程生成 · OPC 智能工作台</title>
+<style>
+body{margin:0;background:#fff;color:#1A1F36;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei","Helvetica Neue",sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#3651C9;text-decoration:none}a:hover{color:#1F2F8A}
+h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
+.sr{position:absolute;left:-9999px}
+.shell{display:flex;flex-wrap:wrap;min-height:100vh}
+.side{flex:1 1 220px;background:#F7F8FA;border-right:1px solid #E3E8EE;padding:16px 12px;display:flex;flex-direction:column;gap:2px}
+@media(min-width:860px){.side{max-width:232px}}
+.acct{display:flex;align-items:center;gap:10px;padding:6px 10px 18px}
+.logo{width:28px;height:28px;border-radius:6px;background:#1A1F36;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none}
+.acctname{font-weight:600;font-size:14px;line-height:1.3}
+.acctsub{font-size:12px;color:#687385}
+.navlabel{font-size:12px;color:#687385;padding:16px 10px 4px;font-weight:500}
+.nav{display:flex;align-items:center;gap:10px;padding:0 10px;min-height:38px;border-radius:6px;color:#414552;font-size:14px;font-weight:500}
+.nav:hover{background:#EBEEF1;color:#1A1F36}
+.nav svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:#687385}
+.nav.on,.nav.on svg{color:#3651C9}
+.content{flex:999 1 560px;min-width:0;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:12px;padding:12px 32px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.search{flex:1 1 240px;max-width:480px;display:flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border-radius:6px;background:#F7F8FA;color:#687385;font-size:14px}
+.search svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.search input{border:none;background:transparent;font:inherit;color:#1A1F36;flex:1;min-width:0;outline:none}
+.main{padding:28px 32px 72px;max-width:1240px;width:100%;display:flex;flex-direction:column;gap:28px}
+@media(max-width:640px){.top,.main{padding-left:16px;padding-right:16px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:0 14px;border-radius:6px;border:1px solid #3651C9;background:#3651C9;color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:0 1px 1px rgba(26,31,54,.08)}
+.btn:hover{background:#2C44B0;border-color:#2C44B0;color:#fff}
+.btn.sec{background:#fff;color:#1A1F36;border-color:#D5DBE1}
+.btn.sec:hover{background:#F7F8FA;color:#1A1F36}
+.muted{color:#687385}
+.badge{display:inline-flex;align-items:center;padding:0 6px;border-radius:4px;font-size:12px;font-weight:500;background:#EEF0F3;color:#4A5263;white-space:nowrap;line-height:20px}
+.badge.ok{background:#E3F5E8;color:#1D6B35}
+.badge.warn{background:#FDF0DA;color:#8A4B00}
+.badge.info{background:#E8ECFB;color:#2F43B0}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.sh h2{font-size:17px}
+.th{font-size:12px;color:#687385;font-weight:500}
+.flabel{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.field{width:100%;min-height:38px;border:1px solid #D5DBE1;border-radius:6px;padding:8px 10px;background:#fff;font:inherit;font-size:14px;color:#1A1F36;box-shadow:0 1px 1px rgba(26,31,54,.04)}
+.field:focus{outline:none;border-color:#3651C9;box-shadow:0 0 0 3px rgba(54,81,201,.18)}
+.seg{display:inline-flex;border:1px solid #D5DBE1;border-radius:6px;overflow:hidden;align-self:flex-start}
+.segb{min-height:34px;padding:0 14px;border:none;border-right:1px solid #D5DBE1;background:#fff;font:inherit;font-size:14px;color:#414552;cursor:pointer}
+.segb:last-child{border-right:none}
+.segb.on{background:#F1F3FD;color:#2F43B0;font-weight:600}
+.tg{min-height:34px;padding:0 12px;border-radius:6px;border:1px solid #D5DBE1;background:#fff;color:#414552;font:inherit;font-size:14px;cursor:pointer}
+.tg:hover{background:#F7F8FA}
+.tg.on{border-color:#3651C9;background:#F1F3FD;color:#2F43B0;font-weight:500}
+.mrow{display:grid;grid-template-columns:96px minmax(0,1fr) 72px;gap:16px;padding:12px 0;border-bottom:1px solid #EBEEF1;font-size:14px;align-items:start}
+.xrow{display:grid;grid-template-columns:minmax(0,1fr) 80px 120px;gap:16px;padding:12px 0;border-bottom:1px solid #EBEEF1;font-size:14px;align-items:center}
+.link{border:none;background:none;padding:0;font:inherit;font-size:14px;font-weight:500;color:#3651C9;cursor:pointer;min-height:28px;text-align:right}
+.link:hover{color:#1F2F8A}
+</style>
+<style>[v-cloak]{display:none}</style>
+</head>
+<body>
+<div id="app" v-cloak>
+<div class="shell">
+<nav class="side" aria-label="主导航">
+<div class="acct"><div class="logo">王</div><div><div class="acctname">王老师咨询工作室</div><div class="acctsub">OPC 工作台 · 专业版</div></div></div>
+<a class="nav" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 7.5L8 3l5.5 4.5V13.5h-11z"></path></svg>首页</a>
+<div class="navlabel">咨询</div>
+<a class="nav" href="diagnose.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg>需求诊断</a>
+<a class="nav" href="proposal.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h6l3 3v9H4z"></path><path d="M6.5 8h4M6.5 10.5h4"></path></svg>方案与报告</a>
+<div class="navlabel">培训与交付</div>
+<a class="nav on" href="course.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h4a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2zM14 3.5h-4a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg>课程生成</a>
+<a class="nav" href="delivery.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect><path d="M5.5 8l1.8 1.8L10.5 6.5"></path></svg>项目交付</a>
+<div class="navlabel">品牌</div>
+<a class="nav" href="brand.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5.5" r="2.5"></circle><path d="M3 13.5c.8-2.5 2.8-3.7 5-3.7s4.2 1.2 5 3.7"></path></svg>个人 IP</a>
+</nav>
+
+<div class="content">
+<header class="top">
+<label class="search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg><span class="sr">搜索</span><input type="search" placeholder="搜索客户、项目、文档"></label>
+<div style="margin-left: auto; display: flex; gap: 8px"><button class="btn sec" type="button">帮助</button></div>
+</header>
+
+<main class="main">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div class="muted" style="font-size: 13px"><a href="index.html">首页</a> / 某城商行培训中心 / 课程生成</div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div><h1 style="font-size: 26px">课程生成</h1><div class="muted" style="font-size: 14px">说清楚给谁讲、讲多久、要达到什么效果。AI 先出大纲，你确认后再生成全套材料。</div></div>
+<div style="display: flex; gap: 8px"><button class="btn sec" type="button">保存草稿</button><button class="btn" type="button">确认大纲</button></div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<section style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div class="sh"><h2>课程需求</h2></div>
+<label class="flabel">课程主题<input class="field" type="text" value="管理者的 AI 思维：用 AI 提升团队效能"></label>
+<label class="flabel">学员对象<input class="field" type="text" value="城商行支行行长、部门负责人，约 40 人"></label>
+<div class="flabel">课程时长
+<div class="seg" role="group" aria-label="课程时长">
+<template v-for="d in v.durations"><button class="segb" :class="[d.cls]" type="button" @click="d.pick">{{ d.label }}</button></template>
+</div>
+</div>
+<div class="flabel">教学形式
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<template v-for="f in v.formats"><button class="tg" :class="[f.cls]" type="button" @click="f.pick">{{ f.label }}</button></template>
+</div>
+</div>
+<label class="flabel">期望成果<textarea class="field" rows="3" style="line-height: 1.7">每人能用 AI 完成一份部门周报和一份客户拜访纪要，并在团队里推广一个 AI 用法。</textarea></label>
+<label class="flabel">参考过往课程<select class="field"><option>制造业中层 AI 赋能训练营（2025）</option><option>不参考</option></select></label>
+<div><button class="btn sec" type="button">重新生成大纲</button></div>
+</section>
+
+<section style="flex: 1.5 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 36px">
+<div>
+<div class="sh"><h2>课程大纲</h2><span class="muted" style="font-size: 13px">{{ v.outlineMeta }}</span></div>
+<div class="mrow" style="padding: 8px 0"><div class="th">时间</div><div class="th">单元</div><div class="th">形式</div></div>
+<template v-for="m in v.modules">
+<div class="mrow"><div class="muted" style="font-variant-numeric: tabular-nums">{{ m.time }}</div><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">{{ m.title }}</span><span class="muted">{{ m.desc }}</span></div><div><span class="badge" :class="[m.tagCls]">{{ m.kind }}</span></div></div>
+</template>
+</div>
+<div>
+<div class="sh"><h2>配套材料</h2><span class="muted" style="font-size: 13px">大纲确认后生成，每份都可单独修改</span></div>
+<template v-for="x in v.delivs">
+<div class="xrow"><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">{{ x.title }}</span><span class="muted">{{ x.desc }}</span></div><div><span class="badge" :class="[x.badgeCls]">{{ x.status }}</span></div><button class="link" type="button" @click="x.go">{{ x.label }}</button></div>
+</template>
+</div>
+</section>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script src="assets/petite-vue.iife.js"></script>
+<script>
+class DCLogic {
+  constructor(props) { this.props = props || {}; this.state = {}; }
+  setState(p) { Object.assign(this.state, typeof p === 'function' ? p(this.state) : p); }
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { dur: '1 天', formats: { '讲授': true, '案例研讨': true, '上机练习': true }, made: { 0: true } };
+  }
+  renderVals() {
+    const s = this.state;
+    const durations = ['半天', '1 天', '2 天'].map((label) => ({
+      label, cls: s.dur === label ? 'on' : '', pick: () => this.setState({ dur: label })
+    }));
+    const formats = ['讲授', '案例研讨', '上机练习', '小组共创'].map((label) => ({
+      label, cls: s.formats[label] ? 'on' : '',
+      pick: () => this.setState({ formats: { ...this.state.formats, [label]: !this.state.formats[label] } })
+    }));
+    const all = [
+      { time: '09:00', title: '开场：AI 正在改变银行的哪些岗位', desc: '用 3 个同业场景打破“AI 离我很远”的认知', kind: '讲授' },
+      { time: '09:40', title: '管理者的 AI 思维模型', desc: '什么工作交给 AI，什么必须自己判断', kind: '讲授' },
+      { time: '10:50', title: '动手：10 分钟写完部门周报', desc: '每人用自己的真实素材完成一次', kind: '练习' },
+      { time: '13:30', title: '案例研讨：一家支行的 AI 试点', desc: '分组讨论推进中的阻力与对策', kind: '研讨' },
+      { time: '15:00', title: '动手：客户拜访纪要与跟进清单', desc: '从录音到纪要，再到待办', kind: '练习' },
+      { time: '16:20', title: '行动计划：回去第一周做什么', desc: '每人写下一个团队 AI 用法并承诺推广', kind: '共创' },
+      { time: '次日 09:00', title: '进阶：用智能体搭建部门工作流', desc: '2 天版专属内容', kind: '练习' },
+      { time: '次日 14:00', title: '成果展示与点评', desc: '各组展示工作流，讲师逐一点评', kind: '研讨' }
+    ];
+    const n = s.dur === '半天' ? 3 : s.dur === '1 天' ? 6 : 8;
+    const tagOf = (k) => (k === '练习' ? 'info' : k === '研讨' || k === '共创' ? 'ok' : '');
+    const modules = all.slice(0, n).map((m) => ({ ...m, tagCls: tagOf(m.kind) }));
+    const D = [
+      { title: '课件 PPT', desc: '按大纲逐页生成，含讲者备注' },
+      { title: '讲师手册', desc: '每个环节的话术、提问和时间控制' },
+      { title: '学员练习册', desc: '上机练习的步骤和素材' },
+      { title: '课后测评', desc: '10 道情景题，外加 30 天行动打卡' }
+    ];
+    const delivs = D.map((d, i) => {
+      const done = !!s.made[i];
+      return { ...d, status: done ? '已生成' : '未生成', badgeCls: done ? 'ok' : '', label: done ? '打开' : '生成',
+        go: () => this.setState({ made: { ...this.state.made, [i]: true } }) };
+    });
+    return { durations, formats, modules, delivs, outlineMeta: s.dur + ' · ' + n + ' 个单元 · 练习约占 40%' };
+  }
+}
+const inst = PetiteVue.reactive(new Component({}));
+PetiteVue.createApp({ get v() { return inst.renderVals(); } }).mount('#app');
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>需求诊断 · OPC 智能工作台</title>
+<style>
+body{margin:0;background:#fff;color:#1A1F36;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei","Helvetica Neue",sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#3651C9;text-decoration:none}a:hover{color:#1F2F8A}
+h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
+.sr{position:absolute;left:-9999px}
+.shell{display:flex;flex-wrap:wrap;min-height:100vh}
+.side{flex:1 1 220px;background:#F7F8FA;border-right:1px solid #E3E8EE;padding:16px 12px;display:flex;flex-direction:column;gap:2px}
+@media(min-width:860px){.side{max-width:232px}}
+.acct{display:flex;align-items:center;gap:10px;padding:6px 10px 18px}
+.logo{width:28px;height:28px;border-radius:6px;background:#1A1F36;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none}
+.acctname{font-weight:600;font-size:14px;line-height:1.3}
+.acctsub{font-size:12px;color:#687385}
+.navlabel{font-size:12px;color:#687385;padding:16px 10px 4px;font-weight:500}
+.nav{display:flex;align-items:center;gap:10px;padding:0 10px;min-height:38px;border-radius:6px;color:#414552;font-size:14px;font-weight:500}
+.nav:hover{background:#EBEEF1;color:#1A1F36}
+.nav svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:#687385}
+.nav.on,.nav.on svg{color:#3651C9}
+.content{flex:999 1 560px;min-width:0;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:12px;padding:12px 32px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.search{flex:1 1 240px;max-width:480px;display:flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border-radius:6px;background:#F7F8FA;color:#687385;font-size:14px}
+.search svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.search input{border:none;background:transparent;font:inherit;color:#1A1F36;flex:1;min-width:0;outline:none}
+.main{padding:28px 32px 72px;max-width:1240px;width:100%;display:flex;flex-direction:column;gap:28px}
+@media(max-width:640px){.top,.main{padding-left:16px;padding-right:16px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:0 14px;border-radius:6px;border:1px solid #3651C9;background:#3651C9;color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:0 1px 1px rgba(26,31,54,.08)}
+.btn:hover{background:#2C44B0;border-color:#2C44B0;color:#fff}
+.btn.sec{background:#fff;color:#1A1F36;border-color:#D5DBE1}
+.btn.sec:hover{background:#F7F8FA;color:#1A1F36}
+.muted{color:#687385}
+.badge{display:inline-flex;align-items:center;padding:0 6px;border-radius:4px;font-size:12px;font-weight:500;background:#EEF0F3;color:#4A5263;white-space:nowrap;line-height:20px}
+.badge.ok{background:#E3F5E8;color:#1D6B35}
+.badge.warn{background:#FDF0DA;color:#8A4B00}
+.badge.info{background:#E8ECFB;color:#2F43B0}
+.badge.bad{background:#FCE8E8;color:#A3262A}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.sh h2{font-size:17px}
+.th{font-size:12px;color:#687385;font-weight:500}
+.flabel{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.field{width:100%;min-height:38px;border:1px solid #D5DBE1;border-radius:6px;padding:8px 10px;background:#fff;font:inherit;font-size:14px;color:#1A1F36;box-shadow:0 1px 1px rgba(26,31,54,.04)}
+.field:focus{outline:none;border-color:#3651C9;box-shadow:0 0 0 3px rgba(54,81,201,.18)}
+.tg{min-height:34px;padding:0 12px;border-radius:6px;border:1px solid #D5DBE1;background:#fff;color:#414552;font:inherit;font-size:14px;cursor:pointer}
+.tg:hover{background:#F7F8FA}
+.tg.on{border-color:#3651C9;background:#F1F3FD;color:#2F43B0;font-weight:500}
+.crumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:#687385}
+.crumbs .on{color:#1A1F36;font-weight:600}
+.prow{display:grid;grid-template-columns:28px minmax(0,1.3fr) 72px minmax(0,1.6fr);gap:14px;padding:14px 0;border-bottom:1px solid #EBEEF1;font-size:14px;align-items:start}
+.opt{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border:1px solid #E3E8EE;border-radius:6px;cursor:pointer;font-size:14px}
+.opt.on{border-color:#3651C9;background:#F7F8FE}
+.opt input{margin:3px 0 0;accent-color:#3651C9}
+</style>
+<style>[v-cloak]{display:none}</style>
+</head>
+<body>
+<div id="app" v-cloak>
+<div class="shell">
+<nav class="side" aria-label="主导航">
+<div class="acct"><div class="logo">王</div><div><div class="acctname">王老师咨询工作室</div><div class="acctsub">OPC 工作台 · 专业版</div></div></div>
+<a class="nav" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 7.5L8 3l5.5 4.5V13.5h-11z"></path></svg>首页</a>
+<div class="navlabel">咨询</div>
+<a class="nav on" href="diagnose.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg>需求诊断</a>
+<a class="nav" href="proposal.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h6l3 3v9H4z"></path><path d="M6.5 8h4M6.5 10.5h4"></path></svg>方案与报告</a>
+<div class="navlabel">培训与交付</div>
+<a class="nav" href="course.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h4a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2zM14 3.5h-4a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg>课程生成</a>
+<a class="nav" href="delivery.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect><path d="M5.5 8l1.8 1.8L10.5 6.5"></path></svg>项目交付</a>
+<div class="navlabel">品牌</div>
+<a class="nav" href="brand.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5.5" r="2.5"></circle><path d="M3 13.5c.8-2.5 2.8-3.7 5-3.7s4.2 1.2 5 3.7"></path></svg>个人 IP</a>
+</nav>
+
+<div class="content">
+<header class="top">
+<label class="search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg><span class="sr">搜索</span><input type="search" placeholder="搜索客户、项目、文档"></label>
+<div style="margin-left: auto; display: flex; gap: 8px"><button class="btn sec" type="button">帮助</button></div>
+</header>
+
+<main class="main">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div class="muted" style="font-size: 13px"><a href="index.html">首页</a> / 需求诊断</div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div><h1 style="font-size: 26px">需求诊断</h1><div class="muted" style="font-size: 14px">把访谈记录交给 AI，先找准问题，再谈方案。</div></div>
+<div class="crumbs" aria-label="诊断进度"><span class="on">1 采集信息</span><span>›</span><span :class="v.s2">2 AI 诊断</span><span>›</span><span :class="v.s3">3 确认结论</span><span>›</span><span>4 生成方案</span></div>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<section style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div class="sh"><h2>客户信息</h2></div>
+<label class="flabel">企业名称<input class="field" type="text" value="某区域连锁零售（华南，门店 [数量] 家）"></label>
+<div class="flabel">所属行业
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<template v-for="it in v.industries"><button class="tg" :class="[it.cls]" type="button" @click="it.pick">{{ it.label }}</button></template>
+</div>
+</div>
+<div class="flabel">客户关注点
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<template v-for="c in v.concerns"><button class="tg" :class="[c.cls]" type="button" @click="c.pick">{{ c.label }}</button></template>
+</div>
+</div>
+<label class="flabel">访谈记录 / 会议纪要
+<textarea class="field" rows="8" style="resize: vertical; line-height: 1.7">运营总监：今年想给店长做一轮培训，提升门店业绩。
+店长 A：每天晚上要填 3 张报表，经常弄到 11 点。
+店长 B：开店流程主要靠老员工带，新店长上手慢。
+督导：总部的通知都在微信群里，门店说没看到的情况很常见。</textarea>
+</label>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; align-items: center">
+<button class="btn" type="button" @click="v.run">{{ v.runLabel }}</button>
+<button class="btn sec" type="button">上传录音或文档</button>
+</div>
+<div class="muted" style="font-size: 13px">支持 Word、PDF 和会议录音。客户资料仅用于本项目，不用于模型训练。</div>
+</section>
+
+<section style="flex: 1.4 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<template v-if="v.isIdle">
+<div class="sh"><h2>诊断结果</h2></div>
+<div style="padding: 64px 0; text-align: center; display: flex; flex-direction: column; gap: 6px; align-items: center">
+<div style="font-weight: 600">还没有诊断结果</div>
+<div class="muted" style="font-size: 14px; max-width: 380px">填写左侧信息后开始诊断。每条结论都会标出依据来自哪段访谈。</div>
+</div>
+</template>
+<template v-if="v.isRunning">
+<div class="sh"><h2>诊断结果</h2><span class="badge info">分析中</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding: 8px 0">
+<div><span class="badge ok">完成</span> 识别 4 位受访者的角色与诉求</div>
+<div><span class="badge ok">完成</span> 对照零售行业常见问题库</div>
+<div><span class="badge info">进行中</span> 归纳根因并标注证据</div>
+</div>
+</template>
+<template v-if="v.isDone">
+<div class="sh"><h2>诊断结果</h2><span class="badge ok">证据 4 条 · 可信度较高</span></div>
+<div style="background: #F7F8FA; border-radius: 8px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px">
+<div class="th">核心判断</div>
+<div style="font-size: 16px; line-height: 1.7">客户说要“店长培训”，真正的问题是<strong>门店运营没有统一标准，总部看不到执行过程</strong>。只做培训，效果很难持续。</div>
+</div>
+<div>
+<div class="prow" style="padding: 8px 0"><div class="th">#</div><div class="th">问题</div><div class="th">影响</div><div class="th">依据</div></div>
+<div class="prow"><div class="muted">1</div><div style="font-weight: 500">开店、交接班流程靠口口相传</div><div><span class="badge bad">高</span></div><div class="muted">“开店流程主要靠老员工带，新店长上手慢。”（店长 B）</div></div>
+<div class="prow"><div class="muted">2</div><div style="font-weight: 500">店长时间被手工报表占用</div><div><span class="badge warn">中</span></div><div class="muted">“每天晚上要填 3 张报表，经常弄到 11 点。”（店长 A）</div></div>
+<div class="prow"><div class="muted">3</div><div style="font-weight: 500">总部到门店的信息传递失真</div><div><span class="badge warn">中</span></div><div class="muted">“通知都在微信群里，门店说没看到的情况很常见。”（督导）</div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<div style="font-weight: 600; font-size: 15px">选择项目方向</div>
+<template v-for="o in v.opts">
+<label class="opt" :class="[o.cls]"><input type="radio" name="dir" :checked="o.on" @change="o.pick"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">{{ o.title }} <span class="badge info" style="margin-left: 6px">{{ o.flag }}</span></span><span class="muted">{{ o.desc }}</span></span></label>
+</template>
+</div>
+<div class="muted" style="font-size: 14px"><strong style="color: #1A1F36">待补充：</strong>门店数量与分布、现有收银和 ERP 系统、上次培训的效果反馈。<a href="diagnose.html">查看追问清单</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<a class="btn" href="proposal.html">生成方案</a>
+<button class="btn sec" type="button" @click="v.reset">重新诊断</button>
+</div>
+</template>
+</section>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script src="assets/petite-vue.iife.js"></script>
+<script>
+class DCLogic {
+  constructor(props) { this.props = props || {}; this.state = {}; }
+  setState(p) { Object.assign(this.state, typeof p === 'function' ? p(this.state) : p); }
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { industry: '零售', concerns: { '组织效率': true, '人才培养': true }, phase: 'done', dir: 0 };
+  }
+  componentWillUnmount() { clearTimeout(this.timer); }
+  renderVals() {
+    const s = this.state;
+    const industries = ['制造', '零售', '金融', '医疗健康', '教育', '互联网'].map((label) => ({
+      label, cls: s.industry === label ? 'on' : '', pick: () => this.setState({ industry: label })
+    }));
+    const concerns = ['组织效率', '人才培养', '数字化转型', '流程优化', '成本控制'].map((label) => ({
+      label, cls: s.concerns[label] ? 'on' : '',
+      pick: () => this.setState({ concerns: { ...this.state.concerns, [label]: !this.state.concerns[label] } })
+    }));
+    const O = [
+      { title: '运营 SOP + AI 巡店助手', desc: '先定标准，再用工具保证执行', flag: '推荐' },
+      { title: '店长训练营', desc: '客户原始需求，建议作为二期', flag: '原需求' },
+      { title: '报表自动化', desc: '见效快，适合做切入点', flag: '快速见效' }
+    ];
+    const opts = O.map((o, i) => ({ ...o, on: s.dir === i, cls: s.dir === i ? 'on' : '', pick: () => this.setState({ dir: i }) }));
+    const run = () => {
+      clearTimeout(this.timer);
+      this.setState({ phase: 'running' });
+      this.timer = setTimeout(() => this.setState({ phase: 'done' }), 1400);
+    };
+    return {
+      industries, concerns, opts, run,
+      reset: () => this.setState({ phase: 'idle' }),
+      runLabel: s.phase === 'running' ? '诊断中…' : '开始诊断',
+      isIdle: s.phase === 'idle', isRunning: s.phase === 'running', isDone: s.phase === 'done',
+      s2: s.phase !== 'idle' ? 'on' : '', s3: s.phase === 'done' ? 'on' : ''
+    };
+  }
+}
+const inst = PetiteVue.reactive(new Component({}));
+PetiteVue.createApp({ get v() { return inst.renderVals(); } }).mount('#app');
+</script>
+</body>
+</html>

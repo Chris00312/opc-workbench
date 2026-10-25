@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>项目交付 · OPC 智能工作台</title>
+<style>
+body{margin:0;background:#fff;color:#1A1F36;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei","Helvetica Neue",sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{color:#3651C9;text-decoration:none}a:hover{color:#1F2F8A}
+h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
+.sr{position:absolute;left:-9999px}
+.shell{display:flex;flex-wrap:wrap;min-height:100vh}
+.side{flex:1 1 220px;background:#F7F8FA;border-right:1px solid #E3E8EE;padding:16px 12px;display:flex;flex-direction:column;gap:2px}
+@media(min-width:860px){.side{max-width:232px}}
+.acct{display:flex;align-items:center;gap:10px;padding:6px 10px 18px}
+.logo{width:28px;height:28px;border-radius:6px;background:#1A1F36;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none}
+.acctname{font-weight:600;font-size:14px;line-height:1.3}
+.acctsub{font-size:12px;color:#687385}
+.navlabel{font-size:12px;color:#687385;padding:16px 10px 4px;font-weight:500}
+.nav{display:flex;align-items:center;gap:10px;padding:0 10px;min-height:38px;border-radius:6px;color:#414552;font-size:14px;font-weight:500}
+.nav:hover{background:#EBEEF1;color:#1A1F36}
+.nav svg{width:16px;height:16px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:#687385}
+.nav.on,.nav.on svg{color:#3651C9}
+.content{flex:999 1 560px;min-width:0;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:12px;padding:12px 32px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.search{flex:1 1 240px;max-width:480px;display:flex;align-items:center;gap:8px;min-height:38px;padding:0 12px;border-radius:6px;background:#F7F8FA;color:#687385;font-size:14px}
+.search svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.search input{border:none;background:transparent;font:inherit;color:#1A1F36;flex:1;min-width:0;outline:none}
+.main{padding:28px 32px 72px;max-width:1280px;width:100%;display:flex;flex-direction:column;gap:32px}
+@media(max-width:640px){.top,.main{padding-left:16px;padding-right:16px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:0 14px;border-radius:6px;border:1px solid #3651C9;background:#3651C9;color:#fff;font:inherit;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;box-shadow:0 1px 1px rgba(26,31,54,.08)}
+.btn:hover{background:#2C44B0;border-color:#2C44B0;color:#fff}
+.btn.sec{background:#fff;color:#1A1F36;border-color:#D5DBE1}
+.btn.sec:hover{background:#F7F8FA;color:#1A1F36}
+.muted{color:#687385}
+.badge{display:inline-flex;align-items:center;padding:0 6px;border-radius:4px;font-size:12px;font-weight:500;background:#EEF0F3;color:#4A5263;white-space:nowrap;line-height:20px}
+.badge.ok{background:#E3F5E8;color:#1D6B35}
+.badge.warn{background:#FDF0DA;color:#8A4B00}
+.badge.info{background:#E8ECFB;color:#2F43B0}
+.sh{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.sh h2{font-size:17px}
+.th{font-size:12px;color:#687385;font-weight:500}
+.ms{display:flex;flex-direction:column;gap:6px;min-width:0;font-size:14px}
+.msline{height:3px;border-radius:2px;background:#EBEEF1}
+.msline.done{background:#1D6B35}
+.msline.cur{background:#3651C9}
+.tabs{display:flex;gap:22px;border-bottom:1px solid #EBEEF1;flex-wrap:wrap}
+.tab{min-height:40px;padding:0;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:transparent;font:inherit;font-size:14px;font-weight:500;color:#687385;cursor:pointer}
+.tab:hover{color:#1A1F36}
+.tab.on{color:#3651C9;border-bottom-color:#3651C9}
+.trow{display:grid;grid-template-columns:minmax(0,2.4fr) 64px minmax(0,1.2fr) 96px 120px;gap:14px;padding:12px 0;border-bottom:1px solid #EBEEF1;font-size:14px;align-items:center}
+.link{border:none;background:none;padding:0;font:inherit;font-size:14px;font-weight:500;color:#3651C9;cursor:pointer;min-height:28px;text-align:right}
+.link:hover{color:#1F2F8A}
+.log{padding:12px 0;border-bottom:1px solid #EBEEF1;font-size:14px;display:flex;flex-direction:column;gap:2px}
+</style>
+<style>[v-cloak]{display:none}</style>
+</head>
+<body>
+<div id="app" v-cloak>
+<div class="shell">
+<nav class="side" aria-label="主导航">
+<div class="acct"><div class="logo">王</div><div><div class="acctname">王老师咨询工作室</div><div class="acctsub">OPC 工作台 · 专业版</div></div></div>
+<a class="nav" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 7.5L8 3l5.5 4.5V13.5h-11z"></path></svg>首页</a>
+<div class="navlabel">咨询</div>
+<a class="nav" href="diagnose.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg>需求诊断</a>
+<a class="nav" href="proposal.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h6l3 3v9H4z"></path><path d="M6.5 8h4M6.5 10.5h4"></path></svg>方案与报告</a>
+<div class="navlabel">培训与交付</div>
+<a class="nav" href="course.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.5h4a2 2 0 0 1 2 2V14a1.5 1.5 0 0 0-1.5-1.5H2zM14 3.5h-4a2 2 0 0 0-2 2V14a1.5 1.5 0 0 1 1.5-1.5H14z"></path></svg>课程生成</a>
+<a class="nav on" href="delivery.html"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="11" height="11" rx="1.5"></rect><path d="M5.5 8l1.8 1.8L10.5 6.5"></path></svg>项目交付</a>
+<div class="navlabel">品牌</div>
+<a class="nav" href="brand.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="5.5" r="2.5"></circle><path d="M3 13.5c.8-2.5 2.8-3.7 5-3.7s4.2 1.2 5 3.7"></path></svg>个人 IP</a>
+</nav>
+
+<div class="content">
+<header class="top">
+<label class="search"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg><span class="sr">搜索</span><input type="search" placeholder="搜索客户、项目、文档"></label>
+<div style="margin-left: auto; display: flex; gap: 8px"><button class="btn sec" type="button">帮助</button></div>
+</header>
+
+<main class="main">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div class="muted" style="font-size: 13px"><a href="index.html">首页</a> / 项目交付</div>
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h1 style="font-size: 26px">中层管理 AI 赋能咨询</h1>
+<div class="muted" style="font-size: 14px">某精密制造企业 · 9 月 1 日启动 · 合同金额 ¥[金额] <span class="badge info" style="margin-left: 6px">进行中</span></div>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<label><span class="sr">切换项目</span><select style="min-height: 38px; border: 1px solid #D5DBE1; border-radius: 6px; padding: 0 10px; font: inherit; font-size: 14px; background: #fff"><option>某精密制造企业</option><option>某区域连锁零售</option><option>某城商行培训中心</option></select></label>
+<button class="btn sec" type="button">客户确认链接</button>
+<button class="btn" type="button">新建任务</button>
+</div>
+</div>
+</div>
+
+<section>
+<div class="sh"><h2>里程碑</h2><span class="muted" style="font-size: 13px">整体进度 62%，按计划推进</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; padding-top: 16px">
+<div class="ms"><div class="msline done"></div><span style="font-weight: 500">现状诊断</span><span class="muted" style="font-size: 13px">9 月 12 日已验收</span></div>
+<div class="ms"><div class="msline done"></div><span style="font-weight: 500">方案确认</span><span class="muted" style="font-size: 13px">9 月 26 日已验收</span></div>
+<div class="ms"><div class="msline cur"></div><span style="font-weight: 500">试点部门落地</span><span style="font-size: 13px; color: #2F43B0">进行中，今天阶段汇报</span></div>
+<div class="ms"><div class="msline"></div><span style="font-weight: 500">全员推广</span><span class="muted" style="font-size: 13px">预计 11 月</span></div>
+<div class="ms"><div class="msline"></div><span style="font-weight: 500">结项复盘</span><span class="muted" style="font-size: 13px">预计 12 月</span></div>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+<section style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column">
+<div class="tabs" role="tablist" aria-label="任务状态">
+<template v-for="t in v.tabs"><button class="tab" :class="[t.cls]" type="button" role="tab" @click="t.pick">{{ t.label }} <span class="muted" style="font-weight: 400">{{ t.count }}</span></button></template>
+</div>
+<div style="overflow-x: auto"><div style="min-width: 620px">
+<div class="trow" style="padding: 10px 0 8px"><div class="th">任务</div><div class="th">类型</div><div class="th">截止 / 说明</div><div class="th">状态</div><div></div></div>
+<template v-for="r in v.rows">
+<div class="trow"><div style="font-weight: 500">{{ r.title }}</div><div class="muted">{{ r.type }}</div><div class="muted">{{ r.due }}</div><div><span class="badge" :class="[r.badgeCls]">{{ r.status }}</span></div><div style="text-align: right"><template v-if="r.canMove"><button class="link" type="button" @click="r.move">{{ r.moveLabel }}</button></template></div></div>
+</template>
+</div></div>
+</section>
+
+<aside style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div>
+<div class="sh"><h2>本周周报</h2><span class="badge warn">周五发送</span></div>
+<template v-if="v.noReport">
+<div style="display: flex; flex-direction: column; gap: 12px; padding-top: 14px">
+<div class="muted" style="font-size: 14px">AI 会汇总本周完成的任务、会议纪要和客户反馈，生成一份可以直接发给客户的周报。</div>
+<div><button class="btn" type="button" @click="v.gen">生成周报</button></div>
+</div>
+</template>
+<template v-if="v.hasReport">
+<div style="display: flex; flex-direction: column; gap: 10px; padding-top: 14px; font-size: 14px; line-height: 1.75">
+<div style="font-weight: 600">第 3 周项目周报 <span class="badge" style="margin-left: 4px">草稿</span></div>
+<div><span class="muted">本周完成　</span>试点部门 12 位主管完成 AI 周报练习，梳理部门工作流 2 条。</div>
+<div><span class="muted">客户反馈　</span>生产部希望增加排班场景，已纳入下周计划。</div>
+<div><span class="muted">下周计划　</span>阶段汇报评审，启动排班场景试点。</div>
+<div><span class="muted">需要协助　</span>请 IT 部开通试点账号权限。</div>
+<div style="display: flex; gap: 8px; padding-top: 4px"><button class="btn" type="button">审阅并发送</button><button class="btn sec" type="button" @click="v.regen">重新生成</button></div>
+</div>
+</template>
+</div>
+<div>
+<div class="sh"><h2>客户沟通</h2><a href="delivery.html" style="font-size: 14px">全部</a></div>
+<div class="log"><div><span style="font-weight: 500">张总监</span> <span class="muted">· 昨天</span></div><div class="muted">汇报材料里加一页试点前后的对比。</div></div>
+<div class="log"><div><span style="font-weight: 500">李经理（HR）</span> <span class="muted">· 10 月 6 日</span></div><div class="muted">推广阶段的培训场地已确认。</div></div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script src="assets/petite-vue.iife.js"></script>
+<script>
+class DCLogic {
+  constructor(props) { this.props = props || {}; this.state = {}; }
+  setState(p) { Object.assign(this.state, typeof p === 'function' ? p(this.state) : p); }
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = {
+      report: true,
+      tab: -1,
+      tasks: [
+        { id: 1, col: 1, type: '咨询', title: '阶段汇报 PPT 增加对比页', due: '今天 14:00 前' },
+        { id: 2, col: 1, type: '工具', title: '部门工作流智能体调优', due: '10 月 10 日' },
+        { id: 3, col: 2, type: '咨询', title: '试点部门工作流说明书', due: '等待张总监确认' },
+        { id: 4, col: 0, type: '咨询', title: '排班场景需求访谈', due: '10 月 12 日' },
+        { id: 5, col: 0, type: '培训', title: '推广阶段培训课件', due: '10 月 20 日' },
+        { id: 6, col: 3, type: '培训', title: '试点主管 AI 周报练习', due: '10 月 5 日完成' },
+        { id: 7, col: 3, type: '咨询', title: '方案确认会纪要', due: '9 月 26 日完成' }
+      ]
+    };
+  }
+  renderVals() {
+    const s = this.state;
+    const names = ['待开始', '进行中', '待客户确认', '已完成'];
+    const badges = ['', 'info', 'warn', 'ok'];
+    const nextLabel = ['开始', '提交客户确认', '标记完成'];
+    const tabs = [{ label: '全部', i: -1 }].concat(names.map((label, i) => ({ label, i }))).map((t) => ({
+      label: t.label,
+      count: t.i < 0 ? s.tasks.length : s.tasks.filter((x) => x.col === t.i).length,
+      cls: s.tab === t.i ? 'on' : '',
+      pick: () => this.setState({ tab: t.i })
+    }));
+    const rows = s.tasks.filter((t) => s.tab < 0 || t.col === s.tab).map((t) => ({
+      ...t, status: names[t.col], badgeCls: badges[t.col], canMove: t.col < 3, moveLabel: nextLabel[t.col] || '',
+      move: () => this.setState({ tasks: this.state.tasks.map((x) => (x.id === t.id ? { ...x, col: x.col + 1 } : x)) })
+    }));
+    return {
+      tabs, rows,
+      noReport: !s.report, hasReport: s.report,
+      gen: () => this.setState({ report: true }),
+      regen: () => this.setState({ report: false })
+    };
+  }
+}
+const inst = PetiteVue.reactive(new Component({}));
+PetiteVue.createApp({ get v() { return inst.renderVals(); } }).mount('#app');
+</script>
+</body>
+</html>
