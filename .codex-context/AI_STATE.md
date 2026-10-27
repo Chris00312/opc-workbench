@@ -1,19 +1,21 @@
 # AI_STATE
 
-Last Updated: 2026-10-25
+Last Updated: 2026-10-27
 
 ## Current Goal
-把项目整理成 Git 仓库并推送到 GitHub（Chris00312/opc-workbench，私有，main 分支）。
+把旧网站「创越企业增长极」的增长极方法论放进原型：新增增长体检页，诊断和方案页按 6 套增长系统组织。
 
 ## Snapshot
+- 产品形态（2026-10-27 定）：AI 增长诊断先行（H5，简版免费、完整版付费），订阅工作台直接卖给企业，顾问为可选陪跑。方法论版权已确认可用。
 - 产品：OPC 智能工作台，帮助 35–55 岁咨询师/培训师/教练做一人公司（培训 + 工具 + 撮合 + 社群）。
-- 已完成：6 个页面的静态 UI 原型（Stripe 后台风格），nginx 一键部署脚本，商业计划书通俗解读。
-- 未完成：撮合平台页面未设计；没有后端、账号、数据存储；页面数据为演示数据。
-- 部署：用户自己的 VPS（Debian 11），用户在 Mac 上 scp/ssh 执行部署。
+- 前身：创越企业增长极（growthhubs.com.cn，即将关闭，已存档）。面向企业的增长咨询平台，两位资深顾问退出后搁置。方法论：增长竞争五力、6 套增长系统、战略肆力、双核心、四梯队、VGEM。
+- 已完成：7 个页面的静态 UI 原型（Stripe 后台风格），含增长体检；nginx 一键部署脚本；计划书解读；旧网站分析文档。
+- 未完成：撮合平台页面；方法论知识库页；没有后端、账号、数据存储；页面数据为演示数据。
+- 部署：用户自己的 VPS（Debian 11），用户在自己电脑上 scp/ssh 执行部署。
 
 ## Last Run
-- result: 从项目文件整理出仓库（site/、deploy.sh、scripts/pack.sh、docs/、状态文件）。
-- proof: `scripts/pack.sh` 生成的包与原 opc-site.tar.gz 文件列表一致；全仓库搜索无服务器 IP、端口、密码。
-- risks: 原商业计划书 PDF 未放入仓库（体积 14MB 且属商业机密）。
-- rollback_point: 首次提交。
+- result: 新增 site/checkup.html（五力自评 → 雷达图 → 推荐增长系统）和 site/assets/growth-model.js（共享方法论数据）；需求诊断页显示匹配的增长系统和要素；方案页模板名随增长系统变化；修复方案页按钮样式被目录 .sec 类覆盖的问题。
+- proof: Playwright 打开 checkup/diagnose/proposal/index/course 无控制台错误；截图检查雷达图、推荐、跳转参数 ?system= 正常；375px 宽无横向滚动。
+- risks: 方法论和案例的版权尚未得到退出顾问和创越咨询的书面确认；体检题目是原型措辞，未经顾问校准。
+- rollback_point: 本次提交之前的 b6f258c。
 - next_step: 见 TODO.md。
