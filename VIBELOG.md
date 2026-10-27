@@ -13,3 +13,18 @@
 - Proof: pack.sh 生成的包与原部署包文件列表一致；搜索无敏感信息。
 - Rollback: 首次提交。
 - Next: 设计撮合平台页面。
+
+## 2026-11-04 — 建立 Mac 本地工作区
+
+**What changed:**
+- 在 /Users/c/Documents/极増科技本地 从项目 bundle 克隆仓库，origin 指向 GitHub
+- 新增 brand/、prototype/（4 组原型稿）、growthhubs-archive/；deploy/*.tar.gz 本地保留但不入库
+- 未复制含真实服务器信息的部署说明、与 docs/ 重复的计划书解读、11 月 1 日音视频
+- 状态文件更新：AI_STATE、INDEX、TODO、HANDOFF，新建 DESIGN_SYSTEM
+
+**Why:** 之后在本地 Mac 上继续开发，资料集中在一个仓库。
+
+**Next:** 校正系统时间 → git fetch 核对 → 提交推送。
+
+Risks: Mac 时钟慢约一周导致 HTTPS 失败；bundle 可能落后于 GitHub。
+Rollback: b6f258c

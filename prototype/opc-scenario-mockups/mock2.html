@@ -1,0 +1,222 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'WenQuanYi Zen Hei',sans-serif;color:#1A1F36;background:#E9ECF2;padding:40px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.phone{width:390px;height:844px;background:#fff;border-radius:44px;border:10px solid #1A1F36;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.status{height:40px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:13px;font-weight:700}
+.top{height:48px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E3E8EE;font-size:15px;font-weight:700;position:relative}
+.top .back{position:absolute;left:16px;color:#697386;font-weight:400}
+.scroll{flex:1;overflow:hidden;padding:20px}
+.muted{color:#697386}.blue{color:#3651C9}.red{color:#C0392B}.green{color:#1F8F5F}
+.btn{display:block;text-align:center;background:#3651C9;color:#fff;border-radius:8px;padding:14px;font-size:15px;font-weight:700}
+.btn.ghost{background:#fff;color:#3651C9;border:1px solid #C9D2F2}
+.hr{height:1px;background:#E3E8EE;margin:16px 0}
+.tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:4px;background:#EEF1FB;color:#3651C9}
+.tag.r{background:#FDEDEC;color:#C0392B}
+.bar{height:6px;background:#EEF0F4;border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:#3651C9}
+.bar i.r{background:#D9534F}
+.row{display:flex;justify-content:space-between;align-items:center}
+/* desktop */
+.desk{width:1440px;height:620px;background:#fff;border:1px solid #D5DBE1;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.chrome{height:36px;background:#F1F3F6;border-bottom:1px solid #E3E8EE;display:flex;align-items:center;gap:8px;padding:0 14px}
+.chrome i{width:11px;height:11px;border-radius:50%;background:#D5DBE1;display:block}
+.chrome span{margin-left:16px;background:#fff;border:1px solid #E3E8EE;border-radius:5px;font-size:12px;color:#697386;padding:3px 12px;width:420px}
+.app{flex:1;display:flex}
+.side{width:220px;background:#F7F8FA;border-right:1px solid #E3E8EE;padding:18px 12px;font-size:14px}
+.side .logo{font-weight:700;font-size:15px;padding:4px 10px 18px}
+.side .lbl{font-size:11px;color:#8792A2;padding:14px 10px 6px}
+.side a{display:block;padding:7px 10px;border-radius:6px;color:#3C4257}
+.side a.on{background:#E8ECFB;color:#3651C9;font-weight:700}
+.main{flex:1;padding:28px 36px;overflow:hidden}
+.main h1{font-size:24px;margin-bottom:4px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:12px;color:#697386;font-weight:400;text-align:left;padding:9px 10px;border-bottom:1px solid #E3E8EE}
+td{padding:11px 10px;border-bottom:1px solid #EEF0F4}
+.kpi{display:flex;border:1px solid #E3E8EE;border-radius:8px}
+.kpi>div{flex:1;padding:16px 18px;border-right:1px solid #E3E8EE}.kpi>div:last-child{border-right:0}
+.kpi b{display:block;font-size:24px;margin-top:6px}
+.panel{border:1px solid #E3E8EE;border-radius:8px;padding:18px}
+.ph{font-size:13px;font-weight:700;margin-bottom:12px}
+.step{display:flex;gap:10px;align-items:center;font-size:13px}
+.dot{width:22px;height:22px;border-radius:50%;border:1px solid #C9D2F2;display:flex;align-items:center;justify-content:center;font-size:11px;color:#3651C9}
+.dot.done{background:#3651C9;color:#fff;border-color:#3651C9}
+</style></head><body>
+<style>.av{width:64px;height:64px;border-radius:32px;background:#3651C9;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700}.doc h3{font-size:15px;margin:14px 0 6px}.doc p{font-size:13px;line-height:1.7;color:#3C4257}</style></head><body>
+<div class="phone" id="c-land">
+ <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+ <div class="scroll" style="padding:26px 24px">
+  <div style="display:flex;gap:14px;align-items:center"><div class="av">陈</div><div><p style="font-size:18px;font-weight:700">陈静</p><p class="muted" style="font-size:13px;margin-top:3px">组织与人才增长顾问</p></div></div>
+  <p class="muted" style="font-size:13px;line-height:1.7;margin-top:14px">前外企 HR 总监 20 年，现专注帮 10–100 人的企业把团队搭起来、把人用好。</p>
+  <div class="hr"></div>
+  <p class="blue" style="font-size:12px;font-weight:700">小微企业增长诊断</p>
+  <h1 style="font-size:24px;line-height:1.4;margin:8px 0 10px">15 分钟，看清公司<br>下一步该补哪块</h1>
+  <div style="margin:16px 0 18px;border:1px solid #E3E8EE;border-radius:10px">
+   <div class="row" style="padding:12px 14px;border-bottom:1px solid #EEF0F4;font-size:14px"><span>五力评分 + 短板</span><span class="green">免费</span></div>
+   <div class="row" style="padding:12px 14px;border-bottom:1px solid #EEF0F4;font-size:14px"><span>陈老师 30 分钟解读</span><span class="green">免费</span></div>
+   <div class="row" style="padding:12px 14px;font-size:14px"><span>组织升级方案</span><span class="muted">按项目</span></div>
+  </div>
+  <a class="btn">开始诊断</a>
+  <p class="muted" style="font-size:11px;text-align:center;margin-top:10px">诊断模型：增长极 · 增长竞争五力</p>
+  <div class="hr"></div>
+  <p style="font-size:13px;font-weight:700;margin-bottom:8px">我常帮客户解决</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px"><span class="tag">20 人后管不过来</span><span class="tag">核心骨干留不住</span><span class="tag">合伙人激励</span><span class="tag">薪酬与考核</span></div>
+ </div>
+</div>
+
+<div class="phone" id="c-quiz">
+ <div class="status"><span>9:46</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>执行力 · 第 16 / 20 题</div>
+ <div class="bar" style="border-radius:0;height:4px"><i style="width:80%"></i></div>
+ <div class="scroll" style="padding:26px 22px">
+  <p class="muted" style="font-size:12px">执行力 · 组织</p>
+  <h2 style="font-size:20px;line-height:1.5;margin:8px 0 20px">公司过了 20 人以后，招人、定薪、考核主要由谁来管？</h2>
+  <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+   <div style="border:2px solid #3651C9;background:#F3F5FD;border-radius:8px;padding:13px" class="row"><span>1 · 都是老板自己</span><span class="blue">✓</span></div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">2 · 老板 + 行政兼着做</div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">3 · 有专职 HR，但没有制度</div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">4 · 有 HR，有基本制度</div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">5 · 制度完整，每年复盘</div>
+  </div>
+  <div style="margin-top:22px;background:#F7F8FA;border-radius:8px;padding:14px;font-size:13px;line-height:1.6">
+   <b>可选：上传资料</b><br><span class="muted">组织架构图、薪酬表（只有陈老师和你能看）</span>
+   <div style="margin-top:10px;display:flex;gap:8px"><span class="tag">📄 组织架构.png</span><span class="tag">＋ 添加</span></div>
+  </div>
+ </div>
+ <div style="padding:14px 22px 24px;display:flex;gap:10px"><a class="btn ghost" style="flex:1">上一题</a><a class="btn" style="flex:2">下一题</a></div>
+</div>
+
+<div class="phone" id="c-lite">
+ <div class="status"><span>10:02</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>诊断报告 · 简版</div>
+ <div class="scroll" style="padding:18px 20px">
+  <div class="row"><div><p style="font-size:15px;font-weight:700">拾光设计 · 林总</p><p class="muted" style="font-size:12px;margin-top:2px">品牌设计公司 · 28 人 · 成立 6 年</p></div><div style="text-align:right"><p class="muted" style="font-size:11px">综合得分</p><p style="font-size:26px;font-weight:700">60</p></div></div>
+  <svg viewBox="0 0 300 230" width="350" height="220" style="display:block;margin:4px -10px 0">
+   <g fill="none" stroke="#E3E8EE">
+    <polygon points="150,25 245,94 209,206 91,206 55,94"/>
+    <polygon points="150,63 207,104 185,171 115,171 93,104"/>
+    <line x1="150" y1="120" x2="150" y2="25"/><line x1="150" y1="120" x2="245" y2="94"/><line x1="150" y1="120" x2="209" y2="206"/><line x1="150" y1="120" x2="91" y2="206"/><line x1="150" y1="120" x2="55" y2="94"/>
+   </g>
+   <polygon points="150,61 217,102 182,167 110,178 108,109" fill="rgba(54,81,201,.15)" stroke="#3651C9" stroke-width="2"/>
+   <g font-size="12" fill="#3C4257" text-anchor="middle">
+    <text x="150" y="16">公司力 62</text><text x="270" y="92">品类力 70</text><text x="222" y="224" fill="#C0392B">市场力 55</text>
+    <text x="78" y="224">产品力 68</text><text x="30" y="92" fill="#C0392B">执行力 44</text>
+   </g>
+  </svg>
+  <div style="background:#FDF3F2;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.65">
+   <b class="red">核心判断</b><br>作品口碑好，但<b>团队全靠老板一个人带</b>：3 位设计总监没有明确分工和激励，接单量卡在老板的时间上。
+  </div>
+  <div style="margin-top:14px;border:1px solid #C9D2F2;border-radius:8px;padding:12px 14px;display:flex;gap:12px">
+   <div class="av" style="width:40px;height:40px;font-size:16px;flex:none">陈</div>
+   <div><p style="font-size:13px;font-weight:700">陈老师的建议</p><p class="muted" style="font-size:12px;line-height:1.6;margin-top:4px">先把 3 位总监变成能独立带项目的“合伙人”，老板退出一线接单。这正是我做过最多的题目。</p></div>
+  </div>
+  <p class="muted" style="font-size:12px;margin-top:12px">推荐路径：业务价值链增长系统 · 匹配度 88%</p>
+ </div>
+ <div style="padding:12px 20px 22px;display:flex;gap:10px"><a class="btn ghost" style="flex:1">分享</a><a class="btn" style="flex:2">预约陈老师 30 分钟</a></div>
+</div>
+
+<div class="desk" id="c-home">
+ <div class="chrome"><i></i><i></i><i></i><span>增长极工作台 › 首页</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">增长极 · 工作台</div><div class="muted" style="font-size:12px;padding:0 10px">陈静 · 一人公司</div>
+   <div class="lbl">业务</div><a class="on">首页</a><a>客户（6）</a><a>线索（4）</a>
+   <div class="lbl">交付</div><a>方案与报告</a><a>月度陪跑</a>
+   <div class="lbl">支撑</div><a>增长知识库</a><a>我的诊断主页</a><a>收入与开票</a></div>
+  <div class="main">
+   <div class="row"><div><h1>早上好，陈老师</h1><p class="muted" style="font-size:13px">2027 年 3 月 · 周一 · AI 已为你准备好今天的 3 件事</p></div><a class="btn ghost" style="padding:8px 14px;font-size:13px">分享我的诊断主页</a></div>
+   <div class="kpi" style="margin:18px 0">
+    <div><span class="muted" style="font-size:12px">本月收入</span><b>¥5.6 万</b><span class="green" style="font-size:12px">已签 ¥14.2 万 / 季度</span></div>
+    <div><span class="muted" style="font-size:12px">在服务客户</span><b>6</b><span class="muted" style="font-size:12px">陪跑 4 · 项目 2</span></div>
+    <div><span class="muted" style="font-size:12px">新线索</span><b>4</b><span class="blue" style="font-size:12px">本周来自诊断主页</span></div>
+    <div><span class="muted" style="font-size:12px">本周待交付</span><b>3</b><span class="muted" style="font-size:12px">AI 已起草 2 份</span></div>
+   </div>
+   <div style="display:flex;gap:24px">
+    <div style="flex:1.6">
+     <p class="ph">我的客户</p>
+     <table>
+      <tr><th>客户</th><th>规模</th><th>阶段</th><th>金额</th><th>下一步</th></tr>
+      <tr><td><b>拾光设计</b> · 林总</td><td>28 人</td><td><span class="tag">方案待确认</span></td><td>¥4.8 万</td><td>周四讲方案</td></tr>
+      <tr><td><b>云栖茶业</b> · 吴总</td><td>18 人</td><td><span class="tag">陪跑 3/6 月</span></td><td>¥1.2 万/月</td><td>3 月复盘稿已生成</td></tr>
+      <tr><td><b>合一跨境</b> · 赵总</td><td>12 人</td><td><span class="tag">陪跑 1/6 月</span></td><td>¥0.8 万/月</td><td>补交薪酬表</td></tr>
+      <tr><td><b>禾木口腔</b> · 何院长</td><td>45 人</td><td><span class="tag r">诊断已完成</span></td><td>—</td><td>今天下午解读</td></tr>
+     </table>
+    </div>
+    <div style="flex:1" class="panel">
+     <p class="ph">AI 今日准备</p>
+     <div style="font-size:13px;line-height:1.7;display:flex;flex-direction:column;gap:10px">
+      <div>✓ 拾光设计方案初稿 <span class="muted">· 待你确认</span></div>
+      <div>✓ 禾木口腔解读提纲 <span class="muted">· 基于诊断 + 行业简报</span></div>
+      <div>✓ 云栖茶业 3 月复盘稿 <span class="muted">· 发现 2 个风险</span></div>
+      <div class="hr" style="margin:4px 0"></div>
+      <div class="muted">新线索 4 条，2 条与你的专长高度匹配</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="desk" id="c-prop">
+ <div class="chrome"><i></i><i></i><i></i><span>增长极工作台 › 方案与报告</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">增长极 · 工作台</div><div class="muted" style="font-size:12px;padding:0 10px">陈静 · 一人公司</div>
+   <div class="lbl">业务</div><a>首页</a><a>客户（6）</a><a>线索（4）</a>
+   <div class="lbl">交付</div><a class="on">方案与报告</a><a>月度陪跑</a>
+   <div class="lbl">支撑</div><a>增长知识库</a><a>我的诊断主页</a><a>收入与开票</a></div>
+  <div class="main" style="display:flex;gap:24px">
+   <div style="flex:1.7;display:flex;flex-direction:column">
+    <div class="row"><div><h1>拾光设计 · 组织升级项目建议书</h1><p class="muted" style="font-size:13px">AI 初稿 · 2 分钟前 · 依据：诊断报告、2 次访谈纪要</p></div><div style="display:flex;gap:8px"><a class="btn ghost" style="padding:8px 14px;font-size:13px">导出 PDF</a><a class="btn" style="padding:8px 14px;font-size:13px">发给林总</a></div></div>
+    <div class="doc panel" style="margin-top:16px;flex:1">
+     <h3 style="margin-top:0">一、现状判断</h3><p>执行力 44 分为最大短板。28 人全部向老板汇报，3 位设计总监有能力但无权责、无激励，老板 70% 时间在一线接单。</p>
+     <h3>二、项目目标（3 个月）</h3><p>3 位总监各带一条业务线独立交付；老板接单时间降到 30% 以下；核心人员一年内零流失。</p>
+     <h3>三、做法</h3>
+     <table style="font-size:13px"><tr><th>阶段</th><th>内容</th><th>交付物</th></tr>
+      <tr><td>第 1 月</td><td>按“双核心”重划 3 条业务线与权责</td><td>组织架构与岗位说明</td></tr>
+      <tr><td>第 2 月</td><td>总监分红与虚拟股方案</td><td>激励方案与测算表</td></tr>
+      <tr><td>第 3 月</td><td>按“四梯队”盘点骨干，建考核节奏</td><td>人才盘点与月度复盘表</td></tr></table>
+     <h3>四、费用</h3><p>项目费 ¥48,000，之后可转月度陪跑 ¥8,000 / 月。</p>
+    </div>
+   </div>
+   <div style="flex:1" class="panel">
+    <p class="ph">AI 助手</p>
+    <div style="font-size:13px;line-height:1.7;background:#F7F8FA;border-radius:8px;padding:12px">初稿用了增长极的<b>双核心能力</b>和<b>四梯队</b>两套方法，参考了案例库里一家 30 人设计公司的分红方案。<br><br>报价按你过去 3 个同类项目的平均价给出。</div>
+    <div style="margin-top:12px;font-size:12px" class="muted">引用：方法论第 3、4 章 · 案例库 #12 · 你的历史项目 3 个</div>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:8px;font-size:13px"><span class="tag" style="align-self:flex-start">把语气改得更口语</span><span class="tag" style="align-self:flex-start">加一页激励测算</span><span class="tag" style="align-self:flex-start">压缩到 2 页</span></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="desk" id="c-kb">
+ <div class="chrome"><i></i><i></i><i></i><span>增长极工作台 › 增长知识库</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">增长极 · 工作台</div><div class="muted" style="font-size:12px;padding:0 10px">陈静 · 一人公司</div>
+   <div class="lbl">业务</div><a>首页</a><a>客户（6）</a><a>线索（4）</a>
+   <div class="lbl">交付</div><a>方案与报告</a><a>月度陪跑</a>
+   <div class="lbl">支撑</div><a class="on">增长知识库</a><a>我的诊断主页</a><a>收入与开票</a></div>
+  <div class="main" style="display:flex;gap:28px">
+   <div style="flex:1.6;display:flex;flex-direction:column">
+    <h1>增长知识库</h1><p class="muted" style="font-size:13px;margin-bottom:20px">增长极方法论 · 20 个案例 · 49 篇研究 · 你的客户资料</p>
+    <div style="align-self:flex-end;background:#3651C9;color:#fff;border-radius:10px 10px 2px 10px;padding:12px 16px;font-size:14px;max-width:75%">茶业公司吴总想开第 4 家门店，但店长还没培养出来，我下周陪跑会该怎么建议？</div>
+    <div style="margin-top:16px;border:1px solid #E3E8EE;border-radius:10px;padding:18px 20px;font-size:14px;line-height:1.8">
+     建议先“人后店”。云栖 3 月复盘显示两家老店人效下降 12%，此时开新店风险高 <span class="tag">内</span>。<br>
+     <b>① 先定标准</b>：把最好的一家店的做法写成店长手册 <span class="tag">1</span>；<br>
+     <b>② 再选人</b>：按四梯队从 6 名店员里选 2 名储备店长，带教 8 周 <span class="tag">2</span>；<br>
+     <b>③ 设开店门槛</b>：储备店长独立带店满 1 个月、老店人效恢复，再签新店租约 <span class="tag">3</span>。
+    </div>
+    <div style="margin-top:12px;display:flex;gap:8px"><span class="tag">生成陪跑会提纲</span><span class="tag">发给吴总前先给我看</span></div>
+    <div style="margin-top:auto;border:1px solid #D5DBE1;border-radius:8px;padding:12px 14px;font-size:14px" class="muted">继续提问…</div>
+   </div>
+   <div style="flex:1" class="panel">
+    <p class="ph">引用来源</p>
+    <div style="font-size:13px;line-height:1.6;display:flex;flex-direction:column;gap:14px">
+     <div><span class="tag">1</span> <b>执行系统规划：标准化先行</b><p class="muted">增长极方法论 · 第 3 章</p></div>
+     <div><span class="tag">2</span> <b>四梯队人才孵化模型</b><p class="muted">增长极方法论 · 第 4 章</p></div>
+     <div><span class="tag">3</span> <b>小型连锁的开店节奏</b><p class="muted">增长研究院 · 研究 #31</p></div>
+     <div class="hr" style="margin:0"></div>
+     <div><span class="tag" style="background:#F1F3F6;color:#697386">内</span> <b>云栖茶业 3 月复盘</b><p class="muted">你的客户资料</p></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</body></html>

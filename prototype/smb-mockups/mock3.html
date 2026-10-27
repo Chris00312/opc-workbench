@@ -1,0 +1,230 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'WenQuanYi Zen Hei',sans-serif;color:#1A1F36;background:#E9ECF2;padding:40px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.phone{width:390px;height:844px;background:#fff;border-radius:44px;border:10px solid #1A1F36;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.status{height:40px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:13px;font-weight:700}
+.top{height:48px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E3E8EE;font-size:15px;font-weight:700;position:relative}
+.top .back{position:absolute;left:16px;color:#697386;font-weight:400}
+.scroll{flex:1;overflow:hidden;padding:20px}
+.muted{color:#697386}.blue{color:#3651C9}.red{color:#C0392B}.green{color:#1F8F5F}
+.btn{display:block;text-align:center;background:#3651C9;color:#fff;border-radius:8px;padding:14px;font-size:15px;font-weight:700}
+.btn.ghost{background:#fff;color:#3651C9;border:1px solid #C9D2F2}
+.hr{height:1px;background:#E3E8EE;margin:16px 0}
+.tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:4px;background:#EEF1FB;color:#3651C9}
+.tag.r{background:#FDEDEC;color:#C0392B}
+.bar{height:6px;background:#EEF0F4;border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:#3651C9}
+.bar i.r{background:#D9534F}
+.row{display:flex;justify-content:space-between;align-items:center}
+/* desktop */
+.desk{width:1440px;height:620px;background:#fff;border:1px solid #D5DBE1;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.chrome{height:36px;background:#F1F3F6;border-bottom:1px solid #E3E8EE;display:flex;align-items:center;gap:8px;padding:0 14px}
+.chrome i{width:11px;height:11px;border-radius:50%;background:#D5DBE1;display:block}
+.chrome span{margin-left:16px;background:#fff;border:1px solid #E3E8EE;border-radius:5px;font-size:12px;color:#697386;padding:3px 12px;width:420px}
+.app{flex:1;display:flex}
+.side{width:220px;background:#F7F8FA;border-right:1px solid #E3E8EE;padding:18px 12px;font-size:14px}
+.side .logo{font-weight:700;font-size:15px;padding:4px 10px 18px}
+.side .lbl{font-size:11px;color:#8792A2;padding:14px 10px 6px}
+.side a{display:block;padding:7px 10px;border-radius:6px;color:#3C4257}
+.side a.on{background:#E8ECFB;color:#3651C9;font-weight:700}
+.main{flex:1;padding:28px 36px;overflow:hidden}
+.main h1{font-size:24px;margin-bottom:4px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:12px;color:#697386;font-weight:400;text-align:left;padding:9px 10px;border-bottom:1px solid #E3E8EE}
+td{padding:11px 10px;border-bottom:1px solid #EEF0F4}
+.kpi{display:flex;border:1px solid #E3E8EE;border-radius:8px}
+.kpi>div{flex:1;padding:16px 18px;border-right:1px solid #E3E8EE}.kpi>div:last-child{border-right:0}
+.kpi b{display:block;font-size:24px;margin-top:6px}
+.panel{border:1px solid #E3E8EE;border-radius:8px;padding:18px}
+.ph{font-size:13px;font-weight:700;margin-bottom:12px}
+.step{display:flex;gap:10px;align-items:center;font-size:13px}
+.dot{width:22px;height:22px;border-radius:50%;border:1px solid #C9D2F2;display:flex;align-items:center;justify-content:center;font-size:11px;color:#3651C9}
+.dot.done{background:#3651C9;color:#fff;border-color:#3651C9}
+</style></head><body>
+<style>.av{width:44px;height:44px;border-radius:22px;background:#3651C9;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex:none}.chk{width:16px;height:16px;border:1px solid #C9D2F2;border-radius:4px;display:inline-block;flex:none}.chk.on{background:#3651C9;border-color:#3651C9}.desk{height:470px}</style></head><body>
+<div class="phone" id="s-land">
+ <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+ <div class="scroll" style="padding:28px 24px">
+  <p class="blue" style="font-size:13px;font-weight:700">增长极 · 小微企业 AI 增长助手</p>
+  <h1 style="font-size:27px;line-height:1.38;margin:14px 0 12px">没有战略部、运营部？<br>先花 15 分钟体检一下</h1>
+  <p class="muted" style="font-size:14px;line-height:1.7">为 1–50 人的小微企业和一人公司设计。AI 按增长极方法论给你打分、找短板、排行动计划。</p>
+  <div style="margin:22px 0;border:1px solid #E3E8EE;border-radius:10px">
+   <div class="row" style="padding:13px 16px;border-bottom:1px solid #EEF0F4;font-size:14px"><span>五力评分 + 短板</span><span class="green">免费</span></div>
+   <div class="row" style="padding:13px 16px;border-bottom:1px solid #EEF0F4;font-size:14px"><span>90 天计划 · 月度复盘 · 随时问</span><span class="muted">AI 助手订阅</span></div>
+   <div class="row" style="padding:13px 16px;font-size:14px"><span>增长极顾问陪跑</span><span class="muted">按需加购</span></div>
+  </div>
+  <a class="btn">免费开始诊断</a>
+  <div class="hr"></div>
+  <p style="font-size:13px;font-weight:700;margin-bottom:10px">AI 负责日常，顾问负责关键时刻</p>
+  <div style="display:flex;gap:10px">
+   <div style="flex:1;background:#F7F8FA;border-radius:8px;padding:12px;font-size:12px;line-height:1.6"><b style="font-size:13px">AI 助手</b><br><span class="muted">计划、复盘、答疑，24 小时在线</span></div>
+   <div style="flex:1;background:#F7F8FA;border-radius:8px;padding:12px;font-size:12px;line-height:1.6"><b style="font-size:13px">增长极顾问</b><br><span class="muted">卡住时一对一，看过你全部记录</span></div>
+  </div>
+ </div>
+</div>
+
+<div class="phone" id="s-quiz">
+ <div class="status"><span>9:45</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>市场力 · 第 9 / 20 题</div>
+ <div class="bar" style="border-radius:0;height:4px"><i style="width:45%"></i></div>
+ <div class="scroll" style="padding:26px 22px">
+  <p class="muted" style="font-size:12px">市场力 · 渠道</p>
+  <h2 style="font-size:20px;line-height:1.5;margin:8px 0 20px">你的销售额里，最大的一个渠道占多少？</h2>
+  <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+   <div style="border:2px solid #3651C9;background:#F3F5FD;border-radius:8px;padding:13px" class="row"><span>1 · 80% 以上</span><span class="blue">✓</span></div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">2 · 60%–80%</div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">3 · 40%–60%</div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">4 · 20%–40%</div>
+   <div style="border:1px solid #E3E8EE;border-radius:8px;padding:14px">5 · 不到 20%，渠道很分散</div>
+  </div>
+  <div style="margin-top:22px;background:#F7F8FA;border-radius:8px;padding:14px;font-size:13px;line-height:1.6">
+   <b>可选：连接店铺后台或上传报表</b><br><span class="muted">数据只用于你的诊断，可随时删除</span>
+   <div style="margin-top:10px;display:flex;gap:8px"><span class="tag">📄 9月销售报表.xlsx</span><span class="tag">＋ 添加</span></div>
+  </div>
+ </div>
+ <div style="padding:14px 22px 24px;display:flex;gap:10px"><a class="btn ghost" style="flex:1">上一题</a><a class="btn" style="flex:2">下一题</a></div>
+</div>
+
+<div class="phone" id="s-lite">
+ <div class="status"><span>10:01</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>诊断报告 · 简版</div>
+ <div class="scroll" style="padding:18px 20px">
+  <div class="row"><div><p style="font-size:15px;font-weight:700">山野木作 · 周总</p><p class="muted" style="font-size:12px;margin-top:2px">跨境家居电商 · 12 人 · 成立 4 年</p></div><div style="text-align:right"><p class="muted" style="font-size:11px">综合得分</p><p style="font-size:26px;font-weight:700">62</p></div></div>
+  <svg viewBox="0 0 300 230" width="350" height="220" style="display:block;margin:4px -10px 0">
+   <g fill="none" stroke="#E3E8EE">
+    <polygon points="150,25 245,94 209,206 91,206 55,94"/>
+    <polygon points="150,63 207,104 185,171 115,171 93,104"/>
+    <line x1="150" y1="120" x2="150" y2="25"/><line x1="150" y1="120" x2="245" y2="94"/><line x1="150" y1="120" x2="209" y2="206"/><line x1="150" y1="120" x2="91" y2="206"/><line x1="150" y1="120" x2="55" y2="94"/>
+   </g>
+   <polygon points="150,57 220,101 178,161 109,180 101,107" fill="rgba(54,81,201,.15)" stroke="#3651C9" stroke-width="2"/>
+   <g font-size="12" fill="#3C4257" text-anchor="middle">
+    <text x="150" y="16">公司力 66</text><text x="270" y="92">品类力 74</text><text x="222" y="224" fill="#C0392B">市场力 48</text>
+    <text x="78" y="224">产品力 70</text><text x="30" y="92" fill="#C0392B">执行力 52</text>
+   </g>
+  </svg>
+  <div style="background:#FDF3F2;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.65">
+   <b class="red">核心判断</b><br>产品有竞争力，但 <b>85% 销售压在亚马逊一个渠道</b>，广告费一涨利润就没了；团队没有固定的目标和复盘。
+  </div>
+  <p style="font-size:13px;font-weight:700;margin:14px 0 8px">推荐增长路径</p>
+  <div style="border:1px solid #C9D2F2;border-radius:8px;padding:12px 14px">
+   <div class="row"><b style="font-size:14px">跨区域增长系统</b><span class="tag">匹配度 86%</span></div>
+   <p class="muted" style="font-size:12px;margin-top:6px;line-height:1.6">适合小型单一业务；对应「开拓新市场和新渠道」；能补市场力、执行力短板</p>
+  </div>
+ </div>
+ <div style="padding:12px 20px 22px;display:flex;gap:10px"><a class="btn ghost" style="flex:1">分享</a><a class="btn" style="flex:2">生成我的 90 天计划</a></div>
+</div>
+
+<div class="phone" id="s-chat">
+ <div class="status"><span>21:18</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>随时问</div>
+ <div class="scroll" style="padding:16px 18px;background:#F7F8FA;display:flex;flex-direction:column;gap:12px">
+  <div style="align-self:flex-end;background:#3651C9;color:#fff;border-radius:12px 12px 2px 12px;padding:10px 13px;font-size:14px;line-height:1.6;max-width:82%">亚马逊广告越来越贵，独立站要不要现在就投钱做？</div>
+  <div style="background:#fff;border:1px solid #E3E8EE;border-radius:12px 12px 12px 2px;padding:12px 14px;font-size:13px;line-height:1.75;max-width:94%">
+   结合你 9 月的数据，建议<b>先小步试，不要一次投大钱</b>：<br>
+   ① 先把复购最高的 3 款放上独立站，用老客户邮件引流 <span class="tag">1</span><br>
+   ② 每月预算控制在亚马逊广告费的 15% 以内<br>
+   ③ 3 个月后看独立站毛利，再决定加不加码 <span class="tag">2</span>
+   <p class="muted" style="font-size:11px;margin-top:8px">出处：① 增长极·跨区域增长系统 ② 研究 #18《小团队的渠道多元化》</p>
+  </div>
+  <div style="background:#EEF1FB;border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.6">
+   <b>这个决定涉及预算和人手</b><br><span class="muted">要不要约增长极顾问聊 30 分钟？顾问已看过你的诊断和复盘。</span>
+   <div style="display:flex;gap:8px;margin-top:10px"><span class="tag" style="background:#3651C9;color:#fff">约顾问</span><span class="tag" style="background:#fff">先按 AI 建议试</span></div>
+  </div>
+ </div>
+ <div style="padding:12px 18px 22px;border-top:1px solid #E3E8EE"><div style="border:1px solid #D5DBE1;border-radius:20px;padding:10px 14px;font-size:13px" class="muted">输入你的问题…</div></div>
+</div>
+
+<div class="phone" id="s-consult">
+ <div class="status"><span>21:20</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>增长极顾问</div>
+ <div class="scroll" style="padding:20px">
+  <p style="font-size:20px;font-weight:700;line-height:1.4">AI 解决日常问题<br>关键决定，找真人顾问</p>
+  <div style="margin:14px 0;background:#F7F8FA;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.6">✓ 顾问会提前看你的诊断、计划和每月复盘，<b>不用从头讲</b></div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+   <div style="border:1px solid #E3E8EE;border-radius:10px;padding:14px">
+    <div class="row"><b style="font-size:15px">单次咨询</b><span style="font-size:13px" class="muted">按次</span></div>
+    <p class="muted" style="font-size:12px;margin-top:6px;line-height:1.6">视频 60 分钟，聚焦一个问题，会后给书面建议</p>
+   </div>
+   <div style="border:2px solid #3651C9;border-radius:10px;padding:13px;background:#F3F5FD">
+    <div class="row"><b style="font-size:15px">90 天陪跑</b><span class="tag">最多人选</span></div>
+    <p class="muted" style="font-size:12px;margin-top:6px;line-height:1.6">每月 2 次会，按你的 90 天计划逐项推进，关键节点帮你把关</p>
+   </div>
+   <div style="border:1px solid #E3E8EE;border-radius:10px;padding:14px">
+    <div class="row"><b style="font-size:15px">专项方案</b><span style="font-size:13px" class="muted">按项目</span></div>
+    <p class="muted" style="font-size:12px;margin-top:6px;line-height:1.6">渠道拓展、股权激励、团队搭建等，出完整方案</p>
+   </div>
+  </div>
+  <p style="font-size:13px;font-weight:700;margin:16px 0 8px">推荐给你的方向</p>
+  <div style="display:flex;gap:6px;flex-wrap:wrap"><span class="tag">渠道与增长</span><span class="tag">目标与复盘</span></div>
+ </div>
+ <div style="padding:12px 20px 22px"><a class="btn">预约 90 天陪跑</a></div>
+</div>
+
+<div class="desk" id="s-plan">
+ <div class="chrome"><i></i><i></i><i></i><span>增长极 AI 助手 › 我的增长计划</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">增长极 · AI 助手</div><div class="muted" style="font-size:12px;padding:0 10px">山野木作</div>
+   <div class="lbl">我的公司</div><a>诊断报告</a><a class="on">90 天增长计划</a><a>月度复盘</a>
+   <div class="lbl">AI</div><a>随时问</a><a>行业简报</a>
+   <div class="lbl">增长极顾问</div><a>预约顾问</a></div>
+  <div class="main">
+   <div class="row"><div><h1>90 天增长计划</h1><p class="muted" style="font-size:13px">基于 10 月诊断生成 · 第 5 周 · 完成 38%</p></div><div style="display:flex;gap:8px"><a class="btn ghost" style="padding:8px 14px;font-size:13px">分享给团队</a><a class="btn" style="padding:8px 14px;font-size:13px">本周任务</a></div></div>
+   <div class="bar" style="margin:16px 0 22px;height:8px"><i style="width:38%"></i></div>
+   <div style="display:flex;gap:24px">
+    <div style="flex:1.6">
+     <table>
+      <tr><th style="width:90px">阶段</th><th>任务</th><th>负责人</th><th>状态</th></tr>
+      <tr><td><span class="tag">1–30 天</span></td><td><span style="display:flex;gap:10px;align-items:center"><i class="chk on"></i>定 3 个月目标：独立站占比 9% → 20%</span></td><td>周总</td><td class="green">完成</td></tr>
+      <tr><td></td><td><span style="display:flex;gap:10px;align-items:center"><i class="chk on"></i>每周一 30 分钟例会，固定看 5 个数</span></td><td>周总</td><td class="green">完成</td></tr>
+      <tr><td><span class="tag">31–60 天</span></td><td><span style="display:flex;gap:10px;align-items:center"><i class="chk"></i>复购前 3 款上架独立站，老客户邮件引流</span></td><td>运营 小王</td><td class="blue">进行中</td></tr>
+      <tr><td></td><td><span style="display:flex;gap:10px;align-items:center"><i class="chk"></i>亚马逊广告按利润重排，砍掉 ACoS &gt; 40% 的词</span></td><td>运营 小王</td><td class="red">延期 1 周</td></tr>
+      <tr><td><span class="tag">61–90 天</span></td><td><span style="display:flex;gap:10px;align-items:center"><i class="chk"></i>试开一个新站点（欧洲站）</span></td><td>周总</td><td class="muted">未开始</td></tr>
+     </table>
+    </div>
+    <div style="flex:1" class="panel">
+     <p class="ph">AI 本周提醒</p>
+     <div style="font-size:13px;line-height:1.75;background:#F7F8FA;border-radius:8px;padding:12px">“广告重排”已延期 1 周。小王同时负责上架和广告，建议先停一项，或者把上架外包给自由职业者。</div>
+     <p class="muted" style="font-size:12px;margin-top:10px">依据：增长极·执行系统规划 · 你的周例会记录</p>
+     <div class="hr"></div>
+     <p class="muted" style="font-size:12px">需要人帮忙拆解？</p>
+     <a class="btn ghost" style="padding:8px;font-size:13px;margin-top:8px">约增长极顾问</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="desk" id="s-review">
+ <div class="chrome"><i></i><i></i><i></i><span>增长极 AI 助手 › 月度复盘</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">增长极 · AI 助手</div><div class="muted" style="font-size:12px;padding:0 10px">山野木作</div>
+   <div class="lbl">我的公司</div><a>诊断报告</a><a>90 天增长计划</a><a class="on">月度复盘</a>
+   <div class="lbl">AI</div><a>随时问</a><a>行业简报</a>
+   <div class="lbl">增长极顾问</div><a>预约顾问</a></div>
+  <div class="main">
+   <div class="row"><div><h1>11 月复盘</h1><p class="muted" style="font-size:13px">数据：店铺后台自动同步 · AI 已生成复盘，3 分钟读完</p></div><a class="btn" style="padding:8px 14px;font-size:13px">发到团队群</a></div>
+   <div class="kpi" style="margin:18px 0">
+    <div><span class="muted" style="font-size:12px">销售额</span><b>¥152 万</b><span class="green" style="font-size:12px">环比 +11%</span></div>
+    <div><span class="muted" style="font-size:12px">独立站占比</span><b>13%</b><span class="blue" style="font-size:12px">目标 20%，进度正常</span></div>
+    <div><span class="muted" style="font-size:12px">广告费占比（ACoS）</span><b class="red">31%</b><span class="red" style="font-size:12px">连续 2 个月超 25%</span></div>
+    <div><span class="muted" style="font-size:12px">退货率</span><b>3.8%</b><span class="green" style="font-size:12px">下降 0.6 个点</span></div>
+   </div>
+   <div style="display:flex;gap:24px">
+    <div style="flex:1.4" class="panel">
+     <p class="ph">AI 复盘结论</p>
+     <ol style="font-size:13px;line-height:1.8;padding-left:18px">
+      <li>独立站起量，老客户邮件贡献了 62% 的独立站订单，继续做</li>
+      <li>广告费连续两个月超标，问题在投放结构，不在单个关键词</li>
+      <li>12 月旺季备货建议比去年少 15%，按新渠道比例分配</li>
+     </ol>
+    </div>
+    <div style="flex:1;border:1px solid #C9D2F2;background:#F3F5FD;border-radius:8px;padding:18px">
+     <p class="ph blue">建议找顾问</p>
+     <p style="font-size:13px;line-height:1.7">广告结构问题已连续 2 个月，且影响旺季预算。这类决定建议和增长极顾问一起定。</p>
+     <a class="btn" style="padding:9px;font-size:13px;margin-top:12px">预约 60 分钟咨询</a>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</body></html>

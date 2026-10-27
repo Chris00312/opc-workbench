@@ -1,0 +1,230 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'WenQuanYi Zen Hei',sans-serif;color:#1A1F36;background:#E9ECF2;padding:40px;display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.phone{width:390px;height:844px;background:#fff;border-radius:44px;border:10px solid #1A1F36;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.status{height:40px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:13px;font-weight:700}
+.top{height:48px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #E3E8EE;font-size:15px;font-weight:700;position:relative}
+.top .back{position:absolute;left:16px;color:#697386;font-weight:400}
+.scroll{flex:1;overflow:hidden;padding:20px}
+.muted{color:#697386}.blue{color:#3651C9}.red{color:#C0392B}.green{color:#1F8F5F}
+.btn{display:block;text-align:center;background:#3651C9;color:#fff;border-radius:8px;padding:14px;font-size:15px;font-weight:700}
+.btn.ghost{background:#fff;color:#3651C9;border:1px solid #C9D2F2}
+.hr{height:1px;background:#E3E8EE;margin:16px 0}
+.tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:4px;background:#EEF1FB;color:#3651C9}
+.tag.r{background:#FDEDEC;color:#C0392B}
+.bar{height:6px;background:#EEF0F4;border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:#3651C9}
+.bar i.r{background:#D9534F}
+.row{display:flex;justify-content:space-between;align-items:center}
+/* desktop */
+.desk{width:1440px;height:620px;background:#fff;border:1px solid #D5DBE1;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.chrome{height:36px;background:#F1F3F6;border-bottom:1px solid #E3E8EE;display:flex;align-items:center;gap:8px;padding:0 14px}
+.chrome i{width:11px;height:11px;border-radius:50%;background:#D5DBE1;display:block}
+.chrome span{margin-left:16px;background:#fff;border:1px solid #E3E8EE;border-radius:5px;font-size:12px;color:#697386;padding:3px 12px;width:420px}
+.app{flex:1;display:flex}
+.side{width:220px;background:#F7F8FA;border-right:1px solid #E3E8EE;padding:18px 12px;font-size:14px}
+.side .logo{font-weight:700;font-size:15px;padding:4px 10px 18px}
+.side .lbl{font-size:11px;color:#8792A2;padding:14px 10px 6px}
+.side a{display:block;padding:7px 10px;border-radius:6px;color:#3C4257}
+.side a.on{background:#E8ECFB;color:#3651C9;font-weight:700}
+.main{flex:1;padding:28px 36px;overflow:hidden}
+.main h1{font-size:24px;margin-bottom:4px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{font-size:12px;color:#697386;font-weight:400;text-align:left;padding:9px 10px;border-bottom:1px solid #E3E8EE}
+td{padding:11px 10px;border-bottom:1px solid #EEF0F4}
+.kpi{display:flex;border:1px solid #E3E8EE;border-radius:8px}
+.kpi>div{flex:1;padding:16px 18px;border-right:1px solid #E3E8EE}.kpi>div:last-child{border-right:0}
+.kpi b{display:block;font-size:24px;margin-top:6px}
+.panel{border:1px solid #E3E8EE;border-radius:8px;padding:18px}
+.ph{font-size:13px;font-weight:700;margin-bottom:12px}
+.step{display:flex;gap:10px;align-items:center;font-size:13px}
+.dot{width:22px;height:22px;border-radius:50%;border:1px solid #C9D2F2;display:flex;align-items:center;justify-content:center;font-size:11px;color:#3651C9}
+.dot.done{background:#3651C9;color:#fff;border-color:#3651C9}
+</style></head><body>
+<style>.desk,.phone{flex:none}</style>
+<style>
+.desk{width:1440px;height:480px}
+.g{font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;display:inline-block}
+.gA{background:#E7F5EE;color:#1F8F5F}.gB{background:#FFF4E0;color:#B26A00}.gC{background:#FDEDEC;color:#C0392B}
+.sc{display:inline-flex;width:26px;height:26px;border-radius:6px;background:#1A1F36;color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center}
+.sc.l{background:#8FA3E8}
+.chip{font-size:12px;padding:3px 9px;border-radius:12px;border:1px solid #D5DBE1;color:#3C4257;display:inline-block}
+.nav{height:60px;display:flex;align-items:center;gap:34px;padding:0 48px;border-bottom:1px solid #E3E8EE;font-size:14px;color:#3C4257}
+.nav b{font-size:17px;color:#1A1F36;margin-right:20px}
+.av{width:44px;height:44px;border-radius:22px;background:#3651C9;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex:none}
+.opt{border:1px solid #E3E8EE;border-radius:10px;padding:14px 16px;font-size:14px;margin-bottom:10px;display:flex;gap:12px;align-items:center}
+.opt.on{border-color:#3651C9;background:#F3F5FD;color:#3651C9;font-weight:700}
+.rd{width:16px;height:16px;border-radius:8px;border:1px solid #C9D2F2;flex:none}.opt.on .rd{border:5px solid #3651C9}
+</style>
+
+<!-- 1 website -->
+<div class="desk" id="d-site">
+ <div class="chrome"><i></i><i></i><i></i><span>jizeng-shangjie.cn（示意）</span></div>
+ <div class="nav"><b>极增商界</b><span>企业分析报告</span><span>样例报告</span><span>方法</span><span>关于极增科技</span><span style="margin-left:auto" class="blue">免费简版评估 →</span></div>
+ <div style="display:flex;padding:40px 48px;gap:48px">
+  <div style="width:560px" id="d-site-hero">
+   <p class="blue" style="font-size:14px;font-weight:700">给 100–150 人企业的老板和管理层</p>
+   <h1 style="font-size:36px;line-height:1.35;margin:14px 0">公司走到哪个阶段了？<br>短板在哪，钱该投向哪里？</h1>
+   <p class="muted" style="font-size:15px;line-height:1.75">填一份问卷、传几份资料，AI 按极增商界的评估框架起草分析报告，极增顾问逐条审校后交付。每个结论都标明证据等级。</p>
+   <div style="display:flex;gap:12px;margin-top:24px"><a class="btn" style="width:200px">免费做简版评估</a><a class="btn ghost" style="width:160px">看样例报告</a></div>
+   <p class="muted" style="font-size:13px;margin-top:18px">简版 3 分钟 · 标准报告 5 个工作日交付</p>
+  </div>
+  <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+   <table id="d-site-tiers" style="font-size:14px">
+    <tr><th>产品</th><th>你要做的</th><th>你拿到的</th><th>价格</th></tr>
+    <tr><td><b>简版评估</b></td><td>12 道选择题</td><td>阶段判定 + 六维初判</td><td class="green">免费</td></tr>
+    <tr><td><b>标准报告</b></td><td>完整问卷 + 上传资料</td><td>约 20 页报告 + 1 小时解读</td><td>¥ 待定</td></tr>
+    <tr><td><b>深度诊断</b></td><td>加管理层访谈 + 现场</td><td>报告 + 处方 + 落地建议</td><td>¥ 待定</td></tr>
+   </table>
+   <div id="d-site-sample" style="display:flex;gap:14px;align-items:center;border:1px solid #E3E8EE;border-radius:10px;padding:14px 16px">
+    <div style="width:64px;height:86px;border-radius:4px;background:linear-gradient(160deg,#1F3B7A,#2F6BC4);flex:none"></div>
+    <div><p style="font-size:12px" class="muted">样例报告</p><p style="font-size:15px;font-weight:700;margin:4px 0">奥托立夫 · 企业成熟期战略分析评估报告</p><p class="muted" style="font-size:13px">23 页 · 六维 24 题 + 八域 32 项 · 证据分 A/B/C 三级</p></div>
+    <span class="blue" style="margin-left:auto;font-size:14px">在线阅读 →</span>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- 2 quiz phone -->
+<div class="phone" id="p-quiz">
+ <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>简版评估 · 极增商界</div>
+ <div class="scroll" style="padding:22px">
+  <div class="row" style="font-size:13px"><span class="muted">第 7 / 12 题</span><span class="blue">组织与治理</span></div>
+  <div class="bar" style="margin:10px 0 24px"><i style="width:58%"></i></div>
+  <div id="p-quiz-q">
+  <p style="font-size:19px;font-weight:700;line-height:1.5;margin-bottom:18px">公司的重要决定，现在主要靠谁拍板？</p>
+  <div class="opt"><span class="rd"></span>基本都是老板一个人</div>
+  <div class="opt on"><span class="rd"></span>老板拍板，几个老员工参与讨论</div>
+  <div class="opt"><span class="rd"></span>有固定的经营会，按制度决策</div>
+  <div class="opt"><span class="rd"></span>授权给各部门负责人</div>
+  </div>
+  <p class="muted" style="font-size:12px;line-height:1.6;margin:14px 0 20px">选项没有好坏，只用来判断公司所处阶段。</p>
+  <a class="btn">下一题</a>
+ </div>
+</div>
+
+<!-- 3 lite result -->
+<div class="phone" id="p-lite">
+ <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>简版结果</div>
+ <div class="scroll" style="padding:20px 22px">
+  <div id="p-lite-stage">
+  <p class="muted" style="font-size:13px">恒拓精密 · 阶段判定</p>
+  <div class="row" style="margin:6px 0 4px;align-items:flex-end"><span style="font-size:30px;font-weight:700">扩张后期</span><span style="font-size:15px" class="muted">76 / 120</span></div>
+  <p style="font-size:13px;line-height:1.6" class="muted">处方方向：规模复制 + 组织建设，先不急着讲第二曲线</p>
+  </div>
+  <div class="hr"></div>
+  <div id="p-lite-dims">
+  <p style="font-size:13px;font-weight:700;margin-bottom:10px">六维初判 <span class="muted" style="font-weight:400">（分高 = 更成熟）</span></p>
+  <div style="font-size:13px;display:flex;flex-direction:column;gap:9px">
+   <div><div class="row"><span>增长动能</span><span>15</span></div><div class="bar"><i style="width:75%"></i></div></div>
+   <div><div class="row"><span>盈利与现金流</span><span>13</span></div><div class="bar"><i style="width:65%"></i></div></div>
+   <div><div class="row"><span>市场地位</span><span>14</span></div><div class="bar"><i style="width:70%"></i></div></div>
+   <div><div class="row"><span>产品与创新</span><span>13</span></div><div class="bar"><i style="width:65%"></i></div></div>
+   <div><div class="row"><span class="red">组织与治理</span><span class="red">10</span></div><div class="bar"><i class="r" style="width:50%"></i></div></div>
+   <div><div class="row"><span>战略与资本</span><span>11</span></div><div class="bar"><i style="width:55%"></i></div></div>
+  </div></div>
+  <div class="hr"></div>
+  <p style="font-size:13px;line-height:1.6;margin-bottom:14px"><b>初步判断：</b>业务已经跑到扩张期，组织还停在“老板管”。完整结论需要标准报告核实。</p>
+  <a class="btn">升级标准报告</a>
+ </div>
+</div>
+
+<!-- 4 intake desktop -->
+<div class="desk" id="d-intake">
+ <div class="chrome"><i></i><i></i><i></i><span>极增商界 · 标准报告 · 恒拓精密</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">极增商界</div>
+   <div class="lbl">标准报告 · 填写进度</div>
+   <a>① 企业档案　✓</a><a>② 六维问卷 24 题　✓</a><a>③ 八域评估 32 项　✓</a><a class="on">④ 上传资料</a><a>⑤ 确认提交</a>
+  </div>
+  <div class="main">
+   <div class="row"><div><h1>上传资料</h1><p class="muted" style="font-size:13px">资料越全，结论的证据等级越高。没有的可以跳过，报告里会标为 C 级（推断）。</p></div>
+   <div id="d-intake-meter" style="width:260px;border:1px solid #E3E8EE;border-radius:8px;padding:12px 14px"><div class="row" style="font-size:13px"><span>资料完备度</span><b>6 / 9</b></div><div class="bar" style="margin:8px 0"><i style="width:67%"></i></div><p class="muted" style="font-size:12px">预计报告置信度：中高</p></div></div>
+   <table id="d-intake-table" style="margin-top:18px">
+    <tr><th style="width:240px">资料</th><th>状态</th><th>支撑的结论</th><th>证据等级</th></tr>
+    <tr><td>近三年财务报表</td><td class="green">已上传 3 份</td><td>增长动能、盈利与现金流</td><td><span class="g gA">A</span></td></tr>
+    <tr><td>客户销售额前 20 名</td><td class="green">已上传</td><td>客户集中度、市场地位</td><td><span class="g gA">A</span></td></tr>
+    <tr><td>组织架构图 + 花名册</td><td class="green">已上传</td><td>组织与治理、管理跨度</td><td><span class="g gA">A</span></td></tr>
+    <tr><td>产品线毛利表</td><td class="blue">上传中 …</td><td>产品与创新</td><td><span class="g gB">B</span></td></tr>
+    <tr><td>年度经营计划 / 预算</td><td class="muted">没有，跳过</td><td>战略与资本</td><td><span class="g gC">C</span></td></tr>
+    <tr><td>绩效与薪酬制度</td><td class="muted">没有，跳过</td><td>组织与治理</td><td><span class="g gC">C</span></td></tr>
+   </table>
+  </div>
+ </div>
+</div>
+
+<!-- 5 draft review (internal) -->
+<div class="desk" id="d-draft">
+ <div class="chrome"><i></i><i></i><i></i><span>极增商界 · 顾问后台 · 审校</span></div>
+ <div class="app">
+  <div class="side"><div class="logo">顾问后台</div>
+   <div class="lbl">待审校</div><a class="on">恒拓精密 · 标准报告</a><a>某连锁餐饮 · 标准报告</a>
+   <div class="lbl">本份进度</div><a>AI 草稿　✓</a><a class="on">逐题审校 41 / 56</a><a>结论与处方</a><a>交付</a>
+  </div>
+  <div class="main" style="display:flex;gap:24px;padding:24px 28px">
+   <div style="flex:1">
+    <div class="row"><h1 style="font-size:20px">E 组织与治理 · AI 草稿</h1><span class="chip">AI 打分 · 顾问确认后生效</span></div>
+    <table id="d-draft-table" style="margin-top:12px;font-size:13px">
+     <tr><th>题</th><th style="width:150px">题项</th><th>AI 分</th><th>证据与判断依据</th><th>等级</th><th>顾问</th></tr>
+     <tr><td>E1</td><td>决策方式</td><td><span class="sc l">2</span></td><td>问卷：老板拍板、老员工参与；无固定经营会</td><td><span class="g gB">B</span></td><td class="green">采纳</td></tr>
+     <tr style="background:#FFFBF0"><td>E2</td><td>管理跨度</td><td><span class="sc">3</span><span class="muted" style="text-decoration:line-through;margin-left:6px">2</span></td><td>花名册：136 人，老板直管 11 人，中层 6 人</td><td><span class="g gA">A</span></td><td class="blue">改为 3</td></tr>
+     <tr><td>E3</td><td>关键岗位依赖</td><td><span class="sc l">2</span></td><td>销售前 20 客户中 14 家由老板本人维护</td><td><span class="g gA">A</span></td><td class="green">采纳</td></tr>
+     <tr><td>E4</td><td>绩效与激励</td><td><span class="sc l">2</span></td><td>未上传制度；按访谈惯例推断为“年底看情况发奖金”</td><td><span class="g gC">C</span></td><td class="muted">待访谈</td></tr>
+    </table>
+   </div>
+   <div id="d-draft-note" style="width:330px;border-left:1px solid #E3E8EE;padding-left:22px">
+    <p style="font-size:13px;font-weight:700">顾问批注 · E2</p>
+    <p style="font-size:13px;line-height:1.7;margin:8px 0 14px">老板直管 11 人偏多，但其中 4 人是项目经理，已有周例会，应给 3 分。<span class="muted">—— 孙老师</span></p>
+    <div class="hr"></div>
+    <p style="font-size:13px;font-weight:700">AI 结论草稿</p>
+    <p style="font-size:13px;line-height:1.7;margin-top:8px">“组织与治理是六维里最不成熟的一维：业务规模已到扩张期，客户关系和决策仍集中在老板一人。”</p>
+    <p style="margin-top:12px;display:flex;gap:8px"><span class="chip">采纳</span><span class="chip">改写</span><span class="chip">删除</span></p>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- 6 report desktop -->
+<div class="desk" id="d-report">
+ <div class="chrome"><i></i><i></i><i></i><span>极增商界 · 恒拓精密 · 企业扩张期分析报告</span></div>
+ <div style="display:flex;flex:1">
+  <div class="side" style="width:200px"><div class="logo">报告目录</div><a class="on">评估摘要</a><a>一 企业基本情况</a><a>二 六维诊断</a><a>三 八域评估</a><a>四 执行约束</a><a>五 处方</a><a>附录 假设清单</a><div class="lbl">下载</div><a class="blue">PDF 版 · 21 页</a></div>
+  <div class="main" style="padding:24px 32px">
+   <p class="muted" style="font-size:12px">评估摘要 · 基准日 2026-11（示意）</p>
+   <h1 style="font-size:22px;margin:4px 0 14px">一页结论：阶段、短板与五条判断</h1>
+   <div class="kpi" id="d-report-kpi"><div><span class="muted" style="font-size:12px">六维总分</span><b>76 / 120</b></div><div><span class="muted" style="font-size:12px">阶段判定</span><b>扩张后期</b></div><div><span class="muted" style="font-size:12px">最不成熟的一维</span><b class="red">组织与治理</b></div><div><span class="muted" style="font-size:12px">资料完备度</span><b>6 / 9 · 中高</b></div></div>
+   <div id="d-report-concl" style="margin-top:16px;display:flex;flex-direction:column;gap:0">
+    <div style="border-top:1px solid #E3E8EE;padding:12px 0"><p style="font-size:15px;font-weight:700">结论一：业务跑到了扩张期，组织还停在“老板管”。</p><p style="font-size:13px;line-height:1.7;margin-top:4px"><span class="muted">依据：</span>近三年营收 0.9 亿 → 1.4 亿 <span class="g gA">A</span>；销售前 20 客户中 14 家由老板维护 <span class="g gA">A</span>；无固定经营会 <span class="g gB">B</span></p><p style="font-size:13px;line-height:1.7"><span class="muted">含义：</span>再往上走，瓶颈不在订单，而在老板的时间。</p></div>
+    <div style="border-top:1px solid #E3E8EE;padding:12px 0"><p style="font-size:15px;font-weight:700">结论二：毛利被两条老产品线拖住，新品贡献不足 15%。</p><p style="font-size:13px;line-height:1.7;margin-top:4px"><span class="muted">依据：</span>产品线毛利表 <span class="g gB">B</span>　<span class="muted">含义：</span>先砍或提价，再谈扩产。</p></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- 7 meeting phone -->
+<div class="phone" id="p-meet">
+ <div class="status"><span>9:41</span><span>●●● 5G</span></div>
+ <div class="top"><span class="back">‹</span>报告已交付</div>
+ <div class="scroll" style="padding:20px 22px">
+  <div id="p-meet-done" style="border:1px solid #E3E8EE;border-radius:10px;padding:14px 16px">
+   <p class="green" style="font-size:13px;font-weight:700">✓ 标准报告已交付</p>
+   <p style="font-size:15px;font-weight:700;margin:6px 0">恒拓精密 · 企业扩张期分析报告</p>
+   <p class="muted" style="font-size:12px">21 页 · 网页版 + PDF · 审校顾问 孙老师</p>
+  </div>
+  <div id="p-meet-book">
+  <p style="font-size:14px;font-weight:700;margin:20px 0 10px">预约 1 小时解读会（已含在标准报告里）</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><span class="chip">11/12 周三 14:00</span><span class="chip" style="border-color:#3651C9;color:#3651C9;background:#F3F5FD">11/13 周四 10:00</span><span class="chip">11/14 周五 16:00</span></div>
+  <p class="muted" style="font-size:12px;line-height:1.6">线上会议 · 建议老板和 2–3 位核心管理者一起参加</p>
+  </div>
+  <div class="hr"></div>
+  <div id="p-meet-up">
+  <p style="font-size:14px;font-weight:700">想把 C 级结论做实？</p>
+  <p style="font-size:13px;line-height:1.65;margin:8px 0 14px" class="muted">报告里有 3 条结论是推断（C 级）。深度诊断加管理层访谈和一天现场，把它们逐条核实，并给出落地处方。</p>
+  <a class="btn ghost">了解深度诊断</a>
+  </div>
+  <a class="btn" style="margin-top:12px">确认预约</a>
+ </div>
+</div>
+</body></html>
