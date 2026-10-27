@@ -1,12 +1,13 @@
 # OPC 智能工作台
 
-面向 35–55 岁咨询师、培训师、教练的“一人公司（OPC）”AI 工作台原型。纯静态网站，6 个页面，无外部 CDN 依赖（Vue 用本地的 petite-vue）。
+面向 35–55 岁咨询师、培训师、教练的“一人公司（OPC）”AI 工作台原型。纯静态网站，7 个页面，无外部 CDN 依赖（Vue 用本地的 petite-vue）。
 
 ## 页面
 
 | 文件 | 内容 |
 | --- | --- |
 | `site/index.html` | 工作台首页 |
+| `site/checkup.html` | 增长体检（五力自评 → 推荐增长系统） |
 | `site/diagnose.html` | 需求诊断 |
 | `site/proposal.html` | 方案与报告 |
 | `site/course.html` | 课程生成 |
@@ -30,5 +31,6 @@ cd site && python3 -m http.server 8000
 ## 文档
 
 - [docs/计划书通俗解读.md](docs/计划书通俗解读.md)：商业计划书的通俗解读和建议。
+- [docs/增长极方法论.md](docs/增长极方法论.md)：前身「创越企业增长极」的业务框架，以及原型怎样使用它。
 - `.codex-context/`：项目状态、待办、决策记录（dev-memory-os）。
 - `VIBELOG.md`：变更日志。
