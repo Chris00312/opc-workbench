@@ -15,7 +15,8 @@ apt-get install -y nginx
 
 mkdir -p /var/www/opc
 rm -rf /var/www/opc/*
-cp -r site/* /var/www/opc/
+SITE_DIR="${SITE_DIR:-site}"   # 发布官网用：SITE_DIR=website bash deploy.sh
+cp -r "$SITE_DIR"/* /var/www/opc/
 
 cat > /etc/nginx/sites-available/opc <<'NGINX'
 server {

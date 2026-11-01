@@ -1,9 +1,9 @@
 # HANDOFF
 
-项目：OPC 智能工作台，面向咨询师/培训师/教练的一人公司 AI 工作台。当前是 6 页静态 UI 原型（Stripe 后台风格）。
+项目：极增科技（品牌：极增商界）。面向 100–150 人中型企业的 AI 经营增长平台。
 
-- 当前目标：仓库已建立并推送到 GitHub（Chris00312/opc-workbench）。
-- 上一个任务：整理项目文件成仓库，去除服务器信息。
-- 下一步：设计撮合平台页面（见 .codex-context/TODO.md）。
-- 关键文件：site/index.html、deploy.sh、docs/部署说明.md、.codex-context/DECISIONS.md。
-- 注意：不要把服务器 IP、端口、密码写进仓库。
+- 当前目标：产品展示官网 website/（纯静态，7 页），待用户确认后部署到阿里云（需 ICP 备案）。
+- 产品：① 企业分析报告（问卷 + AI 起草 + 顾问审校，三档）② 经营工作台（AI 专家/Skill/连接器）③ AI 人才测评（占位）④ 超级个体（占位）。
+- 下一步：替换联系方式与二维码；阿里云部署；开始做产品 1 的问卷与报告生成。
+- 关键文件：website/index.html、website/assets/js/main.js、.codex-context/DECISIONS.md。
+- 注意：不要把服务器 IP、端口、密码写进仓库；素材只用可商用来源并登记到 credits。
