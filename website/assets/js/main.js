@@ -21,7 +21,7 @@
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="极增科技首页"><span class="logo-mark">极</span>极增科技</a>' +
+    '<a class="logo" href="index.html" aria-label="极增科技首页"><img class="logo-img" src="assets/brand/mark-dark.svg" alt="">极增科技</a>' +
     '<ul class="nav-links">' +
       '<li><a href="index.html" class="' + (page === 'home' ? 'active' : '') + '">首页</a></li>' +
       item('report', 'report.html', '企业分析报告', '在线问卷 + AI 起草 + 顾问审校，30 分钟换一份顾问级经营体检。',
@@ -47,7 +47,7 @@
     '</div></section>' +
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
-      '<div class="about"><a class="logo" href="index.html"><span class="logo-mark">极</span>极增科技</a>' +
+      '<div class="about"><a class="logo" href="index.html"><img class="logo-img" src="assets/brand/mark-dark.svg" alt="">极增科技</a>' +
         '<p>用 AI 把企业经营诊断做得更快、更准、更便宜；用真人顾问把结论落到每个月的经营动作里。</p>' +
         '<ul><li>官方邮箱：bd@example.com</li><li>客服热线：400-000-0000</li><li>工作时间：周一至周五 9:00–18:00</li></ul></div>' +
       '<div><h6>产品中心</h6><ul>' + PRODUCTS.map(function (p) { return '<li><a href="' + p.href + '">' + p.name + '</a></li>'; }).join('') + '</ul></div>' +
