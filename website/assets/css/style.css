@@ -409,3 +409,16 @@ ul { list-style: none; }
   box-shadow: 0 -10px 60px rgba(30, 214, 176, .65), 0 -40px 160px rgba(30, 214, 176, .35), inset 0 18px 40px rgba(30, 214, 176, .45); }
 .mission-bg.horizon::after { background: radial-gradient(ellipse 60% 30% at 50% 78%, rgba(30, 214, 176, .25), transparent 70%); }
 @media (max-width: 900px) { .mission-bg.horizon::before { width: 1200px; margin-left: -600px; bottom: -760px; height: 1000px; } }
+/* 导航直接罗列产品（7 项），窄屏提前收进菜单 */
+.nav-links > li > a { padding: 0 16px; }
+@media (max-width: 1280px) { .nav-links > li > a { padding: 0 10px; font-size: 14px; } .logo { font-size: 17px; } }
+@media (max-width: 1100px) {
+  .nav-links { display: none; }
+  .menu-btn { display: block; }
+  .nav .container { justify-content: space-between; }
+  .nav-pill { margin-left: auto; }
+  .nav.open .nav-links { display: flex; flex-direction: column; justify-content: flex-start; position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; height: auto; background: #000; padding: 10px 16px; overflow-y: auto; gap: 0; }
+  .nav.open .nav-links > li { height: auto; }
+  .nav.open .nav-links > li > a { height: 56px; padding: 0 4px; border-bottom: 1px solid var(--line); font-size: 16px; }
+  .drop { display: none; }
+}

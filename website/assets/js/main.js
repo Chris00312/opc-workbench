@@ -15,20 +15,26 @@
       links.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + (l[2] || '') + '</a>'; }).join('') + '</div></div></div>';
   }
 
+  function item(id, href, name, intro, links) {
+    return '<li class="has-drop"><a href="' + href + '" class="' + (page === id ? 'active' : '') + '">' + name + ' <i class="caret"></i></a>' + drop(name, intro, links) + '</li>';
+  }
+
   var header =
     '<header class="nav" id="nav"><div class="container">' +
     '<a class="logo" href="index.html" aria-label="极增科技首页"><span class="logo-mark">极</span>极增科技</a>' +
     '<ul class="nav-links">' +
       '<li><a href="index.html" class="' + (page === 'home' ? 'active' : '') + '">首页</a></li>' +
-      '<li class="has-drop"><a href="index.html#products" class="' + (isProduct ? 'active' : '') + '">产品中心 <i class="caret"></i></a>' +
-        drop('产品中心', '从一份企业分析报告开始，到经营工作台持续陪跑，覆盖“诊断 — 规划 — 执行 — 人才”。', PRODUCTS.map(function (p) { return [p.href, p.name, p.badge]; })) + '</li>' +
-      '<li class="has-drop"><a href="index.html#roadmap">解决方案 <i class="caret"></i></a>' +
-        drop('解决方案', '为 100–150 人的成长型企业设计，解决从“老板管”到“制度管、中层管”的关键问题。',
-          [['workbench.html#plan', '年度经营计划'], ['workbench.html#demo', '月度经营分析会'], ['workbench.html#plan', '组织架构与岗位'], ['workbench.html#plan', '绩效与薪酬'], ['talent.html', '中层梯队培养'], ['report.html', '企业经营体检']]) + '</li>' +
-      '<li class="has-drop"><a href="index.html#insights">极增商界 <i class="caret"></i></a>' +
-        drop('极增商界', '极增商界是极增科技的内容与报告品牌，发布企业分析报告、行业基准与管理实践。',
-          [['report.html#sample', '企业分析报告'], ['index.html#insights', '行业经营基准'], ['index.html#insights', '管理实践'], ['index.html#roadmap', '增长路线图']]) + '</li>' +
-      '<li><a href="index.html#about">关于我们 <i class="caret"></i></a></li>' +
+      item('report', 'report.html', '企业分析报告', '在线问卷 + AI 起草 + 顾问审校，30 分钟换一份顾问级经营体检。',
+        [['report.html#sample', '报告样张', '<span class="badge hot">Hot</span>'], ['report.html#plans', '免费简版'], ['report.html#plans', '标准报告'], ['report.html#plans', '深度诊断']]) +
+      item('workbench', 'workbench.html', '经营工作台', '给老板和中层的 AI 经营工作台：AI 专家、增长 Skill、连接器。',
+        [['workbench.html#demo', '月度经营分析会', '<span class="badge new">New</span>'], ['workbench.html#plan', '年度经营计划'], ['workbench.html#plan', 'AI 专家 · 增长 Skill'], ['workbench.html#plan', '数据连接器']]) +
+      item('talent', 'talent.html', 'AI 人才测评', '扫码答题，生成干部画像与四梯队盘点报告。',
+        [['talent.html', '干部能力画像', '<span class="badge beta">即将上线</span>'], ['talent.html', '四梯队盘点'], ['talent.html', '培养计划与 AI 陪练']]) +
+      item('studio', 'studio.html', '超级个体', '面向个人顾问与小型咨询机构的 AI 订阅版。',
+        [['studio.html', '报告与提案生成', '<span class="badge beta">规划中</span>'], ['studio.html', '经营表格助手'], ['studio.html', '自媒体内容矩阵']]) +
+      item('insights', 'index.html#insights', '极增商界', '极增商界是极增科技的内容与报告品牌，发布企业分析报告、行业基准与管理实践。',
+        [['report.html#sample', '企业分析报告'], ['index.html#insights', '行业经营基准'], ['index.html#insights', '管理实践'], ['index.html#roadmap', '增长路线图']]) +
+      '<li><a href="index.html#about">关于我们</a></li>' +
     '</ul>' +
     '<button class="nav-pill" data-open="contact">预约咨询</button>' +
     '<button class="menu-btn" id="menuBtn" aria-label="打开菜单"><span></span><span></span><span></span></button>' +
