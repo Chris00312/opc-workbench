@@ -63,6 +63,7 @@ Rollback: b6f258c
 
 ## 2026-11-04 — 官网上线 growthhub.cn
 - Done: 阿里云 ECS 试用机（Windows Server 2022，换不了系统）上用云助手开启 OpenSSH，装 nginx for Windows，部署 website/；视频重新编码 10MB→2.7MB；gzip + 静态资源缓存；DNS 添加 @、www 两条 A 记录。
-- Proof: 阿里 DoH 查询两个域名均解析到服务器；带 Host 头请求返回首页 200，未被备案拦截。
+- Proof: 阿里 DoH 查询两个域名均解析到服务器；IP 访问返回首页 200。
+- 更正：几分钟后域名访问被阿里云拦截（403 Non-compliance ICP Filing）。阿里云备案账号里只接入了 talentchain.net（沪ICP备11027906号-2），growthhub.cn 未在阿里云接入备案；Let's Encrypt 验证因此失败，HTTPS 未配成。
 - Risks: 试用机 2027-02-04 到期；Windows 环境与正式 Debian 不同；暂无 HTTPS。
-- Next: HTTPS → 正式服务器迁移 → 关旧服务器。
+- Next: 买正式服务器拿备案服务码 → 在阿里云新增/接入 growthhub.cn 备案 → HTTPS → 关旧服务器。
