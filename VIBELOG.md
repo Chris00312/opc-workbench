@@ -67,3 +67,8 @@ Rollback: b6f258c
 - 更正：几分钟后域名访问被阿里云拦截（403 Non-compliance ICP Filing）。阿里云备案账号里只接入了 talentchain.net（沪ICP备11027906号-2），growthhub.cn 未在阿里云接入备案；Let's Encrypt 验证因此失败，HTTPS 未配成。
 - Risks: 试用机 2027-02-04 到期；Windows 环境与正式 Debian 不同；暂无 HTTPS。
 - Next: 买正式服务器拿备案服务码 → 在阿里云新增/接入 growthhub.cn 备案 → HTTPS → 关旧服务器。
+
+## 2026-11-04 — 过渡域名 talentchain.net
+- Done: talentchain.net（已在阿里云接入备案）@ 和 www 改指向新服务器；nginx server_name 加上 talentchain.net。
+- Proof: 连续 5 分钟每 30 秒访问一次未被拦截；首页、report、workbench、视频、CSS 均 200；公共 DNS 上 www 已生效，@ 旧缓存 1 小时内过期。
+- Risks: 品牌域名不一致，仅作过渡；nginx 以 SYSTEM 运行，管理员会话里 `nginx -s reload` 无权限，改配置要重启计划任务。
