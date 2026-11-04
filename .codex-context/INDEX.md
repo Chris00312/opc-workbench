@@ -1,10 +1,12 @@
 # INDEX
 
-- `site/` OPC 工作台静态原型（入口 `site/index.html`；`site/assets/petite-vue.iife.js` 为本地 Vue）
-- `deploy.sh` 服务器一键部署（nginx，80 端口）
-- `scripts/pack.sh` 打包为 `dist/opc-site.tar.gz`
-- `docs/部署说明.md` Mac / Windows 部署步骤（服务器信息为占位符）
-- `docs/计划书通俗解读.md` 商业计划书解读
+- `website/` 极增科技官网（当前主线）
+  - `index.html` 首页；`report.html` 企业分析报告；`workbench.html` 经营工作台；`talent.html` AI 人才测评（占位）；`studio.html` 超级个体（占位）；`credits.html` 素材来源
+  - `assets/css/style.css` 全站样式；`assets/js/main.js` 公共头尾、轮播、弹窗（产品列表在 PRODUCTS 数组）
+  - `assets/brand/` 双峰 Logo SVG；`assets/media/` 视频与图片（Pexels/Mixkit），`CREDITS.md` 来源表
+- `site/` 旧 OPC 工作台原型（已过时，入口 `site/index.html`）
+  - `checkup.html` 增长体检（五力自评 → 推荐增长系统）
+  - `assets/growth-model.js` 增长极方法论数据与推荐规则；`assets/petite-vue.iife.js` 本地 Vue
 - `brand/` 极增科技品牌标识：mark / lockup / favicon（SVG）+ app 图标与 PNG 导出，见 DESIGN_SYSTEM.md
 - `prototype/` 场景原型稿（HTML + 截图）
   - `scenario-mockups/mock.html` 咨询师场景（知识库、复盘、策略、轻量诊断、测评、落地页）
@@ -12,6 +14,9 @@
   - `smb-mockups/mock3.html` 中小企业场景（对话、咨询、计划、复盘）
   - `report-mockups/mock4.html` 报告与官网（访谈录入、报告草稿、报告、官网分层、约见）
   - `增长体检截图.png` 增长体检页截图
-- `deploy/` 部署包（*.tar.gz 不入库）：`opc-site.tar.gz` 工作台原型；`jizeng-site.tar.gz` 极增官网（website/ + deploy.sh，含视频素材）
 - `growthhubs-archive/` 旧站 growthhubs.com.cn 全站文字存档（md + html）
+- `deploy.sh` 服务器一键部署（nginx，默认发布 site/，`SITE_DIR=website` 发布官网）
+- `scripts/pack.sh` 打包 site/、website/、deploy.sh 为 `dist/opc-site.tar.gz`
+- `deploy/` 部署包（*.tar.gz 不入库；`jizeng-site.tar.gz` 与 website/ 一致）
+- `docs/部署说明.md` 部署步骤（服务器信息为占位符）；`docs/计划书通俗解读.md`；`docs/增长极方法论.md` 前身业务框架
 - `.codex-context/` 项目状态文件；`VIBELOG.md` 变更日志

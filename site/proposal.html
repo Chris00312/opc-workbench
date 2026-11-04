@@ -45,9 +45,9 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 .tab{min-height:40px;padding:0;border:none;border-bottom:2px solid transparent;margin-bottom:-1px;background:transparent;font:inherit;font-size:14px;font-weight:500;color:#687385;cursor:pointer}
 .tab:hover{color:#1A1F36}
 .tab.on{color:#3651C9;border-bottom-color:#3651C9}
-.sec{display:flex;align-items:center;gap:10px;width:100%;min-height:36px;padding:6px 10px;border:none;border-radius:6px;background:transparent;font:inherit;font-size:14px;color:#414552;text-align:left;cursor:pointer}
-.sec:hover{background:#F7F8FA}
-.sec.on{background:#F1F3FD;color:#2F43B0;font-weight:500}
+.toc{display:flex;align-items:center;gap:10px;width:100%;min-height:36px;padding:6px 10px;border:none;border-radius:6px;background:transparent;font:inherit;font-size:14px;color:#414552;text-align:left;cursor:pointer}
+.toc:hover{background:#F7F8FA}
+.toc.on{background:#F1F3FD;color:#2F43B0;font-weight:500}
 .doc p{margin:0;font-size:16px;line-height:1.9;color:#30374A}
 .sug{padding:14px 0;border-bottom:1px solid #EBEEF1;display:flex;flex-direction:column;gap:6px;font-size:14px}
 .link{border:none;background:none;padding:0;font:inherit;font-size:14px;font-weight:500;color:#3651C9;cursor:pointer;align-self:flex-start;min-height:28px}
@@ -64,6 +64,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 <div class="acct"><div class="logo">王</div><div><div class="acctname">王老师咨询工作室</div><div class="acctsub">OPC 工作台 · 专业版</div></div></div>
 <a class="nav" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 7.5L8 3l5.5 4.5V13.5h-11z"></path></svg>首页</a>
 <div class="navlabel">咨询</div>
+<a class="nav" href="checkup.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l5.5 4-2.1 6.5H4.6L2.5 6z"></path></svg>增长体检</a>
 <a class="nav" href="diagnose.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg>需求诊断</a>
 <a class="nav on" href="proposal.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h6l3 3v9H4z"></path><path d="M6.5 8h4M6.5 10.5h4"></path></svg>方案与报告</a>
 <div class="navlabel">培训与交付</div>
@@ -83,7 +84,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 <div style="display: flex; flex-direction: column; gap: 10px">
 <div class="muted" style="font-size: 13px"><a href="index.html">首页</a> / 某区域连锁零售 / 方案与报告</div>
 <div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap">
-<div><h1 style="font-size: 26px">{{ v.docTitle }}</h1><div class="muted" style="font-size: 14px">模板：咨询建议书标准版 · 已自动保存</div></div>
+<div><h1 style="font-size: 26px">{{ v.docTitle }}</h1><div class="muted" style="font-size: 14px">模板：{{ v.tpl }} · 已自动保存</div></div>
 <div style="display: flex; gap: 8px; flex-wrap: wrap"><button class="btn sec" type="button">导出 Word</button><button class="btn sec" type="button">导出 PPT</button><button class="btn" type="button">发送给客户</button></div>
 </div>
 <div class="tabs" role="tablist" aria-label="文档类型">
@@ -96,7 +97,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 <aside style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 2px">
 <div class="th" style="padding: 0 10px 8px">目录</div>
 <template v-for="s in v.sections">
-<button class="sec" :class="[s.cls]" type="button" @click="s.pick"><span class="muted" style="width: 16px">{{ s.n }}</span><span style="flex: 1">{{ s.title }}</span><span class="badge" :class="[s.tagCls]">{{ s.status }}</span></button>
+<button class="toc" :class="[s.cls]" type="button" @click="s.pick"><span class="muted" style="width: 16px">{{ s.n }}</span><span style="flex: 1">{{ s.title }}</span><span class="badge" :class="[s.tagCls]">{{ s.status }}</span></button>
 </template>
 </aside>
 
@@ -128,6 +129,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 </div>
 </div>
 <script src="assets/petite-vue.iife.js"></script>
+<script src="assets/growth-model.js"></script>
 <script>
 class DCLogic {
   constructor(props) { this.props = props || {}; this.state = {}; }
@@ -136,7 +138,8 @@ class DCLogic {
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { doc: 'p', sec: 0, applied: {} };
+    const q = new URLSearchParams(location.search).get('system');
+    this.state = { doc: 'p', sec: 0, applied: {}, sys: window.GrowthModel.byKey(q) ? q : 'value' };
   }
   renderVals() {
     const s = this.state;
@@ -194,7 +197,9 @@ class Component extends DCLogic {
     }));
     const c = list[idx];
     const cur = { n: idx + 1, title: c.title, edits: c.edits, paras: c.paras.map((t) => ({ text: t })) };
+    const sys = window.GrowthModel.byKey(s.sys);
     const raw = [
+      { id: 'model', title: '按增长系统组织方案', desc: `用「${sys.name}」的要素（${sys.els.slice(0, 3).join('、')}等）串起实施方案，客户更容易看懂整体逻辑。` },
       { id: 'case', title: '补充行业参考', desc: '在本节末尾加入同类连锁企业推行标准化的做法，增强说服力。' },
       { id: 'quote', title: '引用客户原话', desc: '把店长 A 关于报表的原话放进背景，让决策者更有共鸣。' },
       { id: 'risk', title: '增加风险与应对', desc: '店长抵触新流程是常见风险，建议写明应对办法。' }
@@ -208,6 +213,7 @@ class Component extends DCLogic {
     return {
       sections, cur, sugs,
       showApplied: !!s.applied[key + 'case'],
+      tpl: sys.name + ' · ' + (s.doc === 'p' ? '项目建议书' : '阶段报告'),
       docTitle: s.doc === 'p' ? '门店运营标准化项目建议书' : '第一阶段诊断报告',
       tabP: s.doc === 'p' ? 'on' : '', tabR: s.doc === 'r' ? 'on' : '',
       showP: () => this.setState({ doc: 'p', sec: 0 }),

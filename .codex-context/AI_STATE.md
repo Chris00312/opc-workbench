@@ -3,17 +3,20 @@
 Last Updated: 2026-11-04
 
 ## Current Goal
-在用户 Mac 本地（/Users/c/Documents/极増科技本地）建立可继续开发的工作区：仓库 + 项目共享资料 + 状态文件。
+三条开发线已合并到 main（10-27 增长体检、11-01~03 极增官网、11-04 本地资料）。主线是 website/ 极增科技官网：待用户确认设计和文案后部署到阿里云。
 
 ## Snapshot
-- 产品：OPC 智能工作台，帮助 35–55 岁咨询师/培训师/教练做一人公司（培训 + 工具 + 撮合 + 社群）。品牌名「极增科技 / JIZENG TECHNOLOGY」。
-- 已完成：6 页静态 UI 原型（site/，Stripe 后台风格）；nginx 一键部署脚本；商业计划书解读；品牌标识（brand/）；4 组场景原型稿（prototype/）；极增官网部署包（deploy/jizeng-site.tar.gz，源码未入库）；旧站 growthhubs 文字存档。
-- 未完成：撮合平台页面；后端、账号、数据存储；页面数据为演示数据。
-- 部署：用户自己的 VPS（Debian 11），用户在 Mac 上 scp/ssh 执行部署。
+- 定位（2026-11-01 定，取代此前的 OPC 顾问工作台）：公司“极增科技”，内容/报告品牌“极增商界”；主客户 100–150 人成长型企业。个人顾问/小机构订阅版（超级个体）是第二产品线，后做。
+- 产品路线：1) 展示官网 → 2) AI 辅助企业分析报告（问卷 + AI 起草 + 顾问审校；免费简版 / 标准报告 / 深度诊断，价格待定）→ 3) 经营工作台（AI 专家 / 增长 Skill / 连接器）。
+- 方法论内核：增长极方法论（前身「创越企业增长极」，版权已确认可用），见 docs/增长极方法论.md。
+- website/：纯静态官网 6 页，版式参考 51WORLD（纯黑、粗体大字、小实心发光按钮），Logo 已定稿“双峰”。素材 Pexels/Mixkit，见 website/credits.html。
+- site/：旧 OPC 工作台原型（7 页，含 10-27 的增长体检页与 growth-model.js），已过时，保留作参考；其中的增长体检与方法论数据可复用到产品 1 的问卷。
+- brand/：品牌标识导出（SVG + PNG + app 图标）；prototype/：4 组场景原型稿；growthhubs-archive/：旧站文字存档。
+- 部署：尚未部署。计划阿里云（大陆服务器需 ICP 备案 1–3 周）；`SITE_DIR=website bash deploy.sh`。支付与表单均为占位。
 
-## Latest Run
-- result: 本地仓库来自项目里的 git bundle（10-25 版，单个提交 b6f258c），origin 已指向 GitHub；复制了 brand/、prototype/、growthhubs-archive/、deploy/*.tar.gz。
-- proof: 65 个文件全部落盘、大小与项目库一致；全仓库搜索无服务器 IP/端口。
-- risks: Mac 系统时间比实际慢约一周（显示 10-28，实际 11-04），HTTPS 证书校验失败，无法 git fetch/push；GitHub 上可能有比 bundle 更新的提交，未核对。
-- rollback_point: b6f258c（新文件尚未提交）。
-- next_step: 校正系统时间后 `git fetch origin && git status`，确认与 GitHub 一致再提交本次新增资料。
+## Last Run
+- result: 合并 origin/claude/project-thread-fp97ce 与 origin/claude/project-thread-cekjgr 到本地 main，状态文件按时间线整合。
+- proof: 代码文件全部自动合并，冲突只在状态文件 / README；本地 deploy/jizeng-site.tar.gz 与分支里的 website/ 逐文件一致；本地预览 site/ 与 website/ 页面可打开。
+- risks: 联系方式、价格、报告样张分数为示意；增长体检题目未经顾问校准。
+- rollback_point: 25c3e2e（合并前的本地 main）。
+- next_step: 见 TODO.md。

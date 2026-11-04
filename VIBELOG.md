@@ -14,6 +14,32 @@
 - Rollback: 首次提交。
 - Next: 设计撮合平台页面。
 
+## 2026-10-27
+- Done: 新增增长体检页（五力自评、雷达图、推荐增长系统、生成需求单）；诊断页匹配增长系统并标出命中要素；方案页模板随增长系统变化；修复方案页按钮样式冲突。
+- Proof: Playwright 截图 5 个页面，无控制台错误；375px 宽无横向滚动。
+- Risks: 方法论版权待确认；体检题目未经顾问校准。
+- Rollback: b6f258c。
+- Next: 方法论知识库页、撮合平台。
+- Decision: 方法论版权确认；产品形态定为 AI 增长诊断先行、订阅卖给企业；诊断方案文档已起草。
+
+## 2026-11-01
+- Done: 新增 website/ 极增科技官网（参考 51WORLD 布局，深色 + 青绿），四款产品（报告、工作台详情页；人才测评、超级个体占位页），素材 Pexels/Mixkit 本地托管并列出来源。
+- Proof: Playwright 1440/390 截图检查 6 页，无横向滚动、无 JS 报错。
+- Risks: 价格、联系方式、样张分数为示意；支付与表单未接后台；大陆服务器需 ICP 备案。
+- Rollback: 回退本次提交即可（website/ 为新增目录）。
+- Next: 用户确认 → 阿里云部署 → 产品 1 问卷与报告生成。
+
+## 2026-11-02
+- Done: 官网 v3 改版，按钮与版式直接参考 51WORLD：纯黑底、60px 黑色导航（加粗菜单 + 下拉大面板）、首屏视频轮播 + 小号实心发光按钮、使命区地平线辉光、理念双大图、产品平台竖版满版卡、增长路线图、极增商界卡片 + 方形箭头、联系我们条 + 页脚。去掉了卡片描边、图标、描边标签、渐变字等“AI 模板感”元素；产品页改为左右图文大段。
+- Proof: Playwright 1440/390 截图 6 页，无横向滚动、无 JS 报错。
+- Risks: 部署暂停（用户换电脑后再做；Admin 电脑已配 SSH 公钥，但该电脑上的 Claude Code 权限不允许 scp）。
+- Next: 用户看预览确认 → 部署。
+
+## 2026-11-03
+- Done: 导航直接罗列四款产品 + 极增商界（参考 51WORLD 一级菜单即产品线），每项悬停出下拉；1100px 以下收进汉堡菜单。
+- Next: 用户确认 → 部署。
+- Done: Logo 定稿为“双峰”（白色峰 + 青绿渐变峰，叠合处深绿），website/assets/brand/ 放 SVG（标志、横版、favicon）；导航、页脚、首屏和浏览器图标已替换。导出文件在项目文件 brand/。
+
 ## 2026-11-04 — 建立 Mac 本地工作区
 
 **What changed:**
@@ -28,3 +54,9 @@
 
 Risks: Mac 时钟慢约一周导致 HTTPS 失败；bundle 可能落后于 GitHub。
 Rollback: b6f258c
+
+## 2026-11-04 — 合并三条开发线
+- Done: 把 claude/project-thread-fp97ce（10-27 增长体检）和 claude/project-thread-cekjgr（11-01~03 极增官网 website/、双峰 Logo）合并进 main；AI_STATE、TODO、HANDOFF、INDEX、PRODUCT、README 按最新定位（极增科技，面向中型企业）整合。
+- Proof: 代码文件自动合并无冲突；deploy/jizeng-site.tar.gz 与 website/ 逐文件一致；本地预览 site/ 与 website/ 无控制台报错。
+- Rollback: 25c3e2e。
+- Next: 用户确认官网 → 阿里云部署 → 产品 1 问卷与报告。

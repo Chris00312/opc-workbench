@@ -64,6 +64,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 <div class="acct"><div class="logo">王</div><div><div class="acctname">王老师咨询工作室</div><div class="acctsub">OPC 工作台 · 专业版</div></div></div>
 <a class="nav" href="index.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 7.5L8 3l5.5 4.5V13.5h-11z"></path></svg>首页</a>
 <div class="navlabel">咨询</div>
+<a class="nav" href="checkup.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2l5.5 4-2.1 6.5H4.6L2.5 6z"></path></svg>增长体检</a>
 <a class="nav on" href="diagnose.html"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"></circle><path d="M10.5 10.5l3 3"></path></svg>需求诊断</a>
 <a class="nav" href="proposal.html"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h6l3 3v9H4z"></path><path d="M6.5 8h4M6.5 10.5h4"></path></svg>方案与报告</a>
 <div class="navlabel">培训与交付</div>
@@ -127,7 +128,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 <div class="sh"><h2>诊断结果</h2><span class="badge info">分析中</span></div>
 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding: 8px 0">
 <div><span class="badge ok">完成</span> 识别 4 位受访者的角色与诉求</div>
-<div><span class="badge ok">完成</span> 对照零售行业常见问题库</div>
+<div><span class="badge ok">完成</span> 对照增长极五力模型和 6 套增长系统</div>
 <div><span class="badge info">进行中</span> 归纳根因并标注证据</div>
 </div>
 </template>
@@ -144,6 +145,12 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 <div class="prow"><div class="muted">3</div><div style="font-weight: 500">总部到门店的信息传递失真</div><div><span class="badge warn">中</span></div><div class="muted">“通知都在微信群里，门店说没看到的情况很常见。”（督导）</div></div>
 </div>
 <div style="display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap"><div style="font-weight: 600; font-size: 15px">匹配的增长系统</div><div class="muted" style="font-size: 12px">{{ v.sysSource }}</div></div>
+<label class="flabel" style="font-weight: 400"><span class="sr">增长系统</span><select class="field" @change="v.pickSys($event.target.value)"><template v-for="o in v.systems"><option :value="o.key" :selected="o.on">{{ o.name }}</option></template></select></label>
+<div class="muted" style="font-size: 14px">本项目涉及的核心要素（蓝色为诊断命中）：</div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px"><template v-for="e in v.els"><span class="badge" :class="[e.cls]">{{ e.name }}</span></template></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
 <div style="font-weight: 600; font-size: 15px">选择项目方向</div>
 <template v-for="o in v.opts">
 <label class="opt" :class="[o.cls]"><input type="radio" name="dir" :checked="o.on" @change="o.pick"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">{{ o.title }} <span class="badge info" style="margin-left: 6px">{{ o.flag }}</span></span><span class="muted">{{ o.desc }}</span></span></label>
@@ -151,7 +158,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 </div>
 <div class="muted" style="font-size: 14px"><strong style="color: #1A1F36">待补充：</strong>门店数量与分布、现有收银和 ERP 系统、上次培训的效果反馈。<a href="diagnose.html">查看追问清单</a></div>
 <div style="display: flex; flex-wrap: wrap; gap: 8px">
-<a class="btn" href="proposal.html">生成方案</a>
+<a class="btn" :href="v.propLink">生成方案</a>
 <button class="btn sec" type="button" @click="v.reset">重新诊断</button>
 </div>
 </template>
@@ -162,6 +169,7 @@ h1,h2,h3{margin:0;font-weight:600;color:#1A1F36;letter-spacing:-.01em}
 </div>
 </div>
 <script src="assets/petite-vue.iife.js"></script>
+<script src="assets/growth-model.js"></script>
 <script>
 class DCLogic {
   constructor(props) { this.props = props || {}; this.state = {}; }
@@ -170,7 +178,10 @@ class DCLogic {
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { industry: '零售', concerns: { '组织效率': true, '人才培养': true }, phase: 'done', dir: 0 };
+    const q = new URLSearchParams(location.search).get('system');
+    const fromCheckup = !!(q && window.GrowthModel.byKey(q));
+    this.state = { industry: '零售', concerns: { '组织效率': true, '人才培养': true }, phase: 'done', dir: 0,
+      sys: fromCheckup ? q : 'value', fromCheckup };
   }
   componentWillUnmount() { clearTimeout(this.timer); }
   renderVals() {
@@ -193,8 +204,18 @@ class Component extends DCLogic {
       this.setState({ phase: 'running' });
       this.timer = setTimeout(() => this.setState({ phase: 'done' }), 1400);
     };
+    const M = window.GrowthModel;
+    const sys = M.byKey(s.sys);
+    // 诊断命中的要素：原型里按访谈问题手工标注
+    const HIT = { value: ['业务流程优化', '衡量与指标体系', '运用技术'], region: ['跨区域管理团队和流程'], niche: [],
+      multi: [], dominant: ['高效运营和交付'], sustain: ['成本优势'] };
+    const systems = M.SYSTEMS.map((o) => ({ key: o.key, name: o.name, on: o.key === s.sys }));
+    const els = sys.els.map((name) => ({ name, cls: HIT[sys.key].includes(name) ? 'info' : '' }));
     return {
-      industries, concerns, opts, run,
+      industries, concerns, opts, run, systems, els,
+      pickSys: (k) => this.setState({ sys: k, fromCheckup: false }),
+      sysSource: s.fromCheckup ? '来自增长体检的推荐' : '按业务结构和诊断结论推荐',
+      propLink: 'proposal.html?system=' + s.sys,
       reset: () => this.setState({ phase: 'idle' }),
       runLabel: s.phase === 'running' ? '诊断中…' : '开始诊断',
       isIdle: s.phase === 'idle', isRunning: s.phase === 'running', isDone: s.phase === 'done',
