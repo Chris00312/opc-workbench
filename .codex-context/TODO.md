@@ -2,7 +2,10 @@
 
 ## Now
 - [ ] 用户确认官网设计和文案（website/），替换联系方式、二维码、备案号
-- [ ] 阿里云：买域名 + 服务器，办 ICP 备案，部署 website/
+- [x] website/ 部署到阿里云试用 ECS，绑定 growthhub.cn（2026-11-04）
+- [ ] HTTPS 证书（阿里云免费证书或 Let's Encrypt）
+- [ ] 买正式服务器（轻量 2核2G，Debian 12）并迁移；关闭旧 Debian 11 服务器上的站点
+- [ ] 仓库里的视频换成压缩版（部署包里已压缩）
 
 ## Next
 - [ ] 产品 1：在线问卷 → AI 起草 → 顾问审校 → PDF/H5 报告（参考奥托立夫样例；可复用 site/checkup.html 与 site/assets/growth-model.js）

@@ -60,3 +60,9 @@ Rollback: b6f258c
 - Proof: 代码文件自动合并无冲突；deploy/jizeng-site.tar.gz 与 website/ 逐文件一致；本地预览 site/ 与 website/ 无控制台报错。
 - Rollback: 25c3e2e。
 - Next: 用户确认官网 → 阿里云部署 → 产品 1 问卷与报告。
+
+## 2026-11-04 — 官网上线 growthhub.cn
+- Done: 阿里云 ECS 试用机（Windows Server 2022，换不了系统）上用云助手开启 OpenSSH，装 nginx for Windows，部署 website/；视频重新编码 10MB→2.7MB；gzip + 静态资源缓存；DNS 添加 @、www 两条 A 记录。
+- Proof: 阿里 DoH 查询两个域名均解析到服务器；带 Host 头请求返回首页 200，未被备案拦截。
+- Risks: 试用机 2027-02-04 到期；Windows 环境与正式 Debian 不同；暂无 HTTPS。
+- Next: HTTPS → 正式服务器迁移 → 关旧服务器。
