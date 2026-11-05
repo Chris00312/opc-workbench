@@ -26,11 +26,11 @@
       '<li><a href="index.html" class="' + (page === 'home' ? 'active' : '') + '">首页</a></li>' +
       item('report', 'report.html', '企业分析报告', '面向中型企业与上市公司：AI 分析起草 + 资深顾问审校的战略诊断报告。',
         [['report.html#sample', '报告样张', '<span class="badge hot">Hot</span>'], ['report.html#plans', '公开信息预诊断'], ['report.html#plans', '标准报告'], ['report.html#plans', '深度诊断']]) +
-      item('workbench', 'workbench.html', '经营工作台', '给老板和中层的 AI 经营工作台：AI 专家、增长 Skill、连接器。',
+      item('workbench', 'workbench.html', '经营工作台', '从小团队到成长型企业的 AI 经营工作台：AI 专家、增长 Skill、连接器。',
         [['workbench.html#demo', '月度经营分析会', '<span class="badge new">New</span>'], ['workbench.html#plan', '年度经营计划'], ['workbench.html#plan', 'AI 专家 · 增长 Skill'], ['workbench.html#plan', '数据连接器']]) +
       item('talent', 'talent.html', 'AI 人才测评', '扫码答题，生成干部画像与四梯队盘点报告。',
         [['talent.html', '干部能力画像', '<span class="badge beta">即将上线</span>'], ['talent.html', '四梯队盘点'], ['talent.html', '培养计划与 AI 陪练']]) +
-      item('studio', 'studio.html', '超级个体', '面向个人顾问与小型咨询机构的 AI 订阅版。',
+      item('studio', 'studio.html', '超级个体', '面向一人公司、自媒体创作者与个人顾问的 AI 订阅版。',
         [['studio.html', '报告与提案生成', '<span class="badge beta">规划中</span>'], ['studio.html', '经营表格助手'], ['studio.html', '自媒体内容矩阵']]) +
       item('insights', 'index.html#insights', '极增商界', '极增商界是极增科技的内容与报告品牌，发布企业分析报告、行业基准与管理实践。',
         [['report.html#sample', '企业分析报告'], ['index.html#insights', '行业经营基准'], ['index.html#insights', '管理实践'], ['index.html#roadmap', '增长路线图']]) +
@@ -48,7 +48,7 @@
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
       '<div class="about"><a class="logo" href="index.html"><img class="logo-img" src="assets/brand/mark-dark.svg" alt="">极增科技</a>' +
-        '<p>用 AI 把企业经营诊断做得更快、更准、更便宜；用真人顾问把结论落到每个月的经营动作里。</p>' +
+        '<p>用 AI 把资深顾问的经营增长方法做成人人用得起的产品；从一人公司到上市公司，让增长有方法、有工具、有人陪。</p>' +
         '<ul><li>官方邮箱：bd@example.com</li><li>客服热线：400-000-0000</li><li>工作时间：周一至周五 9:00–18:00</li></ul></div>' +
       '<div><h6>产品中心</h6><ul>' + PRODUCTS.map(function (p) { return '<li><a href="' + p.href + '">' + p.name + '</a></li>'; }).join('') + '</ul></div>' +
       '<div><h6>极增商界</h6><ul><li><a href="report.html#sample">企业分析报告</a></li><li><a href="index.html#insights">行业经营基准</a></li><li><a href="index.html#roadmap">增长路线图</a></li></ul></div>' +
@@ -64,7 +64,7 @@
       '<form data-form="contact">' +
         '<label class="field"><span>您的称呼</span><input required name="name" placeholder="如：王总"></label>' +
         '<label class="field"><span>手机号</span><input required name="tel" type="tel" placeholder="138 0000 0000"></label>' +
-        '<label class="field"><span>公司规模</span><select name="size"><option>300 人以下</option><option selected>300–1000 人</option><option>1000–5000 人</option><option>5000 人以上</option><option>上市公司</option></select></label>' +
+        '<label class="field"><span>公司规模</span><select name="size"><option>个人 / 一人公司</option><option>50 人以下</option><option>50–300 人</option><option>300–1000 人</option><option>1000 人以上</option><option>上市公司</option></select></label>' +
         '<label class="field"><span>感兴趣的产品</span><select name="product">' + PRODUCTS.map(function (p) { return '<option>' + p.name + '</option>'; }).join('') + '</select></label>' +
         '<button class="btn btn-primary btn-lg" style="width:100%;margin-top:6px">提交预约</button>' +
         '<p class="note" style="margin-top:12px">演示版：表单暂未接入后台，提交后不会真实发送。</p>' +
