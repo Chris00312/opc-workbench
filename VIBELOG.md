@@ -72,3 +72,10 @@ Rollback: b6f258c
 - Done: talentchain.net（已在阿里云接入备案）@ 和 www 改指向新服务器；nginx server_name 加上 talentchain.net。
 - Proof: 连续 5 分钟每 30 秒访问一次未被拦截；首页、report、workbench、视频、CSS 均 200；公共 DNS 上 www 已生效，@ 旧缓存 1 小时内过期。
 - Risks: 品牌域名不一致，仅作过渡；nginx 以 SYSTEM 运行，管理员会话里 `nginx -s reload` 无权限，改配置要重启计划任务。
+
+## 2026-11-05 — AI 企业分析报告方案
+- Done: 读完奥托立夫样例；确认题库反推、通用生命周期版、首期简版+标准版、内部审校、八域以报告为准、四类数据源、DeepSeek→百炼（本地 27B 待评测）；写产品方案（docs/产品规划/）与 REPORT_SPEC。
+- Proof: 规格含样例全部题项与分数，可用于 M0 回填校验。
+- Risks: 评分锚点为反推；象限阈值与置信度规则暂定。
+- Rollback: 54e8f78。
+- Next: M0 题库 v1。

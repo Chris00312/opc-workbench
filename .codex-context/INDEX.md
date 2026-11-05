@@ -19,4 +19,6 @@
 - `scripts/pack.sh` 打包 site/、website/、deploy.sh 为 `dist/opc-site.tar.gz`
 - `deploy/` 部署包（*.tar.gz 不入库；`jizeng-site.tar.gz` 与 website/ 一致）
 - `docs/部署说明.md` 部署步骤（服务器信息为占位符）；`docs/计划书通俗解读.md`；`docs/增长极方法论.md` 前身业务框架
+- `docs/产品规划/` 给人看的规划文档：`AI企业分析报告-产品方案.md`；`样例/奥托立夫战略评估报告.pdf`（报告模板）
+- `.codex-context/REPORT_SPEC.md` 报告产品的技术规格（给 AI 开发用）
 - `.codex-context/` 项目状态文件；`VIBELOG.md` 变更日志
