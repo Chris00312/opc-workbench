@@ -1,0 +1,86 @@
+<!doctype html>
+<!-- wb-meeting-mockup.html — 经营工作台方案配图：月度经营会投屏页（静态示意，示例公司与数据为虚构）。
+     截图：Chrome --headless --window-size=1440,640 --screenshot=fig-wb-meeting.png wb-meeting-mockup.html -->
+<html lang="zh-CN"><head><meta charset="utf-8"><title>经营会工作台示意</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Hiragino Sans GB",sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13px;width:1440px;height:640px;overflow:hidden}
+.top{height:54px;background:#fff;border-bottom:1px solid #e3e7ee;display:flex;align-items:center;padding:0 22px;gap:16px}
+.logo{font-weight:800;color:#0b6e5c}
+.crumb{color:#6b7280}.crumb b{color:#1a1a1a}
+.tabs{display:flex;gap:4px;margin-left:30px}
+.tabs div{padding:7px 14px;border-radius:6px;color:#6b7280}
+.tabs .on{background:#e6f6f1;color:#0b6e5c;font-weight:700}
+.live{margin-left:auto;background:#1f3a68;color:#fff;border-radius:14px;padding:5px 12px;font-size:12px}
+.wrap{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto 1fr;gap:16px;padding:18px 22px;height:586px}
+.panel{background:#fff;border:1px solid #e3e7ee;border-radius:10px;padding:16px 18px}
+.panel h3{font-size:15px;color:#1f3a68;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.panel h3 small{font-size:11.5px;color:#8a94a6;font-weight:400}
+.kpis{grid-column:1/4;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:14px 18px}
+.kpi{border-left:3px solid #0b6e5c;padding-left:12px}
+.kpi.w{border-color:#d99a1e}.kpi.r{border-color:#c0392b}
+.kpi small{color:#6b7280;font-size:12px}
+.kpi b{display:block;font-size:24px;color:#1f3a68;margin:3px 0}
+.kpi span{font-size:11.5px;color:#6b7280}
+.kpi .dn{color:#c0392b;font-weight:700}.kpi .up{color:#0b6e5c;font-weight:700}
+.bars{display:flex;flex-direction:column;gap:11px}
+.br{display:grid;grid-template-columns:78px 1fr 64px;align-items:center;gap:8px;font-size:12.5px}
+.track{height:16px;background:#eef1f5;border-radius:4px;position:relative}
+.fill{height:16px;border-radius:4px;background:#0b6e5c}
+.fill.w{background:#d99a1e}.fill.r{background:#c0392b}
+.tick{position:absolute;top:-3px;height:22px;width:2px;background:#1f3a68;left:74%}
+.legend{font-size:11px;color:#8a94a6;margin-top:10px}
+.ex{border:1px solid #f1d9a6;background:#fffdf7;border-radius:8px;padding:9px 11px;margin-bottom:9px}
+.ex .q{font-weight:700;font-size:12.8px;margin-bottom:4px}
+.ex .q i{font-style:normal;color:#c0392b}
+.ex .a{font-size:12px;line-height:1.6;color:#374151}
+.ex .a b{color:#b9770e}
+.ex .who{font-size:11px;color:#8a94a6;margin-top:3px}
+.ex.pend{border-color:#e3e7ee;background:#fafbfc}
+table{width:100%;border-collapse:collapse;font-size:12.3px}
+th{background:#1f3a68;color:#fff;font-weight:600;padding:6px 7px;text-align:left}
+td{border-bottom:1px solid #eef1f5;padding:7px 7px;vertical-align:top}
+.st{border-radius:10px;padding:1px 8px;font-size:11px;white-space:nowrap}
+.s1{background:#e6f6f1;color:#0b6e5c}.s2{background:#fff4e2;color:#9a6a08}.s3{background:#fdecec;color:#a33}.s4{background:#eef0f4;color:#6b7280}
+.add{margin-top:10px;border:1.5px dashed #9cc9bd;border-radius:8px;padding:9px 11px;color:#0b6e5c;font-size:12.3px;background:#f6fbf9}
+</style></head><body>
+<div class="top"><span class="logo">极增 · 经营工作台</span><span class="crumb">某经贸公司（示例）/ <b>11 月经营会 · 复盘 10 月</b></span>
+<div class="tabs"><div class="on">经营会</div><div>目标</div><div>行动项</div><div>数据</div></div>
+<span class="live">● 投屏中 · 顾问主持</span></div>
+<div class="wrap">
+<div class="panel kpis">
+<div class="kpi r"><small>10 月销售额</small><b>1,152 万</b><span>月目标 1,250 万 · <span class="dn">−7.8%</span></span></div>
+<div class="kpi w"><small>毛利率</small><b>11.4%</b><span>目标 12.5% · <span class="dn">−1.1 个点</span></span></div>
+<div class="kpi r"><small>逾期应收</small><b>453 万</b><span>上月 312 万 · <span class="dn">+45%</span></span></div>
+<div class="kpi w"><small>库存周转</small><b>52 天</b><span>目标 45 天 · <span class="dn">+7 天</span></span></div>
+<div class="kpi"><small>全年累计完成</small><b>78.6%</b><span>时间进度 83% · 年目标 1.5 亿</span></div>
+</div>
+<div class="panel"><h3>部门目标完成（10 月）<small>完成率 = 实际 ÷ 月目标</small></h3>
+<div class="bars">
+<div class="br"><span>内贸销售</span><div class="track"><div class="fill" style="width:96%"></div></div><span>96%</span></div>
+<div class="br"><span>外贸部</span><div class="track"><div class="fill r" style="width:71%"></div></div><span>71%</span></div>
+<div class="br"><span>采购（成本）</span><div class="track"><div class="fill w" style="width:88%"></div></div><span>88%</span></div>
+<div class="br"><span>仓储物流</span><div class="track"><div class="fill w" style="width:85%"></div></div><span>85%</span></div>
+<div class="br"><span>财务（回款）</span><div class="track"><div class="fill r" style="width:63%"></div></div><span>63%</span></div>
+</div>
+<div class="legend">数据：10 月出货明细、金蝶应收账款表（10/31 导出）· 由 AI 汇总，顾问已核对</div>
+<div class="add" style="margin-top:16px">AI 结论：缺口 98 万中，<b>外贸延期出运 75 万</b>是主因；毛利下滑主要来自不锈钢管采购涨价（约 9 万）。</div>
+</div>
+<div class="panel"><h3>差异与原因<small>AI 会前已追问 · 4/5 已回复</small></h3>
+<div class="ex"><div class="q">外贸 2 单延期出运 <i>−75 万</i></div><div class="a">客户要求合并柜，船期改到 11/8。<b>措施：</b>11 月首周出运，并争取 12 月同类订单提前锁柜。</div><div class="who">王经理（外贸部）回复于 11/3</div></div>
+<div class="ex"><div class="q">304 不锈钢管单价 +7.8% <i>毛利 −9 万</i></div><div class="a">钢厂调价 + 急单走现货。<b>措施：</b>11 月已锁价两批。</div><div class="who">陈经理（采购）回复于 11/2</div></div>
+<div class="ex"><div class="q">华东某建材逾期 186 万 <i>逾期 +45%</i></div><div class="a">对方工程款未到位，已约定 11/20 前付 100 万。<b>措施：</b>暂停该客户赊销额度。</div><div class="who">李明（销售总监）回复于 11/1</div></div>
+<div class="ex pend"><div class="q">库存周转 +7 天</div><div class="a" style="color:#8a94a6">仓储主管尚未回复 · AI 已于 11/4 再次提醒</div></div>
+</div>
+<div class="panel"><h3>本次会议决定 → 行动项<small>会后自动发给负责人</small></h3>
+<table><tr><th>行动项</th><th>负责人</th><th>截止</th><th>状态</th></tr>
+<tr><td>2 单外贸订单 11/8 出运并回款跟进</td><td>王经理</td><td>11/15</td><td><span class="st s2">进行中</span></td></tr>
+<tr><td>华东某建材 100 万回款到账</td><td>李明</td><td>11/20</td><td><span class="st s2">进行中</span></td></tr>
+<tr><td>不锈钢管锁价，11 月单价回到 9 月水平</td><td>陈经理</td><td>11/30</td><td><span class="st s4">新</span></td></tr>
+<tr><td>滞销 SKU 清单 + 促销方案</td><td>仓储主管</td><td>11/12</td><td><span class="st s4">新</span></td></tr>
+<tr><td>9 月会议：新客户授信规则</td><td>财务经理</td><td>10/31</td><td><span class="st s3">已逾期</span></td></tr>
+<tr><td>9 月会议：外贸报价模板更新</td><td>王经理</td><td>10/25</td><td><span class="st s1">已完成</span></td></tr>
+</table>
+<div class="add">+ 会上说「下周给我方案」→ 顾问一句话录入，AI 自动拆成行动项，每周一催办</div>
+</div>
+</div></body></html>

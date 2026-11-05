@@ -1,0 +1,78 @@
+<!doctype html>
+<!-- wb-chat-mockup.html — 经营工作台方案配图：企微/钉钉里「极增经营秘书」的三个对话场景（静态示意，示例公司与数据为虚构）。
+     截图：Chrome --headless --window-size=1440,800 --screenshot=fig-wb-chat.png wb-chat-mockup.html -->
+<html lang="zh-CN"><head><meta charset="utf-8"><title>经营秘书对话示意</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Hiragino Sans GB",sans-serif;background:#eef1f5;width:1440px;height:800px;overflow:hidden;display:flex;gap:34px;justify-content:center;align-items:flex-start;padding-top:22px}
+.col{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cap{font-size:15px;font-weight:700;color:#1f3a68}
+.cap span{display:block;font-size:12px;font-weight:400;color:#6b7280;text-align:center;margin-top:3px}
+.phone{width:410px;height:700px;background:#ededed;border-radius:30px;border:9px solid #1d2330;overflow:hidden;display:flex;flex-direction:column}
+.bar{height:50px;background:#f7f7f7;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#1a1a1a;position:relative}
+.bar small{position:absolute;left:14px;font-weight:400;color:#576b95;font-size:14px}
+.bar em{position:absolute;right:14px;font-style:normal;font-size:11px;color:#9aa3b2;font-weight:400}
+.msgs{flex:1;padding:12px 12px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.time{align-self:center;font-size:11px;color:#999}
+.row{display:flex;gap:8px;align-items:flex-start}
+.row.me{flex-direction:row-reverse}
+.av{width:34px;height:34px;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.av.ai{background:#0b6e5c}.av.boss{background:#1f3a68}.av.cg{background:#b9770e}
+.b{background:#fff;border-radius:8px;padding:9px 11px;font-size:12.6px;line-height:1.6;color:#1a1a1a;max-width:318px}
+.me .b{background:#a9e88b}
+.b b{color:#1f3a68}
+.b .red{color:#c0392b;font-weight:700}
+.b .h{font-weight:700;color:#0b6e5c;margin-bottom:3px;font-size:13px}
+.b ol{padding-left:17px}.b li{margin-bottom:3px}
+.card{background:#fff;border-radius:8px;max-width:318px;overflow:hidden;border:1px solid #e3e7ee}
+.card .t{background:#fff4e2;color:#9a6a08;font-size:12px;font-weight:700;padding:7px 11px}
+.card .c{padding:9px 11px;font-size:12.6px;line-height:1.6}
+.card .btns{display:flex;border-top:1px solid #eee}
+.card .btns div{flex:1;text-align:center;padding:9px 0;font-size:12.5px;color:#576b95;border-right:1px solid #eee}
+.card .btns div:last-child{border-right:none}
+.card .btns .p{color:#0b6e5c;font-weight:700}
+.card.done .t{background:#e6f6f1;color:#0b6e5c}
+.note{font-size:10.5px;color:#8a94a6;margin-top:4px}
+.input{height:44px;background:#f7f7f7;border-top:1px solid #ddd;display:flex;align-items:center;padding:0 10px}
+.input div{flex:1;height:30px;background:#fff;border-radius:5px}
+</style></head><body>
+
+<div class="col"><div class="cap">① 每天早上：晨报 + 一键确认<span>老板的「极增经营秘书」会话</span></div>
+<div class="phone"><div class="bar"><small>‹ 消息</small>极增经营秘书<em>企业微信（示意）</em></div>
+<div class="msgs">
+<div class="time">周二 08:30</div>
+<div class="row"><div class="av ai">秘</div><div class="b"><div class="h">10 月经营晨报 · 只说异常</div><ol>
+<li>本月销售 <b>862 万</b>，完成月目标 1250 万的 69%；时间已过 74%，<span class="red">落后约 5 个点</span>。</li>
+<li>华东某建材客户应收 <b>186 万</b>已逾期 32 天，占全部逾期的 41%。</li>
+<li>304 不锈钢管库存周转 <b>68 天</b>，比上月多 15 天。</li></ol></div></div>
+<div class="row"><div class="av ai">秘</div><div class="card"><div class="t">建议 · 需要你确认</div><div class="c">逾期这笔是第 ② 条里最大的。要不要我以你的名义，请<b>销售总监李明</b>周五前给出这个客户的回款计划？</div>
+<div class="btns"><div class="p">好，去问</div><div>我自己处理</div><div>忽略</div></div></div></div>
+<div class="row me"><div class="av boss">张</div><div class="b">好，去问</div></div>
+<div class="row"><div class="av ai">秘</div><div class="card done"><div class="t">✓ 已发给李明</div><div class="c">周五 18:00 前没回复我会提醒他；收到后整理给你。</div></div></div>
+</div><div class="input"><div></div></div></div></div>
+
+<div class="col"><div class="cap">② 随时问：老板开口，30 秒回答<span>老板在会话里直接打字</span></div>
+<div class="phone"><div class="bar"><small>‹ 消息</small>极增经营秘书<em>企业微信（示意）</em></div>
+<div class="msgs">
+<div class="time">周三 21:47</div>
+<div class="row me"><div class="av boss">张</div><div class="b">这个月能完成 1250 万吗？</div></div>
+<div class="row"><div class="av ai">秘</div><div class="b">按近 3 周日均出货 38 万推算，月底预计 <b>1150 万</b>左右，<span class="red">差约 100 万（8%）</span>。<br><br>
+缺口主要在<b>外贸部</b>：有 2 单美元订单（合计约 75 万）船期推迟到下月。这两单如果本月能出运，基本可以完成。<br><br>
+<span style="color:#6b7280;font-size:11.5px">依据：10 月出货明细（10/1–10/22）· 外贸订单表 · 上传于 10/23</span></div></div>
+<div class="row"><div class="av ai">秘</div><div class="card"><div class="t">要不要我去问？</div><div class="c">请<b>外贸部王经理</b>确认这 2 单能否提前到本月出运。</div>
+<div class="btns"><div class="p">好，去问</div><div>先不用</div></div></div></div>
+<div class="row me"><div class="av boss">张</div><div class="b">哪个客户回款最慢？</div></div>
+<div class="row"><div class="av ai">秘</div><div class="b">逾期天数最长的 3 家：华东某建材 32 天（186 万）、某五金批发 27 天（64 万）、某装饰工程 21 天（41 万）。第一家已在催，周五前有结果。</div></div>
+</div><div class="input"><div></div></div></div></div>
+
+<div class="col"><div class="cap">③ 追中层：问原因，收回复<span>采购经理收到的消息</span></div>
+<div class="phone"><div class="bar"><small>‹ 消息</small>极增经营秘书<em>企业微信（示意）</em></div>
+<div class="msgs">
+<div class="time">周四 10:05</div>
+<div class="row"><div class="av ai">秘</div><div class="b">陈经理好，<b>张总想了解</b>：本月 304 不锈钢管采购单价比上月上涨 <span class="red">7.8%</span>，对应毛利少了约 9 万。<br><br>麻烦周五前回复两点：<br>1. 上涨的主要原因<br>2. 11 月有没有办法控制<br><br>直接在这里回复就行，我会整理进 11 月经营会材料。</div></div>
+<div class="row me"><div class="av cg">陈</div><div class="b">钢厂 10 月整体调价 5% 左右，另外 10/12 那批急单只能走现货，贵了 12%。11 月已经锁价两批，预计能回到 9 月水平。</div></div>
+<div class="row"><div class="av ai">秘</div><div class="b">收到，谢谢陈经理。已记录：<br>· 原因：钢厂调价 + 急单现货<br>· 措施：11 月锁价两批<br>11 月 15 日我会再核对一次实际单价。</div></div>
+<div class="note">AI 以「秘书」身份发出、写明是张总想了解；不冒充老板本人</div>
+</div><div class="input"><div></div></div></div></div>
+
+</body></html>

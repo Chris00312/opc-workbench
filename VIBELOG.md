@@ -107,3 +107,9 @@ Rollback: b6f258c
 - Done: 与用户确认：网页系统、AI 辅助开发、Python 后端、默认阿里云可选本地、结构化报告编辑器（一人编辑他人批注）、客户收 PDF、阶段 2 前买服务器。写 TECH_SPEC.md 与技术方案 docx（架构、流水线、编辑器示意、部署、排期、费用、风险）；REPORT_SPEC §9 指向 TECH_SPEC。docgen 抽出 lib.js 共用。
 - Proof: docx 11 页渲染检查；build-report-plan.js 重构后输出不变。
 - Next: 阶段 1a 开发。
+
+## 2026-11-05 经营工作台产品方案 v0.1
+- Done: 与用户讨论工作台形态（客户在哪用、行业不熟、AI 要让客户看得见、参考 Muse 的主动型 AI、企微/钉钉可行性与安装难度），写成 WORKBENCH_SPEC.md 与 Word 方案（13 页：形态图、一个月节奏、企微对话示意、经营会投屏示意、主动四级、安装初始化），示例为虚构经贸公司。
+- Proof: LibreOffice 渲染 13 页检查。
+- Risks: 平台接口未实测；价格为建议区间。
+- Next: 老板确认待定事项。
