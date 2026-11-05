@@ -17,6 +17,6 @@ Last Updated: 2026-11-05
 ## Latest Run
 - result: 目标客户改为中型起步含上市公司；方案 docx 重写为 v0.2（14 页：服务分层、问卷减负、质量标准、保密、新路线），REPORT_SPEC/PRODUCT/HANDOFF/TODO 同步；官网 report/index/main.js/workbench 文案按新定位修改（三档改为预诊断/标准/深度，八域换成报告八域并用奥托立夫真实分数）。
 - proof: LibreOffice 渲染 docx 14 页逐页检查；官网本地预览 report.html 无控制台错误。
-- risks: 官网改动尚未部署到线上服务器；价格未定；技术方案未定。
+- risks: 价格未定；技术方案未定。（官网改动已于 2026-11-05 部署上线，服务器备份 C:\srv\www-backup-20261105.zip）
 - rollback_point: 849c7fa
-- next_step: 讨论软件开发技术方案；部署官网改动（需用户同意）。
+- next_step: 讨论软件开发技术方案。

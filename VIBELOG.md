@@ -91,3 +91,9 @@ Rollback: b6f258c
 - Risks: 官网改动未部署；价格、技术方案未定。
 - Rollback: 849c7fa。
 - Next: 讨论软件开发技术方案。
+
+## 2026-11-05 — 官网新定位版部署上线
+- Done: 打包 website/（不含视频，服务器上保留已压缩视频）上传试用 ECS 并解压覆盖到 C:\srv\www；覆盖前把旧 html/js/css 备份到 C:\srv\www-backup-20261105.zip。
+- Proof: 经服务器 IP 访问 talentchain.net / www，index/report/workbench/main.js/style.css 均 200 且与本地文件逐字节一致；视频 200。
+- Note: 本机走 127.0.0.1:7897 代理时 DNS 不通，验证需 `curl --noproxy '*' --resolve talentchain.net:80:47.111.38.66`。
+- Rollback: 服务器上解压 www-backup-20261105.zip 覆盖回去。
