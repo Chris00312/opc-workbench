@@ -19,4 +19,4 @@ Last Updated: 2026-11-05
 - proof: LibreOffice 渲染 11 页逐页检查；产品方案脚本改用 lib.js 后 document.xml 与原文件逐字节一致。
 - risks: 待老板确认 4 个事项（在线审校时间、Word 导出时机、试跑公司、数据接口预算）；价格未定。
 - rollback_point: 987ac11
-- next_step: 阶段 1a：题库 v1 反推 + server/ 骨架与计分引擎（奥托立夫回填测试）。
+- next_step: 用户 2026-11-05 要求：现阶段只出方案、不动手开发。当前在构思经营工作台的产品形态；报告产品的 1a 开发等用户说开始再做。
