@@ -79,3 +79,8 @@ Rollback: b6f258c
 - Risks: 评分锚点为反推；象限阈值与置信度规则暂定。
 - Rollback: 54e8f78。
 - Next: M0 题库 v1。
+
+## 2026-11-05 — 方案改为 Word 图文版
+- Done: 按用户要求，给人看的方案改为 docx（15 页，6 张配图 + 4 页样例截图），删除 md 版；生成脚本放入 scripts/docgen/。用户确认 Qwen3.8-27B 开源可商用。
+- Proof: LibreOffice 渲染 15 页逐页检查，无跨页断裂的提示框、无孤行。
+- Next: M0 题库 v1。
