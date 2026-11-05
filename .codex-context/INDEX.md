@@ -20,5 +20,7 @@
 - `deploy/` 部署包（*.tar.gz 不入库；`jizeng-site.tar.gz` 与 website/ 一致）
 - `docs/部署说明.md` 部署步骤（服务器信息为占位符）；`docs/计划书通俗解读.md`；`docs/增长极方法论.md` 前身业务框架
 - `docs/产品规划/` 给人看的规划文档：`AI企业分析报告-产品方案.docx`（Word，图文版，由 `scripts/docgen/` 生成）；`样例/奥托立夫战略评估报告.pdf`（报告模板）
-- `.codex-context/REPORT_SPEC.md` 报告产品的技术规格（给 AI 开发用）
+- `docs/产品规划/AI企业分析报告-技术方案.docx` 软件技术方案（Word，由 `scripts/docgen/build-tech-plan.js` 生成）
+- `scripts/docgen/` 方案文档生成：`lib.js` 公共排版；`build-report-plan.js` + `make_figs.py`（产品方案）；`build-tech-plan.js` + `make_tech_figs.py` + `editor-mockup.html`（技术方案）
+- `.codex-context/REPORT_SPEC.md` 报告产品的方法与规则规格（给 AI 开发用）；`.codex-context/TECH_SPEC.md` 软件技术规格（技术栈、目录、流水线、编辑器、部署、阶段验收）
 - `.codex-context/` 项目状态文件；`VIBELOG.md` 变更日志

@@ -1,0 +1,98 @@
+<!doctype html>
+<!-- editor-mockup.html — 技术方案配图：结构化报告编辑器示意（静态，示例数据为虚构）。
+     截图：Chrome --headless --window-size=1440,680 --screenshot=fig-tech-editor.png editor-mockup.html -->
+<html lang="zh-CN"><head><meta charset="utf-8"><title>报告编辑器示意</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Hiragino Sans GB",sans-serif;background:#f4f6f9;color:#1a1a1a;font-size:13px;width:1440px;height:680px;overflow:hidden}
+.top{height:52px;background:#fff;border-bottom:1px solid #e3e7ee;display:flex;align-items:center;padding:0 18px;gap:14px}
+.logo{font-weight:800;color:#0b6e5c}
+.crumb{color:#6b7280}.crumb b{color:#1a1a1a}
+.lock{margin-left:auto;background:#fff4e2;color:#9a6a08;border:1px solid #f1d9a6;border-radius:14px;padding:4px 10px;font-size:12px}
+.btn{border:1px solid #cfd6e0;border-radius:6px;padding:6px 12px;background:#fff;font-size:12px}
+.btn.p{background:#0b6e5c;color:#fff;border-color:#0b6e5c}
+.wrap{display:flex;height:628px}
+.left{width:250px;background:#fff;border-right:1px solid #e3e7ee;padding:14px 10px}
+.left h4{font-size:12px;color:#6b7280;margin:4px 8px 10px}
+.sec{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:6px;margin-bottom:2px}
+.sec.on{background:#e6f6f1;font-weight:700}
+.tag{font-size:11px;border-radius:10px;padding:1px 7px}
+.t1{background:#e6f6f1;color:#0b6e5c}.t2{background:#fff4e2;color:#9a6a08}.t3{background:#eef0f4;color:#6b7280}
+.mid{flex:1;overflow:hidden;padding:22px 34px}
+.page{background:#fff;border:1px solid #e3e7ee;border-radius:8px;padding:30px 44px;box-shadow:0 2px 10px rgba(20,30,50,.05);height:580px}
+.page h2{font-size:21px;color:#1f3a68;border-bottom:2px solid #0b6e5c;padding-bottom:8px;margin-bottom:14px}
+.page p{line-height:1.95;margin-bottom:12px;font-size:14px}
+.ev{font-size:10.5px;background:#e8f0fb;color:#1f3a68;border-radius:4px;padding:1px 5px;margin-left:2px;vertical-align:2px}
+.ev.c{background:#fdecec;color:#a33}
+.data{border:1.5px dashed #9aa6b8;border-radius:8px;padding:12px 14px;margin:6px 0 14px;position:relative;background:#fafbfc}
+.data .lab{position:absolute;top:-10px;left:12px;background:#fff;padding:0 6px;font-size:11px;color:#6b7280}
+.stage{display:flex;height:26px;border-radius:5px;overflow:hidden;font-size:11px;color:#fff;text-align:center;line-height:26px}
+.stage div:nth-child(1){flex:72;background:#9cc9bd}.stage div:nth-child(2){flex:12;background:#5fae99}.stage div:nth-child(3){flex:12;background:#2b8b74}.stage div:nth-child(4){flex:24;background:#0b6e5c}
+.mark{position:relative;height:16px}.mark i{position:absolute;left:83%;top:0;width:2px;height:16px;background:#d99a1e}.mark span{position:absolute;left:84.5%;top:0;font-size:11px;color:#9a6a08;font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:10px}
+td,th{border:1px solid #e3e7ee;padding:5px 8px;text-align:center}th{background:#1f3a68;color:#fff;font-weight:600}
+td.chg{background:#fff4e2;font-weight:700}
+.flag{background:#fff4e2;border-left:3px solid #d99a1e;padding:8px 12px;font-size:12.5px;color:#7a5306;margin-bottom:10px;border-radius:0 6px 6px 0}
+.hl{background:#fff1b8;border-bottom:2px solid #e5b400}
+.right{width:360px;background:#fff;border-left:1px solid #e3e7ee}
+.tabs{display:flex;border-bottom:1px solid #e3e7ee}
+.tabs div{flex:1;text-align:center;padding:12px 0;color:#6b7280}
+.tabs .on{color:#0b6e5c;font-weight:700;border-bottom:2px solid #0b6e5c}
+.pane{padding:14px 16px}
+.item{font-weight:700;margin-bottom:6px}
+.sub{color:#6b7280;font-size:12px;margin-bottom:10px}
+.row{display:flex;gap:10px;margin-bottom:10px}
+.kv{flex:1;border:1px solid #e3e7ee;border-radius:6px;padding:8px;text-align:center}
+.kv b{display:block;font-size:20px;color:#1f3a68}.kv.new b{color:#b9770e}
+.kv small{color:#6b7280;font-size:11px}
+.dots{display:flex;gap:6px;margin:4px 0 12px}.dots span{width:34px;height:28px;border:1px solid #cfd6e0;border-radius:5px;text-align:center;line-height:28px}
+.dots .ai{border-color:#0b6e5c;color:#0b6e5c}.dots .me{background:#d99a1e;border-color:#d99a1e;color:#fff;font-weight:700}
+.ta{border:1px solid #d99a1e;border-radius:6px;padding:8px;font-size:12px;line-height:1.6;background:#fffdf7;margin-bottom:12px}
+.ta em{display:block;font-style:normal;color:#9a6a08;font-size:11px;margin-bottom:3px}
+.evl{border:1px solid #e3e7ee;border-radius:6px;padding:8px;font-size:12px;line-height:1.6;margin-bottom:8px}
+.evl b{color:#1f3a68}
+.cm{border-top:1px solid #e3e7ee;margin-top:12px;padding-top:12px}
+.c1{background:#f7f8fa;border-radius:6px;padding:8px 10px;font-size:12px;line-height:1.6;margin-bottom:6px}
+.c1 b{color:#0b6e5c}
+</style></head><body>
+<div class="top"><span class="logo">极增 · 报告工作台</span><span class="crumb">项目 / <b>某制造集团（示例）· 标准报告</b> / 第 3 版</span>
+<span class="lock">● 编辑中：老板（其他人只能批注）</span><span class="btn">保存版本</span><span class="btn">版本对比</span><span class="btn p">导出 PDF</span></div>
+<div class="wrap">
+<div class="left"><h4>报告目录 · 审校进度 6/14</h4>
+<div class="sec">封面<span class="tag t1">已定稿</span></div>
+<div class="sec">执行摘要<span class="tag t2">审校中</span></div>
+<div class="sec">一、企业档案<span class="tag t1">已定稿</span></div>
+<div class="sec on">二、六维生命周期<span class="tag t2">审校中</span></div>
+<div class="sec">三、八域能力评估<span class="tag t3">AI 草稿</span></div>
+<div class="sec">四、三地平线<span class="tag t3">AI 草稿</span></div>
+<div class="sec">五、核心能力<span class="tag t3">AI 草稿</span></div>
+<div class="sec">六、执行约束<span class="tag t3">AI 草稿</span></div>
+<div class="sec">七、开放问题与假设<span class="tag t3">AI 草稿</span></div>
+<div class="sec">风险与反向证据<span class="tag t1">已定稿</span></div>
+<div class="sec">三条可验收动作<span class="tag t3">AI 草稿</span></div>
+<div class="sec">附录 A–C<span class="tag t1">已定稿</span></div>
+</div>
+<div class="mid"><div class="page">
+<h2>二、六维生命周期定位</h2>
+<div class="data"><span class="lab">🔒 数据块 · 阶段判定（由评分自动计算）</span>
+<div class="mark"><i></i><span>99 / 120</span></div>
+<div class="stage"><div>成长期 &lt;72</div><div>扩张后期</div><div>成熟临界</div><div>典型成熟期 ≥96</div></div>
+<table><tr><th>维度</th><th>增长动能</th><th>盈利与现金流</th><th>市场地位</th><th>产品与创新</th><th>组织与治理</th><th>战略与资本</th></tr>
+<tr><td>得分 /20</td><td>15</td><td class="chg">16 ↓</td><td>17</td><td>16</td><td>17</td><td>18</td></tr></table></div>
+<div class="flag">⚠ 评分已变：B2 由 4 改为 3，总分 100 → 99。下面引用该项的段落请复核。</div>
+<p>公司近三年营收复合增长 6.8%<span class="ev">A·年报P12</span>，毛利率连续两年下滑 1.9 个百分点<span class="ev">A·年报P45</span>。<span class="hl">经营现金流与净利润之比保持在 1.2 倍以上，现金创造能力稳健</span><span class="ev">A·年报P88</span>，增长主要依靠存量客户提价与份额巩固，而非新市场开拓。</p>
+<p>综合六个维度，公司处于<b>典型成熟期</b>的下沿：盈利结构稳定、市场地位领先，但新产品收入占比偏低<span class="ev c">C·待访谈核实</span>，第二曲线尚未成形。</p>
+</div></div>
+<div class="right">
+<div class="tabs"><div class="on">评分面板</div><div>证据 12</div><div>批注 2</div><div>版本</div></div>
+<div class="pane">
+<div class="item">B2　经营现金流 / 净利润</div><div class="sub">盈利与现金流 · 六维量表 · 1–5 分，越高越成熟</div>
+<div class="row"><div class="kv"><small>AI 建议</small><b>4</b><small>B 级证据</small></div><div class="kv new"><small>顾问定分</small><b>3</b><small>已修改</small></div></div>
+<div class="dots"><span>1</span><span>2</span><span class="me">3</span><span class="ai">4</span><span>5</span></div>
+<div class="ta"><em>改分理由（必填）</em>2025 年应收账款增加 31%，经营现金流/净利润降至 0.9，年报 P88 现金流量表；AI 只看了前两年平均。</div>
+<div class="evl"><b>A · 年报 P88</b>　经营活动现金流量净额 4.12 亿元，归母净利润 4.58 亿元……</div>
+<div class="evl"><b>B · 访谈 · 财务总监</b>　“今年回款明显变慢，大客户账期从 90 天拉到 120 天。”</div>
+<div class="cm"><div class="c1"><b>产品负责人：</b>第二段“现金创造能力稳健”要跟着改，和新分数矛盾了。</div>
+<div class="c1"><b>老板：</b>同意，我来改。</div></div>
+</div></div>
+</div></body></html>

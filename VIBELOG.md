@@ -102,3 +102,8 @@ Rollback: b6f258c
 - Done: 用户指出只有企业分析报告面向中型企业与上市公司。首页 title/meta/首屏/使命/理念/产品卡/路线图/资讯、页脚、工作台页、超级个体页、导航描述、预约表单规模选项（加个人/一人公司、50 人以下、50–300 人）改为综合或各自的目标客户；PRODUCT/DECISIONS/AI_STATE 同步。
 - Proof: 本地预览桌面与手机宽度无横向滚动、无报错；部署后线上 index/report/workbench/studio/main.js 与本地一致。
 - Rollback: 216808d（服务器上可再次上传旧包覆盖）。
+
+## 2026-11-05 软件技术方案 v0.1
+- Done: 与用户确认：网页系统、AI 辅助开发、Python 后端、默认阿里云可选本地、结构化报告编辑器（一人编辑他人批注）、客户收 PDF、阶段 2 前买服务器。写 TECH_SPEC.md 与技术方案 docx（架构、流水线、编辑器示意、部署、排期、费用、风险）；REPORT_SPEC §9 指向 TECH_SPEC。docgen 抽出 lib.js 共用。
+- Proof: docx 11 页渲染检查；build-report-plan.js 重构后输出不变。
+- Next: 阶段 1a 开发。

@@ -9,7 +9,7 @@ Human doc: `docs/产品规划/AI企业分析报告-产品方案.docx`（generate
 - Lifecycle-generic: 同一套题判阶段；目标客户多落在 72–120 区间，原问卷措辞基本可用（仅少量改写）。
 - Reviewer = 老板（资深顾问）：访谈、关键判断、审校、解读。Design goal: minimize consultant hours per report (target 1–2 days for standard).
 - Models: dev = DeepSeek official API; prod = 阿里云百炼; local Qwen3.8-27B（开源可商用）= confidentiality option, evaluate in phase 1a on public-data reports (no NDA issue), decide before first paid client. MUST go through a provider abstraction (`chat(messages, schema)`), no vendor SDK calls in business code.
-- Build order: phase 1a 题库 v1 + pre-diagnosis pipeline (inputs = public filings) → 1b 3–5 target firms → 2 first standard reports with minimal internal tooling (consultant edits generated doc) → 3 systemize (client portal, consultant workbench, private deploy) on demand. Software tech plan = to be discussed separately.
+- Build order: phase 1a 题库 v1 + pre-diagnosis pipeline (inputs = public filings) → 1b 3–5 target firms → 2 first standard reports with minimal internal tooling (consultant edits generated doc) → 3 systemize (client portal, consultant workbench, private deploy) on demand. Software tech plan = TECH_SPEC.md.
 
 ## 2. Report sections (order = template)
 `cover` → `summary`(total, stage, quadrant, 8D avg S, 5 conclusions, one-line prescription) → `p1_profile`(档案卡, 结构, 资料完备度) → `p2_six_dim`(24 items) → `p3_eight_domain`(32 items + radar) → `p4_horizons`(H1/H2/H3 current vs suggested + 更新度 4 判定项) → `p5_core_capabilities`(四标准筛选 + 负债面) → `p6_execution`(三约束 + RACE) → `p7_open_and_hypotheses`(3 open Q + C-grade hypotheses H1..Hn with verify method) → `risks`(反向证据 ≥3 + 坦白一句) → `actions`(exactly 3: 动作/量化口径/验收时点与责任人 + 信息补充清单) → `appendix_a`(score table + intervals + key financials) → `appendix_b`(quadrant chart) → `appendix_c`(evidence grade summary).
@@ -59,8 +59,8 @@ All LLM calls: JSON schema-validated output, retry on invalid, prompt+response l
 ## 8. Data model (sketch)
 Company · Assessment(tier, status, questionnaire_version, rules_version) · Respondent(role: owner/exec) · Answer(item_id, score, note) · Document(file, type, pages) · Evidence(kind, ref, grade, excerpt) · ItemScore(item_id, ai_score, final_score, rationale, evidence_ids[], grade, reviewer_note) · SectionDraft(section, ai_text, final_text) · ReviewEvent(diff, reason, by, at) · ReportVersion(html, pdf, published_at) · LlmCall(provider, model, tokens, cost).
 
-## 9. Tech (proposal only — to be decided in the separate software tech plan discussion)
-Python FastAPI + PostgreSQL; files local → OSS later; worker pulls jobs (same worker can run on an office machine for local model, outbound only); report HTML template replicating sample look → headless Chromium PDF. Repo layout target: `apps/report/`, `server/`, `packages/methodology/` (versioned YAML/JSON question bank + rules). Needs a Linux server 2C4G (current Windows trial ECS unsuitable).
+## 9. Tech
+Decided 2026-11-05 → see `.codex-context/TECH_SPEC.md` (web app, Python/FastAPI/PostgreSQL, Vue + TipTap structured editor, Docker Compose cloud/local).
 
 ## 6b. Questionnaire roles (burden reduction)
 Execs (3–6): six-dim 24 + eight-domain S only (~20–25 min). Chairman/GM: same + I for 32 items (AI pre-fills suggestion). B (对标) = AI from 1–2 named competitors' public info, consultant confirms. Interviews 60–90 min × 2–4 people.
