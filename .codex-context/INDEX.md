@@ -1,6 +1,6 @@
 # INDEX
 
-- `website/` 极增科技官网（当前主线）
+- `website/` 极增商界官网（当前主线；2026-11-06 按老板计划书重排）：index（首页，一人公司为主）、zhinao（极增智脑四智能体 + 三档）、workbench（经营工作台 · 经营秘书）、solution（数据化增长方案）、report（企业分析报告）、academy（增长培训与论坛）、insights（商界洞察 + 会员）、credits；studio.html / talent.html 为跳转页（超级个体并入极增智脑个人版，人才测评暂停）
   - `index.html` 首页；`report.html` 企业分析报告；`workbench.html` 经营工作台；`talent.html` AI 人才测评（占位）；`studio.html` 超级个体（占位）；`credits.html` 素材来源
   - `assets/css/style.css` 全站样式；`assets/js/main.js` 公共头尾、轮播、弹窗（产品列表在 PRODUCTS 数组）
   - `assets/brand/` 双峰 Logo SVG；`assets/media/` 视频与图片（Pexels/Mixkit），`CREDITS.md` 来源表
@@ -22,6 +22,6 @@
 - `docs/产品规划/` 给人看的规划文档：`AI企业分析报告-产品方案.docx`（Word，图文版，由 `scripts/docgen/` 生成）；`样例/奥托立夫战略评估报告.pdf`（报告模板）
 - `docs/产品规划/AI企业分析报告-技术方案.docx` 软件技术方案（Word，由 `scripts/docgen/build-tech-plan.js` 生成）
 - `docs/产品规划/经营工作台-产品方案.docx` 经营工作台产品方案（Word，由 `scripts/docgen/build-workbench-plan.js` 生成）
-- `scripts/docgen/` 方案文档生成：`lib.js` 公共排版；`build-report-plan.js` + `make_figs.py`（产品方案）；`build-tech-plan.js` + `make_tech_figs.py` + `editor-mockup.html`（技术方案）；`build-workbench-plan.js` + `make_wb_figs.py` + `wb-chat-mockup.html` + `wb-meeting-mockup.html`（工作台方案）
+- `scripts/docgen/` 方案文档生成：`lib.js` 公共排版；`build-report-plan.js` + `make_figs.py`（产品方案）；`build-tech-plan.js` + `make_tech_figs.py` + `editor-mockup.html`（技术方案）；`build-workbench-plan.js` + `make_wb_figs.py` + `wb-chat-mockup.html` + `wb-meeting-mockup.html` + `wb-opc-mockup.html`（工作台方案）
 - `.codex-context/REPORT_SPEC.md` 报告产品的方法与规则规格（给 AI 开发用）；`.codex-context/TECH_SPEC.md` 软件技术规格（技术栈、目录、流水线、编辑器、部署、阶段验收）；`.codex-context/WORKBENCH_SPEC.md` 经营工作台产品形态规格
 - `.codex-context/` 项目状态文件；`VIBELOG.md` 变更日志

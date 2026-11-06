@@ -10,11 +10,11 @@ const { NAVY, TEAL, AMBER, GREY, WARN, FONT, P, H1, H2, B, N, Caption, PB, Img, 
 const c = [];
 
 // 封面
-c.push(new Paragraph({ spacing: { before: 2200, after: 120 }, children: [new TextRun({ text: "极增科技 · 极增商界", font: FONT, size: 24, color: TEAL, bold: true })] }));
+c.push(new Paragraph({ spacing: { before: 2200, after: 120 }, children: [new TextRun({ text: "极增商界 · 上海极增科技有限公司", font: FONT, size: 24, color: TEAL, bold: true })] }));
 c.push(new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: "AI 企业分析报告", font: FONT, size: 56, bold: true, color: NAVY })] }));
 c.push(new Paragraph({ spacing: { after: 480 }, children: [new TextRun({ text: "软件技术方案", font: FONT, size: 44, bold: true, color: NAVY })] }));
 c.push(P("网页系统 · AI 流水线 · 结构化报告编辑器 · 云端与本地两种部署", { run: { size: 24, color: GREY } }));
-c.push(P("版本 v0.1 ｜ 2026 年 11 月 5 日 ｜ 配套《AI 企业分析报告-产品方案 v0.2》", { run: { size: 22, color: GREY } }));
+c.push(P("版本 v0.2 ｜ 2026 年 11 月 6 日（排期按公司新优先级调整）｜ 配套《AI 企业分析报告-产品方案 v0.3》", { run: { size: 22, color: GREY } }));
 c.push(Gap());
 c.push(Img("fig-tech-editor.png", 600));
 c.push(Caption("报告编辑器示意：左侧目录与审校进度，中间正文，右侧评分面板、证据与批注（示例数据为虚构）"));
@@ -30,6 +30,13 @@ c.push(Box([
   "**数据默认放阿里云，保密要求高的客户可以整套装到本地。**本地模式用办公室的显卡机器运行千问 Qwen3.8-27B，资料不出办公室。两种模式是同一套程序，只改配置。",
   "**分三步做：**第 1–4 周先跑通 AI 流水线（不做界面，在本机出 PDF）；第 3–6 周做报告编辑器并上线服务器；第 5–10 周做问卷、资料上传、访谈转写，交付首批标准报告。",
 ]));
+c.push(Gap());
+c.push(H2("2026-11-06 排期调整"));
+c.push(Box([
+  "**先开发经营工作台，报告软件往后排。**报告业务在此期间按老板现有方式人工交付，作为初始现金流；本方案的阶段 1a / 1b / 2 整体后移，开工时间待定。",
+  "**本方案的技术底座同样用于经营工作台：**Python + PostgreSQL + Vue、统一大模型接口、账号体系、Docker 部署。经营工作台另需：企业微信 / 钉钉平台适配层、数据连接器（Excel、金蝶、用友）、目标与行动项、主动推送引擎。",
+  "**服务器购买时间**改为跟随经营工作台的开发进度（内测前需要 HTTPS 和固定域名）。",
+], WARN, AMBER));
 c.push(Gap());
 c.push(H2("已确认的决定"));
 c.push(Tbl(["事项", "决定"], [
@@ -154,7 +161,7 @@ c.push(Tbl(["事项", "做法"], [
 // 九
 c.push(H1("九、开发计划"));
 c.push(Img("fig-tech-timeline.png", 640));
-c.push(Caption("图 5　开发排期（与产品方案的阶段一致；第 3–6 周 1a 与 1b 并行）"));
+c.push(Caption("图 5　开发排期（周数从报告软件开工算起；按 2026-11-06 的优先级，排在经营工作台之后）"));
 c.push(Tbl(["阶段", "交付什么", "怎么算完成"], [
   ["1a\n第 1–4 周", "方法论包 v1；计分引擎；年报解析与事实卡片；建议分、起草、质检；报告 PDF 模板；本地模型对比评测",
     "奥托立夫回填后六维总分 105（17/18/17/17/17/19）、八域现状均分 3.78，与样例完全一致；给一家上市公司的年报和公告，系统产出预诊断初稿，老板半天内能改完"],
@@ -191,11 +198,11 @@ c.push(Tbl(["风险", "应对"], [
 // 十二
 c.push(H1("十二、待确认事项"));
 c.push(Box([
-  "1. 老板能否在第 4–6 周开始在线使用编辑器审校预诊断？能的话第 4 周左右买服务器。",
+  "1. 报告软件的开工时间（排在经营工作台之后）；开工后老板能否在第 4–6 周在线使用编辑器审校预诊断。",
   "2. Word 导出是否要提前到阶段 1b？（默认放在阶段 2）",
   "3. 阶段 1a 试跑用哪 2–3 家上市公司？（建议和预诊断目标客户同行业）",
   "4. 外部企业数据接口的预算上限。",
 ], WARN, AMBER));
 
-const doc = makeDoc({ title: "AI 企业分析报告 · 软件技术方案", header: "极增科技 · AI 企业分析报告软件技术方案 v0.1", children: c });
+const doc = makeDoc({ title: "AI 企业分析报告 · 软件技术方案", header: "极增商界 · AI 企业分析报告软件技术方案 v0.2", children: c });
 Packer.toBuffer(doc).then((buf) => { fs.writeFileSync(OUT, buf); console.log("written", OUT, buf.length); });

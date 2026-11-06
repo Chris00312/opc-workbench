@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- wb-opc-mockup.html — 经营工作台方案配图：一人公司版「极增经营秘书」两个对话场景（静态示意，人物与数据为虚构）。
+     截图：Chrome --headless --window-size=1000,800 --screenshot=fig-wb-opc.png wb-opc-mockup.html -->
+<html lang="zh-CN"><head><meta charset="utf-8"><title>经营秘书对话示意</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Hiragino Sans GB",sans-serif;background:#eef1f5;width:1000px;height:800px;overflow:hidden;display:flex;gap:34px;justify-content:center;align-items:flex-start;padding-top:22px}
+.col{display:flex;flex-direction:column;align-items:center;gap:10px}
+.cap{font-size:15px;font-weight:700;color:#1f3a68}
+.cap span{display:block;font-size:12px;font-weight:400;color:#6b7280;text-align:center;margin-top:3px}
+.phone{width:410px;height:700px;background:#ededed;border-radius:30px;border:9px solid #1d2330;overflow:hidden;display:flex;flex-direction:column}
+.bar{height:50px;background:#f7f7f7;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#1a1a1a;position:relative}
+.bar small{position:absolute;left:14px;font-weight:400;color:#576b95;font-size:14px}
+.bar em{position:absolute;right:14px;font-style:normal;font-size:11px;color:#9aa3b2;font-weight:400}
+.msgs{flex:1;padding:12px 12px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.time{align-self:center;font-size:11px;color:#999}
+.row{display:flex;gap:8px;align-items:flex-start}
+.row.me{flex-direction:row-reverse}
+.av{width:34px;height:34px;border-radius:6px;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
+.av.ai{background:#0b6e5c}.av.boss{background:#1f3a68}.av.cg{background:#b9770e}.av.lin{background:#5b4a9e}
+.b{background:#fff;border-radius:8px;padding:9px 11px;font-size:12.6px;line-height:1.6;color:#1a1a1a;max-width:318px}
+.me .b{background:#a9e88b}
+.b b{color:#1f3a68}
+.b .red{color:#c0392b;font-weight:700}
+.b .h{font-weight:700;color:#0b6e5c;margin-bottom:3px;font-size:13px}
+.b ol{padding-left:17px}.b li{margin-bottom:3px}
+.card{background:#fff;border-radius:8px;max-width:318px;overflow:hidden;border:1px solid #e3e7ee}
+.card .t{background:#fff4e2;color:#9a6a08;font-size:12px;font-weight:700;padding:7px 11px}
+.card .c{padding:9px 11px;font-size:12.6px;line-height:1.6}
+.card .btns{display:flex;border-top:1px solid #eee}
+.card .btns div{flex:1;text-align:center;padding:9px 0;font-size:12.5px;color:#576b95;border-right:1px solid #eee}
+.card .btns div:last-child{border-right:none}
+.card .btns .p{color:#0b6e5c;font-weight:700}
+.card.done .t{background:#e6f6f1;color:#0b6e5c}
+.note{font-size:10.5px;color:#8a94a6;margin-top:4px}
+.input{height:44px;background:#f7f7f7;border-top:1px solid #ddd;display:flex;align-items:center;padding:0 10px}
+.input div{flex:1;height:30px;background:#fff;border-radius:5px}
+</style></head><body>
+
+<div class="col"><div class="cap">① 每天早上：只说今天该管的事<span>一人公司版 · 独立培训顾问林老师（虚构）</span></div>
+<div class="phone"><div class="bar"><small>‹ 消息</small>极增经营秘书<em>企业微信（示意）</em></div>
+<div class="msgs">
+<div class="time">周一 08:30</div>
+<div class="row"><div class="av ai">秘</div><div class="b"><div class="h">今日晨报 · 只说异常</div><ol>
+<li>本月已收款 <b>3.2 万</b>，月目标 8 万完成 40%；时间已过 50%，<span class="red">落后 10 个点</span>。</li>
+<li>某科技公司的内训尾款 <b>1.5 万</b>，开票后 21 天未到账。</li>
+<li>2 位意向客户 <b>7 天</b>没有跟进。</li>
+<li>周四要发的短视频脚本还没写。</li></ol></div></div>
+<div class="row"><div class="av ai">秘</div><div class="card"><div class="t">建议 · 需要你确认</div><div class="c">我已按你平时的语气起草了尾款提醒和 2 条客户跟进消息，要看一下吗？</div>
+<div class="btns"><div class="p">看草稿</div><div>今天不处理</div></div></div></div>
+<div class="row me"><div class="av lin">林</div><div class="b">看草稿</div></div>
+<div class="row"><div class="av ai">秘</div><div class="b">草稿在下面，你确认后自己发出；周三我再看一下有没有回复。</div></div>
+</div><div class="input"><div></div></div></div></div>
+
+<div class="col"><div class="cap">② 每周五：一周复盘<span>做了什么、差多少、下周先做什么</span></div>
+<div class="phone"><div class="bar"><small>‹ 消息</small>极增经营秘书<em>企业微信（示意）</em></div>
+<div class="msgs">
+<div class="time">周五 18:00</div>
+<div class="row"><div class="av ai">秘</div><div class="b"><div class="h">本周复盘</div>
+· 收款 <b>2.1 万</b>（尾款已到账 1.5 万）<br>· 新增意向客户 3 位，来自 2 条视频<br>· 内容：发了 2 条，计划 3 条<br><br>
+<b>按现在的节奏</b>，本月预计收款 7.1 万，<span class="red">差 0.9 万</span>。差距主要在新客户：本月还没有签下新单。</div></div>
+<div class="row"><div class="av ai">秘</div><div class="card"><div class="t">下周建议先做这 3 件</div><div class="c">1. 给 3 位新意向客户发方案（草稿已备好）<br>2. 周二直播讲「中层带团队」，带出内训报名<br>3. 把上月的线上课剪成 2 条短视频</div>
+<div class="btns"><div class="p">放进下周计划</div><div>我调整一下</div></div></div></div>
+<div class="row me"><div class="av lin">林</div><div class="b">这个月能补上吗？</div></div>
+<div class="row"><div class="av ai">秘</div><div class="b">如果 3 位里签下 1 位（按你过去的平均单价约 1.2 万），就能完成。</div></div>
+</div><div class="input"><div></div></div></div></div>
+
+</body></html>
