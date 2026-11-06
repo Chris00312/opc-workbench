@@ -123,3 +123,8 @@ Rollback: b6f258c
 - Proof: 本地 http 预览 375 宽度各页无横向滚动、无控制台错误、导航高亮正确；1440 宽度截图检查；三份 docx 经 LibreOffice 渲染检查（16/15/11 页）。
 - Risks: 官网改动未部署；工作台待定事项待老板决定。
 - Next: 部署官网；老板确认工作台待定事项。
+
+## 2026-11-06 官网改版部署上线
+- Done: 先在服务器备份旧版 html/js/css 到 C:\srv\www-backup-20261106.zip，再上传 website/（不含视频）解压覆盖。
+- Proof: 经服务器 IP 访问 talentchain.net 的 10 个页面与 main.js、style.css 均与本地逐字节一致；www 与视频 200。
+- Rollback: 服务器上解压 www-backup-20261106.zip 覆盖回 C:\srv\www（新增的 zhinao/solution/academy/insights 需手动删除）。
