@@ -7,7 +7,7 @@
     { id: 'workbench', href: 'workbench.html', name: '经营工作台' },
     { id: 'solution', href: 'solution.html', name: '数据化增长方案' },
     { id: 'report', href: 'report.html', name: '企业分析报告' },
-    { id: 'academy', href: 'academy.html', name: '增长培训与论坛' },
+    { id: 'academy', href: 'academy.html', name: '增长培训与活动' },
     { id: 'insights', href: 'insights.html', name: '商界洞察 · 会员' }
   ];
 
@@ -30,9 +30,9 @@
         [['workbench.html', '经营秘书 · 经营工作台', '<span class="badge new">New</span>'], ['zhinao.html#diagnose', '增长诊断智能体'], ['zhinao.html#content', '内容生成智能体'], ['zhinao.html#ops', '运营自动化智能体'], ['zhinao.html#match', '用户匹配智能体'], ['zhinao.html#tiers', '版本与订阅']]) +
       item(['solution', 'report'], 'solution.html', '增长方案', '数据化增长方案：诊断 → 建模 → 策略 → 追踪，用数据找到卡点，用 AI 盯到落地。',
         [['solution.html#checkup', 'AI 经营体检'], ['report.html', '企业分析报告', '<span class="badge hot">Hot</span>'], ['solution.html#coach', '顾问陪跑'], ['solution.html#coach', '专项咨询']]) +
-      item(['academy'], 'academy.html', '培训活动', '从 AI 工具实操到增长方法论和行业专项；季度论坛、月度研讨、周度沙龙。',
-        [['academy.html#training', '增长培训'], ['academy.html#cert', '企业增长分析师认证'], ['academy.html#events', '论坛 · 研讨 · 沙龙']]) +
-      item(['insights'], 'insights.html', '商界洞察', '围绕「可验证的增长洞察」：行业快讯、方法论拆解、月度数据报告。',
+      item(['academy'], 'academy.html', '培训活动', '从 AI 工具实操到增长方法论和行业专项；季度峰会、月度研讨、周度沙龙。',
+        [['academy.html#training', '增长培训'], ['academy.html#cert', '企业增长分析师认证'], ['academy.html#events', '峰会 · 研讨 · 沙龙']]) +
+      item(['insights'], 'insights.html', '商界洞察', '围绕「可验证的增长洞察」：行业数据速览、方法论拆解、月度数据报告。',
         [['insights.html#columns', '每日动态 · 每周深度'], ['insights.html#columns', '月度洞察报告'], ['insights.html#latest', '最新文章'], ['insights.html#member', '商界会员']]) +
       '<li><a href="index.html#about">关于我们</a></li>' +
     '</ul>' +

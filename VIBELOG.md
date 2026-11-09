@@ -176,3 +176,8 @@ Rollback: b6f258c
 - Done: talentchain.net 开 HTTPS；上线备案资料提交页与接收服务（见 DECISIONS）。
 - Proof: HTTPS 首页 200；无密钥访问接口返回 403；带密钥上传 4B 和 6MB 文件、列表、删除均成功；http 访问 /icp/ 301 到 https；浏览器打开页面正常。
 - Rollback: 服务器 nginx.conf.bak-20261109；停用计划任务 icp-upload。
+
+## 2026-11-09 去掉备案敏感词并部署
+- Done: 「论坛」→ 峰会/活动，「行业快讯」→ 行业数据速览，「社群」→ 会员活动（index/academy/insights/zhinao/main.js）；资源版本号 20261109f；备份 C:\\srv\\www-backup-20261109f.zip 后上线。
+- Proof: 5 个改动文件线上与本地哈希一致；全站 grep 无「论坛/快讯」；/icp/ 页正常。
+- Also: 备案上传页加「资料说明」；组网方案建设书草稿已生成（临时目录，不入库）。

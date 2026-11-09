@@ -92,3 +92,7 @@
 ## 2026-11-09 备案资料收集页 + talentchain.net 开启 HTTPS
 - 用户要求做网页让老板上传 growthhub.cn 备案文件、存在自己服务器。因含身份证与营业执照，先给 talentchain.net 开 HTTPS（win-acme / Let's Encrypt，自动续期；续期后脚本用计划任务重启 nginx，因 nginx -s reload 对开机任务启动的实例无效）。
 - 实现：静态页 C:\srv\www\icp\index.html（noindex，密钥放在链接 # 后面，不进日志）；接收服务 C:\srv\icp\icp_upload.py（便携版 Python 3.12，仅监听 127.0.0.1:8091，计划任务 icp-upload 开机自启）；nginx 只在 443 上转发 /icp-api/，80 端口的 /icp/ 跳转 HTTPS；文件存 C:\srv\icp\uploads（不在网站目录，仅 SYSTEM/管理员可读）。源码与密钥不入库。
+
+## 2026-11-09 官网避开备案敏感词
+- 决定：官网不用「论坛」「行业快讯」「社群」等字样，改为「增长培训与活动」「季度峰会」「行业数据速览」「会员活动」。
+- 原因：备案时组网方案建设书承诺「不开设论坛（BBS）、不发布新闻」，网站文字要和承诺一致，避免被退回或被要求前置审批。以后写文案也照此执行。
