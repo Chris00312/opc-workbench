@@ -14,7 +14,7 @@ c.push(new Paragraph({ spacing: { before: 1800, after: 120 }, children: [new Tex
 c.push(new Paragraph({ spacing: { after: 120 }, children: [new TextRun({ text: "AI 企业分析报告", font: FONT, size: 56, bold: true, color: NAVY })] }));
 c.push(new Paragraph({ spacing: { after: 480 }, children: [new TextRun({ text: "产品方案", font: FONT, size: 44, bold: true, color: NAVY })] }));
 c.push(P("面向中型企业与上市公司 · AI 辅助分析 + 资深顾问审校", { run: { size: 24, color: GREY } }));
-c.push(P("版本 v0.3 ｜ 2026 年 11 月 6 日（按公司新定位调整归属与优先级）", { run: { size: 22, color: GREY } }));
+c.push(P("版本 v0.4 ｜ 2026 年 11 月 9 日（按公司宣传口径调整）", { run: { size: 22, color: GREY } }));
 c.push(Gap());
 c.push(Img("s-cover-01.png", 300));
 c.push(Caption("报告模板参考：奥托立夫战略评估报告（样例第 1 页，基于公开信息完成）"));
@@ -31,9 +31,9 @@ c.push(Box([
   "**路线：**先做「公开信息预诊断」：不依赖客户配合就能跑通 AI 流水线，做出来就是销售敲门砖。再做首批标准报告，最后按需要系统化。",
 ]));
 c.push(Gap());
-c.push(H2("在公司整体中的位置（2026-11-06 调整）"));
+c.push(H2("在公司整体中的位置（2026-11-06 / 11-09 调整）"));
 c.push(Box([
-  "**公司定位调整：**按老板 2026 年 11 月的商业计划书，公司以「极增商界 · 一人公司经济的 AI 增长引擎」对外，**一人公司为主**，兼顾成长型企业。",
+  "**公司定位调整：**公司以「极增商界 · **AI 赋能企业提效平台**」对外（2026-11-09 定），服务从小微企业到上市公司的各规模企业，不再突出「一人公司」概念。",
   "**本产品的归属：**企业分析报告属于「数据化增长方案」（诊断 → 建模 → 策略 → 追踪）中的**诊断、建模、策略**三步；「追踪」由经营工作台承接，报告里的三条可验收动作可直接导入。",
   "**目标客户不变：**仍面向**中型企业与上市公司**。这是老板的老业务，作为公司的**初始现金流**。",
   "**开发优先级：**软件开发排在经营工作台之后；在此之前，报告业务按老板现有方式（顾问 + 现有工具）人工交付。本方案中的题库、流水线、编辑器设计保留，开工时按第十一章执行。",
@@ -271,5 +271,5 @@ c.push(N("本地模型硬件：阶段 1 评测后决定。"));
 c.push(N("软件开发技术方案：已完成 v0.1，见《AI 企业分析报告-技术方案》；开工时间排在经营工作台之后。"));
 
 // ---------------- document ----------------
-const doc = makeDoc({ title: "AI 企业分析报告 · 产品方案", header: "极增商界 · AI 企业分析报告产品方案 v0.3", children: c });
+const doc = makeDoc({ title: "AI 企业分析报告 · 产品方案", header: "极增商界 · AI 企业分析报告产品方案 v0.4", children: c });
 Packer.toBuffer(doc).then((buf) => { fs.writeFileSync(OUT, buf); console.log("written", OUT, buf.length); });

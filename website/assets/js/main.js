@@ -48,7 +48,7 @@
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
       '<div class="about"><a class="logo" href="index.html"><img class="logo-img" src="assets/brand/mark-dark.svg" alt="">极增商界</a>' +
-        '<p>一人公司经济的 AI 增长引擎。内容、智能体、数据与服务四位一体，让一人公司和成长型企业都用得起咨询级的增长能力。数据赋能增长，洞察驱动未来。</p>' +
+        '<p>AI 赋能企业提效平台。智能体、数据、服务与内容四位一体，让各规模企业的老板和团队少做重复的事、早发现问题、把定了的事办成。</p>' +
         '<ul><li>官方邮箱：bd@example.com</li><li>客服热线：400-000-0000</li><li>工作时间：周一至周五 9:00–18:00</li></ul></div>' +
       '<div><h6>产品中心</h6><ul>' + PRODUCTS.map(function (p) { return '<li><a href="' + p.href + '">' + p.name + '</a></li>'; }).join('') + '</ul></div>' +
       '<div><h6>商界洞察</h6><ul><li><a href="insights.html#columns">内容栏目</a></li><li><a href="insights.html#member">商界会员</a></li><li><a href="report.html#sample">报告样张</a></li><li><a href="index.html#roadmap">增长路线图</a></li></ul></div>' +
@@ -64,7 +64,7 @@
       '<form data-form="contact">' +
         '<label class="field"><span>您的称呼</span><input required name="name" placeholder="如：王总"></label>' +
         '<label class="field"><span>手机号</span><input required name="tel" type="tel" placeholder="138 0000 0000"></label>' +
-        '<label class="field"><span>公司规模</span><select name="size"><option>一人公司 / 自由职业者</option><option>2–50 人</option><option>50–500 人</option><option>500 人以上</option><option>上市公司</option></select></label>' +
+        '<label class="field"><span>公司规模</span><select name="size"><option>30 人以下</option><option>30–100 人</option><option>100–500 人</option><option>500 人以上</option><option>上市公司</option></select></label>' +
         '<label class="field"><span>感兴趣的产品</span><select name="product">' + PRODUCTS.map(function (p) { return '<option>' + p.name + '</option>'; }).join('') + '</select></label>' +
         '<button class="btn btn-primary btn-lg" style="width:100%;margin-top:6px">提交预约</button>' +
         '<p class="note" style="margin-top:12px">演示版：表单暂未接入后台，提交后不会真实发送。</p>' +
