@@ -18,7 +18,8 @@
 - [ ] 用户确认官网设计和文案（website/），替换联系方式、二维码、备案号
 - [x] website/ 部署到阿里云试用 ECS（2026-11-04）
 - [ ] growthhub.cn 在阿里云新增/接入备案（需正式服务器备案服务码），通过后才能用域名访问
-- [ ] HTTPS 证书（阿里云免费证书或 Let's Encrypt）
+- [x] HTTPS：talentchain.net / www 已用 Let's Encrypt（win-acme，自动续期，2026-11-09）；growthhub.cn 备案后再加
+- [ ] growthhub.cn 备案：老板在 https://talentchain.net/icp/#<key> 上传资料（key 在服务器 C:\srv\icp\key.txt）；需先买正式服务器（试用机不能备案）；起草组网方案建设书；备案完成后删除 C:\srv\icp\uploads 并停用 icp-upload 计划任务
 - [ ] 买正式服务器（轻量 2核2G，Debian 12）并迁移；关闭旧 Debian 11 服务器上的站点
 - [ ] 仓库里的视频换成压缩版（部署包里已压缩）
 

@@ -88,3 +88,7 @@
 
 ## 2026-11-09 官网配色改为白底为主、黑底为辅
 - 用户要求参考英伟达官网的色调：白底居多、黑底为辅。保留自有品牌色青绿（不用英伟达绿，避免模仿其品牌）；浅底上的强调文字改用深青绿保证可读性。每页保留一条黑色强调带，首屏图片加左侧加深渐变。细则见 DESIGN_SYSTEM.md。
+
+## 2026-11-09 备案资料收集页 + talentchain.net 开启 HTTPS
+- 用户要求做网页让老板上传 growthhub.cn 备案文件、存在自己服务器。因含身份证与营业执照，先给 talentchain.net 开 HTTPS（win-acme / Let's Encrypt，自动续期；续期后脚本用计划任务重启 nginx，因 nginx -s reload 对开机任务启动的实例无效）。
+- 实现：静态页 C:\srv\www\icp\index.html（noindex，密钥放在链接 # 后面，不进日志）；接收服务 C:\srv\icp\icp_upload.py（便携版 Python 3.12，仅监听 127.0.0.1:8091，计划任务 icp-upload 开机自启）；nginx 只在 443 上转发 /icp-api/，80 端口的 /icp/ 跳转 HTTPS；文件存 C:\srv\icp\uploads（不在网站目录，仅 SYSTEM/管理员可读）。源码与密钥不入库。

@@ -171,3 +171,8 @@ Rollback: b6f258c
 
 ## 2026-11-09 灰色加深版部署
 - Done: 备份到 C:\\srv\\www-backup-20261109e.zip 后上传覆盖；线上文件与本地逐字节一致，style.css?v=20261109e。
+
+## 2026-11-09 备案资料提交页上线
+- Done: talentchain.net 开 HTTPS；上线备案资料提交页与接收服务（见 DECISIONS）。
+- Proof: HTTPS 首页 200；无密钥访问接口返回 403；带密钥上传 4B 和 6MB 文件、列表、删除均成功；http 访问 /icp/ 301 到 https；浏览器打开页面正常。
+- Rollback: 服务器 nginx.conf.bak-20261109；停用计划任务 icp-upload。
