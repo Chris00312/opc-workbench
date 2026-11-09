@@ -138,3 +138,8 @@ Rollback: b6f258c
 - Done: 服务器先备份旧版 html/js/css 到 C:\srv\www-backup-20261109.zip，再上传 website/（不含视频）解压覆盖。
 - Proof: 经服务器 IP 访问 12 个文件与本地逐字节一致；首页标题为「极增商界 — AI 赋能企业提效平台」；www 与视频 200。
 - Rollback: 服务器上解压 www-backup-20261109.zip 覆盖回 C:\srv\www。
+
+## 2026-11-09 官网改为白底为主、黑底为辅
+- Done: style.css 改为浅色变量 + 深色作用域；按钮方角去发光；首屏左侧加深渐变；7 个页面各指定一条黑色强调带；ncard、弹窗、表单、流程圆点等改为深浅两用；CSS/JS 链接加版本号。DESIGN_SYSTEM 记录新配色规则。
+- Proof: 桌面全页截图、手机宽度脚本检查。
+- Next: 部署。
