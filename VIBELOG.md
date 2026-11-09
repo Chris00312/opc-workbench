@@ -133,3 +133,8 @@ Rollback: b6f258c
 - Done: 官网 7 个文件去掉一人公司 / OPC 表述并改写首屏、使命、痛点、路线图、产品卡顺序、三档名称、表单规模；工作台方案 v0.3（建议先做团队版，老板版补充）、报告方案 v0.4；PRODUCT/DECISIONS/SPEC/AI_STATE/TODO 同步。临时目录被清空，重建 docx 环境与全部配图（与上一版一致）。
 - Proof: 本地预览抓取各页无相关字样；docx 渲染检查。
 - Next: 部署官网。
+
+## 2026-11-09 口径调整版官网部署
+- Done: 服务器先备份旧版 html/js/css 到 C:\srv\www-backup-20261109.zip，再上传 website/（不含视频）解压覆盖。
+- Proof: 经服务器 IP 访问 12 个文件与本地逐字节一致；首页标题为「极增商界 — AI 赋能企业提效平台」；www 与视频 200。
+- Rollback: 服务器上解压 www-backup-20261109.zip 覆盖回 C:\srv\www。
