@@ -495,8 +495,8 @@ ul { list-style: none; }
   .rm { background: linear-gradient(90deg, #fff, #def5ee) !important; border-bottom: 1px solid #fff; }
   .rm.hl { background: linear-gradient(90deg, #fff, #a9e5d3) !important; }
 }
-/* 联系条改为浅灰，不用暗图 */
-.contact { background: #f2f4f5; }
+/* 底部（联系条 + 页脚）整体黑色，联系条不用暗图 */
+.contact { background: #000; border-bottom: 1px solid rgba(255, 255, 255, .1); --text: #fff; --text-2: #bdbdbd; --text-3: #8a8a8a; --line: rgba(255, 255, 255, .14); --ink: #1ed6b0; color: #fff; }
 .contact .bg { display: none; }
 /* 价格高亮卡改为白卡 + 顶部色条 */
 .plan.hl { background: #fff; box-shadow: 0 12px 36px rgba(0, 0, 0, .08); border-top: 3px solid var(--accent); }
