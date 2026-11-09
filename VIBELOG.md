@@ -143,3 +143,8 @@ Rollback: b6f258c
 - Done: style.css 改为浅色变量 + 深色作用域；按钮方角去发光；首屏左侧加深渐变；7 个页面各指定一条黑色强调带；ncard、弹窗、表单、流程圆点等改为深浅两用；CSS/JS 链接加版本号。DESIGN_SYSTEM 记录新配色规则。
 - Proof: 桌面全页截图、手机宽度脚本检查。
 - Next: 部署。
+
+## 2026-11-09 新配色官网部署
+- Done: 备份旧版到 C:\srv\www-backup-20261109b.zip 后上传覆盖。
+- Proof: 12 个文件线上与本地逐字节一致；带版本号的 style.css 返回 200，首页引用 ?v=20261109；www 200。
+- Rollback: 解压 www-backup-20261109b.zip 覆盖回 C:\srv\www。
