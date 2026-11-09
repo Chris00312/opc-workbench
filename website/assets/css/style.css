@@ -471,7 +471,7 @@ ul { list-style: none; }
 .drop { background: rgba(255, 255, 255, .98); box-shadow: 0 16px 40px rgba(0, 0, 0, .08); border-top: 1px solid rgba(0, 0, 0, .06); }
 .menu-btn span { background: #111; }
 .nav.open .nav-links { background: #fff !important; }
-.block-dark2 { --surface: #f7f8f9; }
+.block-dark2 { --surface: #f1f3f5; }
 .block-black { background: var(--surface); }
 /* 使命区改为浅色 */
 .mission { background: #fff; min-height: 0; padding: 120px 0 130px; }
