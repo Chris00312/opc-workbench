@@ -23,7 +23,7 @@
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="极增商界首页"><img class="logo-img" src="assets/brand/mark-dark.svg" alt="">极增商界</a>' +
+    '<a class="logo" href="index.html" aria-label="极增商界首页"><img class="logo-img" src="assets/brand/mark-light.svg" alt="">极增商界</a>' +
     '<ul class="nav-links">' +
       '<li><a href="index.html" class="' + (page === 'home' ? 'active' : '') + '">首页</a></li>' +
       item(['zhinao', 'workbench'], 'zhinao.html', '极增智脑', '主动型 AI 智能体：知道你的目标，每天盯着数据，发现问题先来找你。',

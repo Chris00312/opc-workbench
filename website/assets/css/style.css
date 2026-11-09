@@ -18,8 +18,8 @@
   --nav-h: 60px;
   --max: 1300px;
 }
-/* 深色作用域：导航、首屏、黑色强调带、联系条、页脚、图卡、高亮价格卡、手机示意 */
-.nav, .drop, .hero, .page-hero, .mission, .block-black, .contact, .footer, .pcard, .plan.hl, .phone, .toast {
+/* 深色作用域：只有首屏、页脚、图片卡片和手机示意是深色（参照英伟达官网：导航白色，中间区块全部浅色） */
+.hero, .page-hero, .footer, .pcard, .phone, .toast {
   --bg: #000; --bg-2: #0b0b0b; --surface: #000; --card: #141414;
   --text: #fff; --text-2: #bdbdbd; --text-3: #8a8a8a;
   --line: rgba(255, 255, 255, .14); --line-strong: rgba(255, 255, 255, .5); --ink: #1ed6b0;
@@ -465,3 +465,41 @@ ul { list-style: none; }
 .bub small { display: block; color: var(--text-3); font-size: 11px; margin-top: 4px; }
 @media (max-width: 1180px) { .cols.four { grid-template-columns: 1fr 1fr; } .phones { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 900px) { .cols.four { grid-template-columns: 1fr; gap: 30px; } .phones { grid-template-columns: 1fr; } }
+
+/* ---------- 2026-11-09 v4.1：按英伟达官网比例，黑色只留首屏与页脚 ---------- */
+.nav { background: #fff; color: #111; border-bottom: 1px solid rgba(0, 0, 0, .08); }
+.drop { background: rgba(255, 255, 255, .98); box-shadow: 0 16px 40px rgba(0, 0, 0, .08); border-top: 1px solid rgba(0, 0, 0, .06); }
+.menu-btn span { background: #111; }
+.nav.open .nav-links { background: #fff !important; }
+.block-dark2 { --surface: #f7f8f9; }
+.block-black { background: var(--surface); }
+/* 使命区改为浅色 */
+.mission { background: #fff; min-height: 0; padding: 120px 0 130px; }
+.mission-bg.horizon { background: radial-gradient(ellipse 70% 60% at 50% 120%, rgba(30, 214, 176, .16), transparent 70%), #fff; }
+.mission-bg.horizon::before { display: none; }
+.mission-bg.horizon::after { content: none; }
+/* 路线图改为浅色 */
+.rm:nth-child(1) { background: linear-gradient(180deg, #fff 30%, #eefaf6); }
+.rm:nth-child(2) { background: linear-gradient(180deg, #fff 30%, #def5ee); }
+.rm:nth-child(3) { background: linear-gradient(180deg, #fff 30%, #cdf0e5); }
+.rm:nth-child(4) { background: linear-gradient(180deg, #fff 30%, #bbebdc); }
+.rm:nth-child(5) { background: linear-gradient(180deg, #fff 30%, #a9e5d3); }
+.rm.hl { background: linear-gradient(180deg, #fff 20%, #1ed6b0) !important; }
+.rm .say { border-color: var(--line-strong); color: var(--text-2); background: #fff; }
+.rm.hl .code, .rm.hl .nm { color: #0b6e5c; }
+.rm.hl .say { border-color: #0b8a72; }
+.rm::after, .rm.hl::after { background: #111; }
+.rm.hl::after { box-shadow: 0 0 0 5px rgba(0, 0, 0, .12); }
+.roadmap::after { background: var(--line-strong); }
+@media (max-width: 900px) {
+  .rm { background: linear-gradient(90deg, #fff, #def5ee) !important; border-bottom: 1px solid #fff; }
+  .rm.hl { background: linear-gradient(90deg, #fff, #a9e5d3) !important; }
+}
+/* 联系条改为浅灰，不用暗图 */
+.contact { background: #f2f4f5; }
+.contact .bg { display: none; }
+/* 价格高亮卡改为白卡 + 顶部色条 */
+.plan.hl { background: #fff; box-shadow: 0 12px 36px rgba(0, 0, 0, .08); border-top: 3px solid var(--accent); }
+.plan.hl .nm { color: var(--ink); }
+/* 卡片：白底圆角 + 轻阴影 */
+.ncard { border-radius: 8px; overflow: hidden; border: 1px solid rgba(0, 0, 0, .08); box-shadow: 0 4px 16px rgba(0, 0, 0, .05); background: #fff; }
