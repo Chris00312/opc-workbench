@@ -194,3 +194,7 @@ Rollback: b6f258c
 ## 2026-11-10 企业研究入口版部署
 - Done: 备份到 C:\\srv\\www-backup-20261110a.zip 后上传覆盖。
 - Proof: 全部 html、main.js、style.css 线上与本地哈希一致；research.html 返回 200；/icp/ 页正常。
+
+## 2026-11-10 以老板文档为准 + 综合分析第 2 版
+- Done: 老板《产品与功能模块（完整版）V1.0》入库 docs/产品规划/，DECISIONS、PRODUCT 记录「以它为准」；综合分析 PDF 重写为第 2 版（9 页，临时目录，不入库）。
+- Not done: 官网、三份方案、备案建设书未按老板文档改，等用户确认。
