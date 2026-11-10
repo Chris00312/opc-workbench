@@ -24,6 +24,6 @@
 4. 超级个体（并入极增智脑基础版 / 工作台老板版；studio.html 跳转到 zhinao.html）：一人公司、自媒体创作者、个人顾问的 AI 订阅版（报告、PPT、Excel、自媒体助手）。
 
 ## 官网验收标准
-- 8 页（index/zhinao/workbench/solution/report/academy/insights/credits）可离线打开、互相跳转；桌面 1440 与手机 390 宽度无横向滚动、无 JS 报错
+- 9 页（index/research/zhinao/workbench/solution/report/academy/insights/credits；research = 子品牌「极增商界 · 企业研究」企业入口，公众号文章统一指向它）可离线打开、互相跳转；桌面 1440 与手机 390 宽度无横向滚动、无 JS 报错
 - 素材全部为可商用来源并在 credits.html 列明
 - 支付、表单为占位，页面明确标注“演示”
