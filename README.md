@@ -2,10 +2,21 @@
 
 ## 官网（当前主线）：`website/`
 
-极增科技产品展示网站，纯静态、无第三方依赖。参考 51WORLD 官网布局，深色科技风。
+极增商界定位为「面向一人公司（OPC）经济的 AI 驱动企业增长赋能平台」。2026-11-12 官网已按老板《产品与功能模块（完整版）V1.0》同步并部署；双轮驱动：媒体内容平台 × 极增智脑。
 
-| 文件 | 内容 |
-| --- | --- |
+- 首页：双轮驱动、六大模块、目标用户、MVP / V1 / V2 路线图。
+- 企业研究 `research.html`：数据方案、五阶段增长咨询、专项报告入口。
+- 极增智脑 `zhinao.html`：四大智能体、九大工具集与订阅规划；`workbench.html` 为统一经营工作台规划。
+- 数据方案 `solution.html`：基础诊断 1.98 万、标准方案 9.8 万、深度陪跑 29.8 万；`report.html` 保留专项报告样张。
+- 培训活动 `academy.html`、内容会员 `insights.html`、素材来源 `credits.html`。
+- `studio.html`、`talent.html` 为旧页面跳转。
+
+官网为原生 HTML/CSS/JS 静态站，无第三方依赖。核心软件尚未开发；规划能力已标注，预约/支付尚未接后台，联系方式、二维码与样张数据为示意。
+
+本地预览：`python3 -m http.server 8000 --directory website`。
+线上：[talentchain.net](https://talentchain.net)（过渡域名，HTTPS）。当前服务器为 Windows nginx，部署需备份后覆盖静态文件，保留 `/icp/`；根目录 `deploy.sh` 仅用于未来 Debian/Ubuntu 部署，默认仍发布旧 `site/`，官网需指定 `SITE_DIR=website`。
+
+--- | --- |
 | `website/index.html` | 首页：首屏视频轮播、使命、产品平台、解决方案、生命周期路线图、极增商界、联系我们 |
 | `website/report.html` | 产品 1：企业分析报告（三档） |
 | `website/workbench.html` | 产品 2：经营工作台 |

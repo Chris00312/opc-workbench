@@ -14,7 +14,7 @@
 | img-05.jpg | Pexels | cottonbro studio | https://www.pexels.com/photo/men-in-gray-suit-inside-the-office-9068367/ | Pexels License | 办公室 |
 | img-06.jpg | Pexels | Matheus Bertelli | https://www.pexels.com/photo/team-of-workers-in-meeting-15141493/ | Pexels License | 团队培训 |
 | img-07.jpg | Pexels | Tima Miroshnichenko | https://www.pexels.com/photo/man-reviewing-woman-s-resume-5439455/ | Pexels License | 人才面试/测评 |
-| img-08.jpg | Pexels | Anna Shvets | https://www.pexels.com/photo/woman-putting-phone-into-ring-light-stand-6593775/ | Pexels License | 手机内容创作/直播 |
+| img-08.jpg | AI 生成（Growth Hub 内部配图） | — | — | 自制可商用 | 现代化数字办公与数据可视化桌面（2026-11-15 替换） |
 | img-09.jpg | Pexels | Luis Quintero | https://www.pexels.com/photo/aerial-shot-of-panama-city-in-panama-14840760/ | Pexels License | 城市天际线 |
 | img-10.jpg | Pexels | Yan Krukau | https://www.pexels.com/photo/close-up-shot-of-2-person-shake-hands-7792841/ | Pexels License | 握手合作 |
 

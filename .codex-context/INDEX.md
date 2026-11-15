@@ -1,9 +1,13 @@
 # INDEX
 
-- `website/` 极增商界官网（当前主线；2026-11-06 按老板计划书重排）：index（首页，2026-11-09 起口径为「AI 赋能企业提效平台」）、zhinao（极增智脑四智能体 + 三档）、workbench（经营工作台 · 经营秘书）、solution（数据化增长方案）、report（企业分析报告）、academy（增长培训与论坛）、insights（商界洞察 + 会员）、credits；studio.html / talent.html 为跳转页（超级个体并入极增智脑个人版，人才测评暂停）
-  - `index.html` 首页；`report.html` 企业分析报告；`workbench.html` 经营工作台；`talent.html` AI 人才测评（占位）；`studio.html` 超级个体（占位）；`credits.html` 素材来源
-  - `assets/css/style.css` 全站样式；`assets/js/main.js` 公共头尾、轮播、弹窗（产品列表在 PRODUCTS 数组）
-  - `assets/brand/` 双峰 Logo SVG；`assets/media/` 视频与图片（Pexels/Mixkit），`CREDITS.md` 来源表
+- `website/` 当前 Growth Hub 企业增长赋能平台官网（2026-11-15 按《产品与功能模块 V1.0》及会议纪要改版部署，版本 `20261115g`）：
+  - `index.html`：4 屏文字进度条首屏、双轮驱动、四大智能体、六大核心产品模块、精选内容、四类场景、会员权益、三阶段路线图与主办主体简介。
+  - `insights.html`：极增商界内容服务、主题特色栏目与商界会员权益；`academy.html`：三层九级增长培训与季/月/周主题交流研讨会规划。
+  - `zhinao.html`：极增智脑四大智能体与统一入口规划；`workbench.html`：增长顾问·经营工作台（V1 规划）；`tools.html`：AI 增长赋能工具（九大业务工具集）。
+  - `consulting.html`：增长咨询服务（五大企业生命周期、三种合作方式、六步交付流程）；`solution.html`：七大分析方向与三档数据化增长方案。
+  - `about.html`：关于我们（上海领越人力资源服务中心与平台矩阵）；`contact.html`：联系我们、在线登记、人才招募、商务合作与渠道发展；`credits.html`：素材来源。
+  - `report.html` / `research.html` / `studio.html` / `talent.html`：旧页跳转，非独立产品。
+  - `assets/css/style.css` 全站样式；`assets/js/main.js` 7 栏导航、页脚、文字进度条轮播、演示表单；`assets/brand/` Logo；`assets/media/` 本地素材。
 - `site/` 旧 OPC 工作台原型（已过时，入口 `site/index.html`）
   - `checkup.html` 增长体检（五力自评 → 推荐增长系统）
   - `assets/growth-model.js` 增长极方法论数据与推荐规则；`assets/petite-vue.iife.js` 本地 Vue
@@ -25,3 +29,5 @@
 - `scripts/docgen/` 方案文档生成：`lib.js` 公共排版；`build-report-plan.js` + `make_figs.py`（产品方案）；`build-tech-plan.js` + `make_tech_figs.py` + `editor-mockup.html`（技术方案）；`build-workbench-plan.js` + `make_wb_figs.py` + `wb-chat-mockup.html` + `wb-meeting-mockup.html` + `wb-opc-mockup.html`（工作台方案）
 - `.codex-context/REPORT_SPEC.md` 报告产品的方法与规则规格（给 AI 开发用）；`.codex-context/TECH_SPEC.md` 软件技术规格（技术栈、目录、流水线、编辑器、部署、阶段验收）；`.codex-context/WORKBENCH_SPEC.md` 经营工作台产品形态规格
 - `.codex-context/` 项目状态文件；`VIBELOG.md` 变更日志
+
+- 产品定位基准：`docs/产品规划/老板-产品与功能模块（完整版）V1.0.docx`；旧报告/工作台技术规格与三份方案冲突处以此为准。

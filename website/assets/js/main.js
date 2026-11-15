@@ -1,15 +1,16 @@
-/* 极增商界官网：公共导航与页脚、首屏轮播、弹窗（无第三方依赖）。导航按老板商业计划书 202611 版的模块组织。 */
+/* Growth Hub 企业增长赋能平台公共导航、页脚、首屏轮播与演示表单交互（原生 JS，无第三方依赖）。
+   依据《产品与功能模块（完整版）V1.0》5.1 六大产品模块与备案主体对齐：上海领越人力资源服务中心。 */
 (function () {
   var page = document.body.getAttribute('data-page') || 'home';
 
   var PRODUCTS = [
-    { id: 'research', href: 'research.html', name: '企业研究' },
-    { id: 'zhinao', href: 'zhinao.html', name: '极增智脑' },
-    { id: 'workbench', href: 'workbench.html', name: '经营工作台' },
-    { id: 'solution', href: 'solution.html', name: '数据化增长方案' },
-    { id: 'report', href: 'report.html', name: '企业分析报告' },
-    { id: 'academy', href: 'academy.html', name: '增长培训与活动' },
-    { id: 'insights', href: 'insights.html', name: '商界洞察 · 会员' }
+    { id: 'insights', href: 'insights.html', name: '极增商界 · 内容服务平台' },
+    { id: 'zhinao', href: 'zhinao.html', name: '极增智脑 · 四大智能体' },
+    { id: 'workbench', href: 'workbench.html', name: '增长顾问 · 经营工作台' },
+    { id: 'academy', href: 'academy.html', name: '增长培训与主题活动' },
+    { id: 'solution', href: 'solution.html', name: 'AI 增长数据赋能解决方案' },
+    { id: 'consulting', href: 'consulting.html', name: '增长咨询服务' },
+    { id: 'tools', href: 'tools.html', name: 'AI 增长赋能工具（九大工具集）' }
   ];
 
   function drop(title, intro, links) {
@@ -17,25 +18,35 @@
       links.map(function (l) { return '<a href="' + l[0] + '">' + l[1] + (l[2] || '') + '</a>'; }).join('') + '</div></div></div>';
   }
 
-  // ids：本菜单在哪些页面上高亮
-  function item(ids, href, name, intro, links) {
-    return '<li class="has-drop"><a href="' + href + '" class="' + (ids.indexOf(page) >= 0 ? 'active' : '') + '">' + name + ' <i class="caret"></i></a>' + drop(name, intro, links) + '</li>';
+  function item(ids, href, label, fullTitle, intro, links) {
+    return '<li class="has-drop"><a href="' + href + '" class="' + (ids.indexOf(page) >= 0 ? 'active' : '') + '">' + label + ' <i class="caret"></i></a>' + drop(fullTitle, intro, links) + '</li>';
   }
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="极增商界首页"><img class="logo-img" src="assets/brand/mark-light.svg" alt="">极增商界</a>' +
+    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><span class="logo-main">Growth Hub</span><span class="logo-sub">企业增长赋能平台</span></a>' +
     '<ul class="nav-links">' +
-      '<li><a href="index.html" class="' + (page === 'home' ? 'active' : '') + '">首页</a></li>' +
-      item(['research', 'solution', 'report'], 'research.html', '企业研究', '极增商界 · 企业研究：面向中型企业与上市公司的增长诊断与战略研究，资深顾问主持，AI 负责整理和起草。',
-        [['research.html', '企业研究首页'], ['report.html', '企业分析报告', '<span class="badge hot">Hot</span>'], ['solution.html', '数据化增长方案'], ['solution.html#coach', '顾问陪跑与专项咨询']]) +
-      item(['zhinao', 'workbench'], 'zhinao.html', '极增智脑', '主动型 AI 智能体：知道你的目标，每天盯着数据，发现问题先来找你。',
-        [['workbench.html', '经营秘书 · 经营工作台', '<span class="badge new">New</span>'], ['zhinao.html#diagnose', '增长诊断智能体'], ['zhinao.html#content', '内容生成智能体'], ['zhinao.html#ops', '运营自动化智能体'], ['zhinao.html#tiers', '版本与订阅']]) +
-      item(['academy'], 'academy.html', '培训活动', '从 AI 工具实操到增长方法论和行业专项；月度研讨、周度沙龙。',
-        [['academy.html#training', '增长培训'], ['academy.html#format', '学习形式'], ['academy.html#events', '研讨 · 沙龙']]) +
-      item(['insights'], 'insights.html', '商界洞察', '围绕「可验证的增长洞察」：行业数据速览、方法论拆解、月度数据报告。',
-        [['insights.html#columns', '每日动态 · 每周深度'], ['insights.html#columns', '月度洞察报告'], ['insights.html#latest', '最新文章'], ['insights.html#member', '商界会员']]) +
-      '<li><a href="index.html#about">关于我们</a></li>' +
+      item(['home'], 'index.html', '首页', 'Growth Hub · AI 驱动企业增长赋能平台',
+        '面向一人公司（OPC）与成长期中小企业，以媒体内容与极增智脑双轮驱动，连接六大核心产品模块。',
+        [['index.html#agents', '极增智脑 · 智能体入口'], ['index.html#products', '六大核心产品模块'], ['index.html#insights', '商界洞察精选'], ['index.html#cases', '典型应用场景'], ['index.html#membership', '会员权益与转化'], ['index.html#roadmap', '三期建设路线图']]) +
+      item(['insights'], 'insights.html', '极增商界', '极增商界 · 内容服务与商界会员',
+        '整合商界洞察、行业数据速览、深度报告与商界会员专栏（极增夜话、增长60秒、增长新锐、权益注册）。',
+        [['insights.html#columns', '商界洞察 · 行业数据速览'], ['insights.html#latest', '深度报告与最新研究'], ['insights.html#community', '极增夜话 · 增长60秒 · 增长新锐'], ['insights.html#member', '会员注册与权益体系']]) +
+      item(['zhinao', 'workbench', 'tools'], 'zhinao.html', '极增智脑', '极增智脑 · 智能体、工作台与九大赋能工具集',
+        '涵盖四大智能体、统一入口「增长顾问 · 经营工作台」与覆盖企业全经营场景的九大 AI 增长赋能工具集。',
+        [['workbench.html', '增长顾问 · 经营工作台', '<span class="badge new">V1</span>'], ['zhinao.html#content', '内容生成智能体', '<span class="badge hot">MVP</span>'], ['zhinao.html#diagnose', '增长诊断智能体', '<span class="badge hot">MVP</span>'], ['zhinao.html#data', '数据洞察智能体'], ['zhinao.html#ops', '运营自动化智能体'], ['tools.html', 'AI 增长赋能工具（九大工具集）', '<span class="badge new">V1</span>']]) +
+      item(['academy'], 'academy.html', '培训活动', '增长培训服务与主题交流研讨会',
+        '三层九级成长课程与四大核心学习方向，配合季度主题交流、月度专题研讨会与周度垂直沙龙。',
+        [['academy.html#training', '三层九级增长培训体系'], ['academy.html#courses', '首席增长官 · 企业增长分析师'], ['academy.html#courses', '商业增长设计 · 商业模式创新'], ['academy.html#format', '线上录播 · 直播 · 小班工作坊'], ['academy.html#events', '主题交流与研讨会（季 / 月 / 周）'], ['academy.html#certification', '企业增长分析师能力认证规划']]) +
+      item(['consulting'], 'consulting.html', '增长咨询', '增长咨询服务（AI 增长咨询工作台）',
+        '按企业生命周期五大阶段划分战略咨询议题，采用「AI 辅助整理 + 专家主诊」模式，提供单次、季度与年度陪跑。',
+        [['consulting.html#startup', '初创期企业增长战略咨询'], ['consulting.html#growth', '成长期企业增长战略咨询'], ['consulting.html#expansion', '扩张期企业增长战略咨询'], ['consulting.html#maturity', '成熟期企业增长战略咨询'], ['consulting.html#transform', '转型期企业增长战略咨询'], ['consulting.html#process', '咨询预约与六步交付流程']]) +
+      item(['solution'], 'solution.html', '数据方案', 'AI 增长数据赋能解决方案',
+        '围绕「数据诊断—模型构建—策略生成—效果追踪」四步流程，覆盖七大增长分析方向与三档交付方案。',
+        [['solution.html#directions', '多业务（母合）与可持续增长分析'], ['solution.html#directions', '主导性业务与价值链增长分析'], ['solution.html#directions', '跨区域与利基市场增长分析'], ['solution.html#directions', '增长战略与模式匹配度分析'], ['solution.html#plans', '三档交付方案（诊断 · 建模 · 陪跑）'], ['solution.html#flow', '四步标准交付流程']]) +
+      item(['about', 'contact', 'credits'], 'about.html', '关于我们', '关于我们 · 上海领越人力资源服务中心',
+        '了解主办运营主体上海领越人力资源服务中心、平台定位与六大产品矩阵，以及联系方式、人才招募与商务合作。',
+        [['about.html#lingyue', '上海领越人力资源服务中心'], ['about.html#platform', 'Growth Hub 平台介绍'], ['about.html#business', '核心业务与产品矩阵'], ['contact.html#info', '联系我们与在线留言'], ['contact.html#jobs', '人才招募'], ['contact.html#business', '商务合作与渠道发展']]) +
     '</ul>' +
     '<button class="nav-pill" data-open="contact">预约咨询</button>' +
     '<button class="menu-btn" id="menuBtn" aria-label="打开菜单"><span></span><span></span><span></span></button>' +
@@ -43,38 +54,60 @@
 
   var footer =
     '<section class="contact"><div class="bg"><img data-media src="assets/media/img-04.jpg" alt="" loading="lazy"></div><div class="container">' +
-      '<div><h2>联系我们</h2><p>成为极增商界的会员、客户或合作伙伴，让增长变成一套可执行的方法</p><button class="btn btn-primary" data-open="contact">联系我们</button></div>' +
-      '<div class="qrs"><div><i></i>关注公众号<br>了解更多企业增长洞察</div><div><i></i>关注视频号<br>观看管理实践案例</div></div>' +
+      '<div><h2>联系我们</h2><p>成为 Growth Hub 企业增长赋能平台的会员、客户或合作伙伴，让增长变成一套可执行的方法</p><button class="btn btn-primary" data-open="contact">预约咨询</button></div>' +
+      '<div class="qrs"><div><i></i>关注公众号<br>获取深度图文与行业洞察</div><div><i></i>关注视频号<br>观看管理与增长实践案例</div></div>' +
     '</div></section>' +
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
-      '<div class="about"><a class="logo" href="index.html"><img class="logo-img" src="assets/brand/mark-dark.svg" alt="">极增商界</a>' +
-        '<p>AI 赋能企业提效平台。智能体、数据、服务与内容四位一体，让各规模企业的老板和团队少做重复的事、早发现问题、把定了的事办成。</p>' +
-        '<ul><li>官方邮箱：bd@example.com</li><li>客服热线：400-000-0000</li><li>工作时间：周一至周五 9:00–18:00</li></ul></div>' +
-      '<div><h6>产品中心</h6><ul>' + PRODUCTS.map(function (p) { return '<li><a href="' + p.href + '">' + p.name + '</a></li>'; }).join('') + '</ul></div>' +
-      '<div><h6>商界洞察</h6><ul><li><a href="insights.html#columns">内容栏目</a></li><li><a href="insights.html#member">商界会员</a></li><li><a href="report.html#sample">报告样张</a></li><li><a href="index.html#roadmap">增长路线图</a></li></ul></div>' +
-      '<div><h6>关于我们</h6><ul><li><a href="index.html#about">公司介绍</a></li><li><a href="#" data-open="contact">商务合作</a></li><li><a href="credits.html">素材来源</a></li></ul></div>' +
+      '<div class="about"><a class="logo" href="index.html"><span class="logo-main">Growth Hub</span><span class="logo-sub">企业增长赋能平台</span></a>' +
+        '<p>AI 驱动企业增长赋能平台，由上海领越人力资源服务中心主办运营。以媒体内容与极增智脑双轮驱动，连接内容、智能体、培训、研讨、数据方案与咨询服务。</p>' +
+        '<ul><li>主办单位：上海领越人力资源服务中心</li><li>联系邮箱：待补充</li><li>联系电话：待补充</li><li>办公地址：待补充</li></ul></div>' +
+      '<div><h6>六大产品模块</h6><ul>' +
+        '<li><a href="insights.html">内容服务平台（极增商界）</a></li>' +
+        '<li><a href="zhinao.html">AI 智能体工具（极增智脑）</a></li>' +
+        '<li><a href="academy.html#training">增长培训服务</a></li>' +
+        '<li><a href="academy.html#events">主题交流与研讨会</a></li>' +
+        '<li><a href="solution.html">数据化增长方案</a></li>' +
+        '<li><a href="consulting.html">增长咨询服务</a></li>' +
+      '</ul></div>' +
+      '<div><h6>工具与延伸</h6><ul>' +
+        '<li><a href="workbench.html">增长顾问 · 经营工作台</a></li>' +
+        '<li><a href="tools.html">AI 增长赋能工具（九大工具集）</a></li>' +
+        '<li><a href="insights.html#columns">商界洞察 · 行业数据速览</a></li>' +
+        '<li><a href="insights.html#latest">深度研究报告</a></li>' +
+        '<li><a href="index.html#roadmap">产品建设路线图</a></li>' +
+      '</ul></div>' +
+      '<div><h6>关于与联系</h6><ul>' +
+        '<li><a href="about.html#lingyue">上海领越人力资源服务中心</a></li>' +
+        '<li><a href="about.html#platform">Growth Hub 平台介绍</a></li>' +
+        '<li><a href="contact.html#info">联系方式与留言</a></li>' +
+        '<li><a href="contact.html#jobs">人才招募</a></li>' +
+        '<li><a href="contact.html#business">商务合作与渠道</a></li>' +
+        '<li><a href="credits.html">素材来源</a></li>' +
+      '</ul></div>' +
     '</div>' +
-    '<div class="footer-bottom"><span>© 2026 上海极增科技有限公司 · 极增商界　ICP 备案号：待备案</span><span>页面中的联系方式、价格与数据均为示意　|　<a href="credits.html">图片与视频来源</a></span></div>' +
+    '<div class="footer-bottom"><span>© 2026 上海领越人力资源服务中心 · Growth Hub 企业增长赋能平台　ICP 备案号：待备案</span><span>联系方式待补充；规划功能尚未上线，服务以正式合同为准　|　<a href="credits.html">图片与视频来源</a></span></div>' +
     '</div></footer>';
 
   var modals =
     '<div class="modal" id="m-contact" role="dialog" aria-modal="true" aria-labelledby="mc-t"><div class="modal-box">' +
       '<button class="modal-close" data-close aria-label="关闭">×</button>' +
-      '<h3 id="mc-t">预约沟通</h3><p>留下联系方式，顾问会在 1 个工作日内联系您。</p>' +
+      '<h3 id="mc-t">预约咨询与意向登记</h3><p>了解产品与服务，登记您的诉求。当前表单为演示，尚未接入后台。</p>' +
       '<form data-form="contact">' +
-        '<label class="field"><span>您的称呼</span><input required name="name" placeholder="如：王总"></label>' +
-        '<label class="field"><span>手机号</span><input required name="tel" type="tel" placeholder="138 0000 0000"></label>' +
-        '<label class="field"><span>公司规模</span><select name="size"><option>30 人以下</option><option>30–100 人</option><option>100–500 人</option><option>500 人以上</option><option>上市公司</option></select></label>' +
-        '<label class="field"><span>感兴趣的产品</span><select name="product">' + PRODUCTS.map(function (p) { return '<option>' + p.name + '</option>'; }).join('') + '</select></label>' +
-        '<button class="btn btn-primary btn-lg" style="width:100%;margin-top:6px">提交预约</button>' +
+        '<label class="field"><span>您的姓名 / 称呼</span><input required name="name" placeholder="如：王先生 / 张女士"></label>' +
+        '<label class="field"><span>公司 / 组织名称</span><input name="company" placeholder="如：XX 有限公司（OPC 可填个人业务）"></label>' +
+        '<label class="field"><span>手机号</span><input required name="tel" type="tel" placeholder="请输入 11 位手机号"></label>' +
+        '<label class="field"><span>公司规模</span><select name="size"><option>一人公司 / 超级个体</option><option>2–10 人</option><option>11–30 人</option><option>30–100 人</option><option>100–500 人</option><option>500 人以上</option><option>上市公司</option></select></label>' +
+        '<label class="field"><span>诉求类型 / 感兴趣模块</span><select name="product">' + PRODUCTS.map(function (p) { return '<option>' + p.name + '</option>'; }).join('') + '<option>商务合作 / 渠道代理</option><option>人才招募应聘</option></select></label>' +
+        '<label class="field"><span>简要说明</span><textarea name="note" placeholder="请简述您当前的增长阶段或希望解决的问题（选填）"></textarea></label>' +
+        '<button class="btn btn-primary btn-lg" style="width:100%;margin-top:6px">提交登记</button>' +
         '<p class="note" style="margin-top:12px">演示版：表单暂未接入后台，提交后不会真实发送。</p>' +
       '</form></div></div>' +
     '<div class="modal" id="m-pay" role="dialog" aria-modal="true" aria-labelledby="mp-t"><div class="modal-box">' +
       '<button class="modal-close" data-close aria-label="关闭">×</button>' +
-      '<h3 id="mp-t">购买 <span data-pay-name>标准报告</span></h3><p>支付完成后可在线查看并下载 PDF 报告。</p>' +
+      '<h3 id="mp-t">开通 <span data-pay-name>标准方案</span></h3><p>后台与支付系统建设中，上线后支持扫码支付与电子发票申请。</p>' +
       '<div class="pay"><div><i></i>微信支付</div><div><i></i>支付宝</div></div>' +
-      '<p class="note">支付功能开发中：上线后接入微信支付 / 支付宝扫码，这里先占位。</p>' +
+      '<p class="note">演示占位：当前尚未接入线上收款，意向登记请使用「预约咨询」表单。</p>' +
     '</div></div>' +
     '<div class="toast" id="toast"></div>';
 
@@ -101,10 +134,20 @@
   document.querySelectorAll('[data-carousel]').forEach(function (c) {
     var slides = c.querySelectorAll('.slide'), dots = c.querySelector('.dots'), cur = -1, timer, DUR = 7000;
     if (!dots) return;
+    var hasTabs = false;
     slides.forEach(function (s, i) {
-      var b = document.createElement('button'); b.setAttribute('aria-label', '第 ' + (i + 1) + ' 屏');
+      var tab = s.getAttribute('data-tab');
+      var b = document.createElement('button');
+      if (tab) {
+        hasTabs = true;
+        b.textContent = tab;
+        b.setAttribute('aria-label', tab);
+      } else {
+        b.setAttribute('aria-label', '第 ' + (i + 1) + ' 屏');
+      }
       b.style.setProperty('--dur', DUR + 'ms'); b.addEventListener('click', function () { go(i); }); dots.appendChild(b);
     });
+    if (hasTabs) dots.classList.add('hero-tabs');
     var bs = dots.querySelectorAll('button');
     function shownVideo(s) {
       var vs = s.querySelectorAll('video');
@@ -154,7 +197,7 @@
   document.addEventListener('submit', function (e) {
     var fm = e.target.closest('[data-form]'); if (!fm) return;
     e.preventDefault(); var m = fm.closest('.modal'); if (m) m.classList.remove('open'); fm.reset();
-    var t = document.getElementById('toast'); t.textContent = '已收到（演示版，未真实提交）'; t.classList.add('show');
+    var t = document.getElementById('toast'); t.textContent = '已登记（演示版，后台接口接入中）'; t.classList.add('show');
     setTimeout(function () { t.classList.remove('show'); }, 2600);
   });
 })();

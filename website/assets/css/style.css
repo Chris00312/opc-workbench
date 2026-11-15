@@ -1,4 +1,4 @@
-/* 极增商界官网 v4（2026-11-09）—— 白底为主、黑底为辅：黑色导航与首屏，正文区块白 / 浅灰交替，少量黑色强调带；
+/* 极增商界官网（2026-11-12）—— 白色导航、白灰正文、黑色首屏与页脚；六模块与分期产品规划共用组件；
    粗体大字、居中区块标题、方角实心按钮、大图满版。品牌色：青绿 #1ed6b0（填充用），浅底上的文字用深青绿 --ink。
    深色区块通过「深色作用域」重设变量，组件只引用变量，深浅两用。 */
 :root {
@@ -15,7 +15,7 @@
   --accent: #1ed6b0;
   --ink: #0b8a72;
   --accent-dark: #0c3d33;
-  --nav-h: 60px;
+  --nav-h: 66px;
   --max: 1300px;
 }
 /* 深色作用域：只有首屏、页脚、图片卡片和手机示意是深色（参照英伟达官网：导航白色，中间区块全部浅色） */
@@ -37,14 +37,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 ul { list-style: none; }
 .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 40px; }
 
-/* ---------- 导航：黑色实底 60px，菜单加粗带小三角 ---------- */
+/* ---------- 导航：白色实底 66px，宽屏适配 8 个栏目 ---------- */
 .nav { position: fixed; inset: 0 0 auto; height: var(--nav-h); background: #000; z-index: 100; }
-.nav .container { height: 100%; display: flex; align-items: center; max-width: 1440px; }
-.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 19px; letter-spacing: 1px; white-space: nowrap; }
+.nav .container { height: 100%; display: flex; align-items: center; max-width: 1480px; padding: 0 28px; }
+.logo { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; white-space: nowrap; flex-shrink: 0; margin-right: 12px; }
+.logo-main { font-weight: 900; font-size: 20px; letter-spacing: .5px; }
+.logo-sub { font-size: 10.5px; font-weight: 600; color: var(--ink); letter-spacing: 1.2px; margin-top: 3px; }
 .logo-mark { width: 34px; height: 34px; border-radius: 50%; background: #fff; color: #000; display: grid; place-items: center; font-size: 16px; font-weight: 900; }
-.nav-links { display: flex; flex: 1; justify-content: center; gap: 6px; height: 100%; }
+.nav-links { display: flex; flex: 1; justify-content: center; gap: 2px; height: 100%; }
 .nav-links > li { position: relative; height: 100%; }
-.nav-links > li > a { display: flex; align-items: center; gap: 6px; height: 100%; padding: 0 20px; font-size: 15px; font-weight: 700; transition: color .2s; }
+.nav-links > li > a { display: flex; align-items: center; gap: 5px; height: 100%; padding: 0 14px; font-size: 14.5px; font-weight: 700; white-space: nowrap; transition: color .2s; }
 .nav-links > li > a:hover, .nav-links > li > a.active { color: var(--ink); }
 .caret { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid currentColor; }
 .drop { position: fixed; left: 0; right: 0; top: var(--nav-h); background: rgba(0, 0, 0, .96); opacity: 0; visibility: hidden; transition: .25s; border-top: 1px solid var(--line); }
@@ -74,7 +76,7 @@ ul { list-style: none; }
 .btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
 /* ---------- 首屏轮播 ---------- */
-.hero { position: relative; height: 88vh; min-height: 600px; overflow: hidden; background: #000; }
+.hero { position: relative; height: 88vh; min-height: 640px; overflow: hidden; background: #000; }
 .slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 1s, visibility 1s; display: flex; align-items: center; }
 .slide.on { opacity: 1; visibility: visible; }
 .slide-media { position: absolute; inset: 0; }
@@ -82,11 +84,11 @@ ul { list-style: none; }
 .slide-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .74) 0%, rgba(0, 0, 0, .42) 55%, rgba(0, 0, 0, .18) 100%); }
 .slide.on .kb { animation: kb 12s ease-out forwards; }
 @keyframes kb { from { transform: scale(1.1); } to { transform: scale(1); } }
-.slide .container { position: relative; z-index: 2; max-width: 1440px; }
-.slide .brand { display: flex; align-items: center; gap: 16px; font-size: 44px; font-weight: 300; font-style: italic; letter-spacing: 1px; margin-bottom: 26px; }
+.slide .container { position: relative; z-index: 2; max-width: 1440px; padding-bottom: 54px; }
+.slide .brand { display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; font-style: normal; letter-spacing: 1.5px; color: rgba(255, 255, 255, .86); margin-bottom: 14px; }
 .slide .brand i { width: 64px; height: 64px; border-radius: 50%; background: #fff; color: #000; font-style: normal; font-weight: 900; font-size: 30px; display: grid; place-items: center; }
 .slide h1 { font-size: clamp(36px, 5vw, 72px); font-weight: 900; line-height: 1.2; letter-spacing: 1px; }
-.slide .sub { font-size: clamp(18px, 2.2vw, 32px); margin: 22px 0 70px; font-weight: 500; }
+.slide .sub { font-size: clamp(18px, 2.2vw, 32px); margin: 22px 0 52px; font-weight: 500; }
 .slide .brand, .slide h1, .slide .sub, .slide .btns { opacity: 0; transform: translateY(24px); transition: .8s; }
 .slide.on .brand { opacity: 1; transform: none; transition-delay: .15s; }
 .slide.on h1 { opacity: 1; transform: none; transition-delay: .3s; }
@@ -96,6 +98,11 @@ ul { list-style: none; }
 .dots button { width: 12px; height: 12px; border-radius: 6px; background: rgba(255, 255, 255, .35); transition: width .3s; position: relative; overflow: hidden; }
 .dots button.on { width: 46px; }
 .dots button.on::after { content: ""; position: absolute; inset: 0; background: #fff; transform-origin: left; animation: prog var(--dur, 7s) linear forwards; }
+.dots.hero-tabs { bottom: 26px; width: min(960px, calc(100vw - 80px)); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.dots.hero-tabs button { width: auto; height: auto; border-radius: 0; background: none; padding: 0 0 10px; text-align: left; color: rgba(255, 255, 255, .62); font-size: 13.5px; font-weight: 600; letter-spacing: .4px; border-bottom: 2px solid rgba(255, 255, 255, .24); overflow: visible; transition: color .25s; white-space: nowrap; }
+.dots.hero-tabs button:hover { color: rgba(255, 255, 255, .92); }
+.dots.hero-tabs button.on { width: auto; color: #fff; }
+.dots.hero-tabs button.on::after { top: auto; bottom: -2px; left: 0; right: 0; height: 2px; background: var(--accent); }
 @keyframes prog { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 .only-m { display: none !important; }
 
@@ -362,7 +369,7 @@ ul { list-style: none; }
   .only-d { display: none !important; }
   .only-m { display: block !important; }
   .slide .container { padding-top: var(--nav-h); }
-  .slide .brand { font-size: 28px; margin-bottom: 18px; }
+  .slide .brand { font-size: 14.5px; letter-spacing: 1px; margin-bottom: 10px; }
   .slide .brand i { width: 44px; height: 44px; font-size: 20px; }
   .slide .sub { margin: 16px 0 40px; }
   .block { padding: 72px 0; }
@@ -422,10 +429,10 @@ ul { list-style: none; }
   box-shadow: 0 -10px 60px rgba(30, 214, 176, .65), 0 -40px 160px rgba(30, 214, 176, .35), inset 0 18px 40px rgba(30, 214, 176, .45); }
 .mission-bg.horizon::after { background: radial-gradient(ellipse 60% 30% at 50% 78%, rgba(30, 214, 176, .25), transparent 70%); }
 @media (max-width: 900px) { .mission-bg.horizon::before { width: 1200px; margin-left: -600px; bottom: -760px; height: 1000px; } }
-/* 导航直接罗列产品（7 项），窄屏提前收进菜单 */
-.nav-links > li > a { padding: 0 16px; }
-@media (max-width: 1280px) { .nav-links > li > a { padding: 0 10px; font-size: 14px; } .logo { font-size: 17px; } }
-@media (max-width: 1100px) {
+/* 导航直接罗列 8 项核心栏目，窄屏提前收进菜单 */
+.nav-links > li > a { padding: 0 12px; }
+@media (max-width: 1360px) { .nav-links > li > a { padding: 0 9px; font-size: 13.5px; } .logo-main { font-size: 18px; } }
+@media (max-width: 1120px) {
   .nav-links { display: none; }
   .menu-btn { display: block; }
   .nav .container { justify-content: space-between; }
@@ -468,7 +475,7 @@ ul { list-style: none; }
 
 /* ---------- 2026-11-09 v4.1：按英伟达官网比例，黑色只留首屏与页脚 ---------- */
 .nav { background: #fff; color: #111; border-bottom: 1px solid rgba(0, 0, 0, .08); }
-.drop { background: rgba(255, 255, 255, .98); box-shadow: 0 16px 40px rgba(0, 0, 0, .08); border-top: 1px solid rgba(0, 0, 0, .06); }
+.drop { background: #fff; box-shadow: 0 16px 40px rgba(0, 0, 0, .08); border-top: 1px solid rgba(0, 0, 0, .06); }
 .menu-btn span { background: #111; }
 .nav.open .nav-links { background: #fff !important; }
 .block-dark2 { --surface: #e7eaed; }
@@ -506,3 +513,40 @@ ul { list-style: none; }
 
 /* 两张卡片的方案区（如培训页活动），桌面端居中两列 */
 @media (min-width: 901px) { .plans.two { grid-template-columns: repeat(2, 1fr); max-width: 860px; margin-left: auto; margin-right: auto; } }
+
+/* 2026-11-12：六大模块、路线图与工具集；复用原有品牌视觉与移动端布局。 */
+.modules { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.modules .pcard { height: 420px; }
+.modules .pcard .head b { font-size: 36px; }
+.centered { justify-content: center; margin-top: 36px; }
+.cols > div { min-width: 0; }
+.plan .pr { overflow-wrap: anywhere; font-size: clamp(24px, 2.5vw, 36px); }
+@media (max-width: 1180px) and (min-width: 901px) { .modules { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) { .modules { grid-template-columns: 1fr; } .modules .pcard { height: 360px; } }
+
+/* ---------- 2026-11-15：Growth Hub 改版新增排版组件 ---------- */
+.cards-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.cards-grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards-grid.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.card-box { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; transition: border-color .2s, transform .2s; }
+.card-box:hover { border-color: var(--accent); transform: translateY(-2px); }
+.card-box .tag { font-size: 12px; font-weight: 700; color: var(--ink); letter-spacing: 1px; }
+.card-box h4 { font-size: 20px; font-weight: 800; line-height: 1.4; }
+.card-box p { font-size: 14.5px; color: var(--text-2); line-height: 1.8; flex: 1; }
+.card-box ul { border-top: 1px solid var(--line); padding-top: 12px; font-size: 13.5px; color: var(--text-3); display: grid; gap: 6px; }
+.card-box .card-actions { margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap; }
+.field textarea { width: 100%; min-height: 92px; padding: 10px 12px; background: #fff; border: 1px solid #c9c9c9; color: #111; font: inherit; font-size: 14px; resize: vertical; }
+.field textarea:focus { outline: none; border-color: var(--accent); }
+.form-panel { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 34px 32px; box-shadow: 0 8px 28px rgba(0, 0, 0, .05); }
+.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 680px; margin-top: 38px; border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 20px; }
+.hero-stats div b { display: block; font-size: 24px; font-weight: 900; color: var(--accent); }
+.hero-stats div span { font-size: 13px; color: #ccc; }
+@media (max-width: 1180px) { .cards-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 900px) {
+  .cards-grid, .cards-grid.two, .cards-grid.four { grid-template-columns: 1fr; }
+  .hero-stats { display: none; }
+  .slide .container { padding-top: calc(var(--nav-h) + 24px); padding-bottom: 96px; }
+  .dots.hero-tabs { bottom: 20px; width: calc(100vw - 40px); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
+  .dots.hero-tabs button { font-size: 12px; padding-bottom: 7px; }
+  .form-panel { padding: 24px 20px; }
+}
