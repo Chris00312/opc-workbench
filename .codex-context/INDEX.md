@@ -22,7 +22,7 @@
 - `deploy.sh` 服务器一键部署（nginx，默认发布 site/，`SITE_DIR=website` 发布官网）
 - `scripts/pack.sh` 打包 site/、website/、deploy.sh 为 `dist/opc-site.tar.gz`
 - `deploy/` 部署包（*.tar.gz 不入库；`jizeng-site.tar.gz` 与 website/ 一致）
-- `docs/部署说明.md` 部署步骤（服务器信息为占位符）；`docs/计划书通俗解读.md`；`docs/增长极方法论.md` 前身业务框架
+- `docs/部署说明.md` 部署步骤（服务器信息为占位符）；`docs/技术部署书_99元服务器版.md` / `.pdf` 基于 99 元 ECS 的分阶段架构与运维部署方案（2026-11-16 定稿）；`docs/计划书通俗解读.md`；`docs/增长极方法论.md` 前身业务框架
 - `docs/产品规划/` 给人看的规划文档：`AI企业分析报告-产品方案.docx`（Word，图文版，由 `scripts/docgen/` 生成）；`样例/奥托立夫战略评估报告.pdf`（报告模板）
 - `docs/产品规划/AI企业分析报告-技术方案.docx` 软件技术方案（Word，由 `scripts/docgen/build-tech-plan.js` 生成）
 - `docs/产品规划/经营工作台-产品方案.docx` 经营工作台产品方案（Word，由 `scripts/docgen/build-workbench-plan.js` 生成）

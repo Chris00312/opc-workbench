@@ -12,12 +12,12 @@ Last Updated: 2026-11-16（晚）
 - 合规与清理：移除全部备案敏感词（论坛、快讯、投顾、投资对接、公开培训/课程/公开课/训练营等）；清除所有非 V1.0 文档遗留内容；全站联系方式统一更新为 `021-57876227` / `johnsuncq@aliyun.com` / 注册住所。
 - 首屏交互与标识：4 屏核心轮播（`01 平台总览`、`02 研习与活动`、`03 智脑与工具`、`04 方案与咨询`）+ 底部文字进度条交互；已移除第 1 屏 `.hero-stats` 指标条并将首屏正文居中略偏下排布；左上角及页脚「Growth Hub」采用 AI 生成并经透明去背与双色适配精修的文字 Logo（`logo-wordmark-light.png` / `logo-wordmark-dark.png`，V1 宽肩圆方科技折叠风）；替换 `img-08.jpg` 为现代办公与数据可视化 AI 配图（`?v=20261115b`）。
 - website/：11 个主要静态页面（`index`、`insights`、`zhinao`、`workbench`、`academy`、`consulting`、`solution`、`tools`、`about`、`contact`、`credits`）+ 4 个跳转页（`report`、`research`、`studio`、`talent`），原生 HTML/CSS/JS；`assets/brand/` 新增 `logo-wordmark-light.png` / `logo-wordmark-dark.png`。
-- 核心软件尚未开发：无 `server/`、`web/` 应用骨架；后续按 MVP「内容—诊断—转化」推进，正式阿里云 ECS 推荐 `2 vCPU / 4 GiB`（华东 2 上海 / 华东 1 杭州）。
+- 核心软件尚未开发：无 `server/`、`web/` 应用骨架；后续按 MVP「内容—诊断—转化」推进。因上海可用区 K 2027-07-15 停服导致 199 元套餐下线，正式阿里云 ECS 改选 `ecs.e-c1m1.large`（99 元/年，2 vCPU / 2 GiB，华东 1 杭州可用区 J，3M 固定带宽，40G ESSD Entry），重负载走云服务外置（详见 `docs/技术部署书_99元服务器版.md` / `.pdf`）。
 - 部署：现有阿里云 Windows ECS + nginx，站点 `C:\srv\www`；域名 `https://talentchain.net` 与 `www`，已有 HTTPS 自动续期；`/icp/` 上传页与 `icp-upload` 服务完整保留。
 
 ## Latest Run
-- result: 官网按组网方案书排查整改并上线（版本 `20261116f`）：撤下支付弹窗与「订阅/加油包/资料下载」等线上收费表述；新增 `privacy.html` 隐私说明与表单知情同意；直播改线上专题答疑、「投资与并购」改「并购整合协同」；页脚公示统一社会信用代码。方案书 v2（Word + PDF，临时目录不入库）已按新版重拍截图并补隐私页。
-- proof: 线上 SHA-256 抽查与本地一致；8 页 375px 无横向溢出、无脚本报错；ECS 购买页实测 u1 2核4G + ESSD Entry 80G + 5M 固定带宽 + 1 年 = ¥199（上海，企业账号命中，系统盘选 AutoPL 会失去优惠）。
-- risks: ① growthhub.cn 持有者为「上海国澍投资管理中心（有限合伙）」，非领越，须先过户（阿里云域名详情 → 更改（过户）→ 快速过户，选领越模板 ID 9588248，手机验证码；已备案域名不能过户，须先过户再备案）；② 域名联系人邮箱 johnsuncq@aliyun.com 验证未通过；③ talentchain.net 备案网站名「人才供应链」与现放内容不一致；④ 公众号/视频号二维码仍为占位；⑤ `/icp/` 上传页备案资料交齐后须删除。
+- result: 官网按组网方案书排查整改并上线（版本 `20261116f`）；更新服务器比价 PDF（¥99/年 vs 2年 ¥2,440.97，临时目录）；通过浏览器 DevTools MCP 将 99 元 e 实例套餐（杭州可用区 J，¥99.00/年）加入阿里云「配置清单」第 1 行；完成并定稿 `docs/技术部署书_99元服务器版.md` 与 5 页排版版 `.pdf`。
+- proof: 线上 SHA-256 抽查与本地一致；8 页 375px 无横向溢出、无脚本报错；阿里云配置报价器截图实证 99 元 e 实例（`ecs.e-c1m1.large`，华东1 杭州可用区 J，¥99.00）已入清单；部署书 PDF 5 页逐页 PNG 核查无截断无溢出。
+- risks: ① growthhub.cn 持有者为「上海国澍投资管理中心（有限合伙）」，非领越，须先过户（阿里云域名详情 → 更改（过户）→ 快速过户，选领越模板 ID 9588248，手机验证码；已备案域名不能过户，须先过户再备案）；② 域名联系人邮箱 johnsuncq@aliyun.com 验证未通过；③ talentchain.net 备案网站名「人才供应链」与现放内容不一致；④ 公众号/视频号二维码仍为占位；⑤ `/icp/` 上传页备案资料交齐后须删除；⑥ 99 元机仅 3 Mbps 带宽与 2 GiB 内存，上线前务必先将官网视频压缩并迁 OSS + CDN。
 - rollback_point: 服务器备份 `C:\srv\www-backup-20261116d.zip`（含 HTML 与 main.js；覆盖 `C:\srv\www` 对应文件即可回退）。
-- next_step: 过户 growthhub.cn → 导入上海密钥对 growthhub-prod 并下单 199 元服务器（系统盘 ESSD Entry，加 22 端口）→ 申请备案服务码、回填方案书 3.2 与「既有备案关系」（沪ICP备11027906号）→ 孙飚签字盖章后在已有主体下提交新增网站备案。
+- next_step: 过户 growthhub.cn → 在阿里云配置清单勾选下单 99 元杭州服务器（设登录凭证、加 22 端口/非22密钥）→ 视频压缩迁 OSS + CDN → 申请备案服务码、回填方案书 3.2 与「既有备案关系」（沪ICP备11027906号）→ 孙飚签字盖章后在已有主体下提交新增网站备案。
