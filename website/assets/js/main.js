@@ -24,7 +24,7 @@
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><span class="logo-main">Growth Hub</span><span class="logo-sub">企业增长赋能平台</span></a>' +
+    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116b" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
     '<ul class="nav-links">' +
       item(['home'], 'index.html', '首页', 'Growth Hub · AI 驱动企业增长赋能平台',
         '面向一人公司（OPC）与成长期中小企业，以媒体内容与极增智脑双轮驱动，连接六大核心产品模块。',
@@ -59,7 +59,7 @@
     '</div></section>' +
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
-      '<div class="about"><a class="logo" href="index.html"><span class="logo-main">Growth Hub</span><span class="logo-sub">企业增长赋能平台</span></a>' +
+      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116b" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
         '<p>AI 驱动企业增长赋能平台，由上海领越人力资源服务中心主办运营。以媒体内容与极增智脑双轮驱动，连接内容、智能体、培训、研讨、数据方案与咨询服务。</p>' +
         '<ul><li>主办单位：上海领越人力资源服务中心</li><li>联系邮箱：待补充</li><li>联系电话：待补充</li><li>办公地址：待补充</li></ul></div>' +
       '<div><h6>六大产品模块</h6><ul>' +

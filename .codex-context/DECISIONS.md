@@ -137,7 +137,7 @@
 - 首屏轮播升级为「方案 1」：4 屏核心内容（`01 平台总览`、`02 内容与培训`、`03 智脑与工具`、`04 方案与咨询`）+ 底部文字标签进度条；首页数据方案卡片去掉直接三档价格数字。
 - 视觉与缓存：`img-08.jpg` 替换为 AI 生成现代办公可视化桌面配图（`?v=20261115b`）；资源缓存统一升级至 `?v=20261115g`。
 
-## 2026-11-16 首页首屏精简居中与 Logo 开源字体（Audiowide）
+## 2026-11-16 首页首屏精简居中与 AI 生成文字 Logo（V1–V5）
 - 保持前版白底主调、7 栏导航与首屏 4 屏文字进度条方案，明确保留用户确认的当前页面整体风格：移除首屏第 1 屏底部的三栏指标区（`.hero-stats`：「双轮驱动 / 6 大模块 / 9 大工具集」），调整 `.hero .slide .container` 上下内边距（`padding-top: calc(var(--nav-h) + 24px); padding-bottom: 48px`），使首屏主视觉在导航栏下方、底部文字进度条上方居于视觉偏中略下的平衡位置。
-- 品牌英文标识「Growth Hub」字标选型：英伟达（NVIDIA）品牌字标基于商业字体 Handel Gothic 定制、未开放第三方商用开源授权；选用风格最接近其圆方折角几何科技感的 **Audiowide**（SIL Open Font License 1.1 开源免费商用），通过 `@font-face`（`GrowthLogo`, `font-weight: 400`）本地自托管 `.woff2`（无外链依赖），并在 `credits.html` / `CREDITS.md` 登记开源授权；另备 `Orbitron`、`Goldman`、`Zen Dots`、`Michroma`、`Oxanium`、`Chakra Petch`、`Syne` 共 8 款 SIL OFL 1.1 方案实机对比供进一步微调挑选。
-- 资源版本全站升级至 `?v=20261116a`。
+- 品牌英文标识「Growth Hub」采用生图模型定制创作 5 个纯文字 Logo 版本（V1 宽肩几何折叠风、V2 切角速度跃迁风、V3 现代增长趋势风、V4 简约斜杠连笔风、V5 全大写硬核芯片引擎风），经图像纯白去背、边缘色彩去污染、紧裁切及浅色导航（`#111111 + #0b8a72`）/ 深色页脚（`#FFFFFF + #1ed6b0`）双色分离后制成 4x 超清透明 PNG。默认上线最贴近英伟达宽肩几何气质的 **V1**（`website/assets/brand/logo-wordmark-light.png` / `logo-wordmark-dark.png`），同步交付 V1–V5 实机对比方案供选用；同时保留 `credits.html` / `CREDITS.md` 自制可商用登记。
+- 资源版本全站升级至 `?v=20261116b`。

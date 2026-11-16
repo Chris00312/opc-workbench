@@ -17,5 +17,5 @@
 | img-08.jpg | AI 生成（Growth Hub 内部配图） | — | — | 自制可商用 | 现代化数字办公与数据可视化桌面（2026-11-15 替换） |
 | img-09.jpg | Pexels | Luis Quintero | https://www.pexels.com/photo/aerial-shot-of-panama-city-in-panama-14840760/ | Pexels License | 城市天际线 |
 | img-10.jpg | Pexels | Yan Krukau | https://www.pexels.com/photo/close-up-shot-of-2-person-shake-hands-7792841/ | Pexels License | 握手合作 |
-| audiowide-latin-400-normal.woff2 | Google Fonts / Fontsource | Astigmatic | https://fonts.google.com/specimen/Audiowide | SIL Open Font License 1.1 | Growth Hub 品牌标识英文字体（2026-11-16 新增） |
+| logo-wordmark-light.png / dark.png | AI 生成（Growth Hub 内部配图 + 去背精修） | — | — | 自制可商用 | 导航与页脚 Growth Hub 品牌文字标识（2026-11-16 更新） |
 

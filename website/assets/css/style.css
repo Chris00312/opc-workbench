@@ -1,11 +1,4 @@
 /* Growth Hub 企业增长赋能平台样式表 */
-@font-face {
-  font-family: "GrowthLogo";
-  src: url("../fonts/audiowide-latin-400-normal.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 :root {
   --bg: #fff;
   --bg-2: #f5f6f7;
@@ -45,9 +38,9 @@ ul { list-style: none; }
 /* ---------- 导航：白色实底 66px，宽屏适配 8 个栏目 ---------- */
 .nav { position: fixed; inset: 0 0 auto; height: var(--nav-h); background: #000; z-index: 100; }
 .nav .container { height: 100%; display: flex; align-items: center; max-width: 1480px; padding: 0 28px; }
-.logo { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; white-space: nowrap; flex-shrink: 0; margin-right: 12px; }
-.logo-main { font-family: "GrowthLogo", "Alibaba PuHuiTi", "PingFang SC", sans-serif; font-weight: 400; font-size: 20px; letter-spacing: .8px; }
-.logo-sub { font-size: 10.5px; font-weight: 600; color: var(--ink); letter-spacing: 1.2px; margin-top: 3px; }
+.logo { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; line-height: 1.1; white-space: nowrap; flex-shrink: 0; margin-right: 12px; }
+.logo-wordmark { display: block; height: 22px; width: auto; max-width: none; }
+.logo-sub { font-size: 10.5px; font-weight: 600; color: var(--ink); letter-spacing: 1.2px; margin-top: 4px; }
 .logo-mark { width: 34px; height: 34px; border-radius: 50%; background: #fff; color: #000; display: grid; place-items: center; font-size: 16px; font-weight: 900; }
 .nav-links { display: flex; flex: 1; justify-content: center; gap: 2px; height: 100%; }
 .nav-links > li { position: relative; height: 100%; }
@@ -436,7 +429,7 @@ ul { list-style: none; }
 @media (max-width: 900px) { .mission-bg.horizon::before { width: 1200px; margin-left: -600px; bottom: -760px; height: 1000px; } }
 /* 导航直接罗列 8 项核心栏目，窄屏提前收进菜单 */
 .nav-links > li > a { padding: 0 12px; }
-@media (max-width: 1360px) { .nav-links > li > a { padding: 0 9px; font-size: 13.5px; } .logo-main { font-size: 18px; } }
+@media (max-width: 1360px) { .nav-links > li > a { padding: 0 9px; font-size: 13.5px; } .logo-wordmark { height: 20px; } }
 @media (max-width: 1120px) {
   .nav-links { display: none; }
   .menu-btn { display: block; }

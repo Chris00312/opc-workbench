@@ -1,13 +1,13 @@
 # INDEX
 
-- `website/` 当前 Growth Hub 企业增长赋能平台官网（2026-11-16 视觉微调，版本 `20261116a`）：
+- `website/` 当前 Growth Hub 企业增长赋能平台官网（2026-11-16 首屏精简与 AI 文字 Logo 上线，版本 `20261116b`）：
   - `index.html`：4 屏文字进度条首屏、双轮驱动、四大智能体、六大核心产品模块、精选内容、四类场景、会员权益、三阶段路线图与主办主体简介。
   - `insights.html`：极增商界内容服务、主题特色栏目与商界会员权益；`academy.html`：三层九级增长培训与季/月/周主题交流研讨会规划。
   - `zhinao.html`：极增智脑四大智能体与统一入口规划；`workbench.html`：增长顾问·经营工作台（V1 规划）；`tools.html`：AI 增长赋能工具（九大业务工具集）。
   - `consulting.html`：增长咨询服务（五大企业生命周期、三种合作方式、六步交付流程）；`solution.html`：七大分析方向与三档数据化增长方案。
   - `about.html`：关于我们（上海领越人力资源服务中心与平台矩阵）；`contact.html`：联系我们、在线登记、人才招募、商务合作与渠道发展；`credits.html`：素材来源。
   - `report.html` / `research.html` / `studio.html` / `talent.html`：旧页跳转，非独立产品。
-  - `assets/css/style.css` 全站样式；`assets/fonts/audiowide-latin-400-normal.woff2` Logo 开源字体（SIL OFL-1.1）；`assets/js/main.js` 7 栏导航、页脚、文字进度条轮播、演示表单；`assets/brand/` Logo；`assets/media/` 本地素材。
+  - `assets/css/style.css` 全站样式；`assets/js/main.js` 7 栏导航、页脚、文字进度条轮播、演示表单；`assets/brand/` 双色 AI 生成文字 Logo（`logo-wordmark-light/dark.png`）；`assets/media/` 本地素材。
 - `site/` 旧 OPC 工作台原型（已过时，入口 `site/index.html`）
   - `checkup.html` 增长体检（五力自评 → 推荐增长系统）
   - `assets/growth-model.js` 增长极方法论数据与推荐规则；`assets/petite-vue.iife.js` 本地 Vue
