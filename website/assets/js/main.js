@@ -24,7 +24,7 @@
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116e" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
+    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116f" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
     '<ul class="nav-links">' +
       item(['home'], 'index.html', '首页', 'Growth Hub · AI 驱动企业增长赋能平台',
         '面向一人公司（OPC）与成长期中小企业，以媒体内容与极增智脑双轮驱动，连接六大核心产品模块。',
@@ -37,7 +37,7 @@
         [['workbench.html', '增长顾问 · 经营工作台', '<span class="badge new">V1</span>'], ['zhinao.html#content', '内容生成智能体', '<span class="badge hot">MVP</span>'], ['zhinao.html#diagnose', '增长诊断智能体', '<span class="badge hot">MVP</span>'], ['zhinao.html#data', '数据洞察智能体'], ['zhinao.html#ops', '运营自动化智能体'], ['tools.html', 'AI 增长赋能工具（九大工具集）', '<span class="badge new">V1</span>']]) +
       item(['academy'], 'academy.html', '研习活动', '管理咨询研习与主题交流研讨会',
         '三层九级成长研习专题与四大核心方向，配合季度主题交流、月度专题研讨会与周度垂直沙龙。',
-        [['academy.html#training', '三层九级增长研习体系'], ['academy.html#courses', '首席增长官 · 企业增长分析方向'], ['academy.html#courses', '商业增长设计 · 商业模式创新'], ['academy.html#format', '专题直播 · 小班工作坊 · 系统内内训'], ['academy.html#events', '主题交流与研讨会（季 / 月 / 周）']]) +
+        [['academy.html#training', '三层九级增长研习体系'], ['academy.html#courses', '首席增长官 · 企业增长分析方向'], ['academy.html#courses', '商业增长设计 · 商业模式创新'], ['academy.html#format', '线上答疑 · 小班工作坊 · 系统内内训'], ['academy.html#events', '主题交流与研讨会（季 / 月 / 周）']]) +
       item(['consulting'], 'consulting.html', '增长咨询', '增长咨询服务（AI 增长咨询工作台）',
         '按企业生命周期五大阶段划分战略咨询议题，采用「AI 辅助整理 + 专家主诊」模式，提供单次、季度与年度陪跑。',
         [['consulting.html#startup', '初创期企业增长战略咨询'], ['consulting.html#growth', '成长期企业增长战略咨询'], ['consulting.html#expansion', '扩张期企业增长战略咨询'], ['consulting.html#maturity', '成熟期企业增长战略咨询'], ['consulting.html#transform', '转型期企业增长战略咨询'], ['consulting.html#process', '咨询预约与六步交付流程']]) +
@@ -59,7 +59,7 @@
     '</div></section>' +
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
-      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116e" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
+      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116f" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
         '<p>AI 驱动企业增长赋能平台，由上海领越人力资源咨询服务中心主办运营。以媒体内容与极增智脑双轮驱动，连接内容、智能体、管理研习、主题研讨、数据方案与咨询服务。</p>' +
         '<ul><li>主办单位：上海领越人力资源咨询服务中心</li><li>统一社会信用代码：91310118566597133M</li><li>联系邮箱：johnsuncq@aliyun.com</li><li>联系电话：021-57876227</li><li>注册地址：上海市青浦区赵巷镇沪青平公路 3398 号 1 幢 2 层 A 区 121 室</li></ul></div>' +
       '<div><h6>六大产品模块</h6><ul>' +
@@ -84,6 +84,7 @@
         '<li><a href="contact.html#jobs">人才招募</a></li>' +
         '<li><a href="contact.html#business">商务合作与渠道</a></li>' +
         '<li><a href="credits.html">素材来源</a></li>' +
+        '<li><a href="privacy.html">隐私说明</a></li>' +
       '</ul></div>' +
     '</div>' +
     '<div class="footer-bottom"><span>© 2026 上海领越人力资源咨询服务中心 · Growth Hub 企业增长赋能平台　ICP 备案号：备案审核中</span><span>规划功能尚未上线，服务以正式合同为准　|　<a href="credits.html">图片与视频来源</a></span></div>' +
@@ -101,7 +102,7 @@
         '<label class="field"><span>诉求类型 / 感兴趣模块</span><select name="product">' + PRODUCTS.map(function (p) { return '<option>' + p.name + '</option>'; }).join('') + '<option>商务合作 / 渠道代理</option><option>人才招募应聘</option></select></label>' +
         '<label class="field"><span>简要说明</span><textarea name="note" placeholder="请简述您当前的增长阶段或希望解决的问题（选填）"></textarea></label>' +
         '<button class="btn btn-primary btn-lg" style="width:100%;margin-top:6px">提交登记</button>' +
-        '<p class="note" style="margin-top:12px">演示版：表单暂未接入后台，提交后不会真实发送。</p>' +
+        '<p class="note" style="margin-top:12px">提交即表示您同意按<a href="privacy.html">《隐私说明》</a>处理所填信息。演示版：表单暂未接入后台，提交后不会真实发送。</p>' +
       '</form></div></div>' +
     '<div class="toast" id="toast"></div>';
 
