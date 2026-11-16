@@ -217,3 +217,9 @@ Rollback: b6f258c
 - Proof: `node --check website/assets/js/main.js` 通过；全站禁用/遗留词 grep 检查 0 命中；全站内链与锚点检查 0 错误；Playwright Chrome 11 页 × `1440×900`、`1280×800`、`375×812` 共 33 项检查 0 失败（含首屏 4 屏文字标签零重叠验证）；线上 HTTPS 取回 21 个文件（15 HTML + CSS + JS + `img-08.jpg` + `CREDITS.md` + 2 SVG）与本地 SHA-256 一致，`/icp/`、`www`、`hero.mp4` 均 200。
 - Deploy: 版本 `20261115g`（配图缓存版本 `20261115b`），现有 Windows nginx；备份 `C:\srv\www-backup-20261115a.zip` 已留存，同步更新文件至 `C:\srv\www`（保留 `/icp/` 与视频）。
 - Rollback: 解压 `C:\srv\www-backup-20261115a.zip` 覆盖回 `C:\srv\www`。
+
+## 2026-11-16 首页首屏居中精简与 Logo 开源字体升级
+- Done: 保留 `20261115g` 页面结构与文字进度条首屏，移除首屏第 1 屏底部的 `.hero-stats` 三栏指标 strip（`index.html`、`style.css`），并将桌面端 `.slide .container` 设为 `padding-top: calc(var(--nav-h) + 24px); padding-bottom: 48px` 使首屏内容垂直居于导航与底部页签之间略偏下位置；由于 NVIDIA 官方标识字体基于商业版权 Handel Gothic 定制，不可开源直接商用，选用风格最接近其圆方折角几何科技感的开源字体 `Audiowide`（SIL OFL 1.1），下载至 `website/assets/fonts/audiowide-latin-400-normal.woff2` 通过 `@font-face`（`GrowthLogo`, `font-weight: 400`）应用到全站导航/页脚 `.logo-main` 并写入 `credits.html` / `CREDITS.md`；资源缓存版本全站升级为 `?v=20261116a`，同步更新 `.codex-context/`；另生成 8 款 SIL OFL 1.1 开源科技字体对比图供选用。
+- Proof: `node --check website/assets/js/main.js` 通过；全站 132 条内链与锚点 0 错误；Playwright Chrome 13 页 × `1440×900`、`1280×800`、`375×812` 检查 0 横向溢出、`GrowthLogo` 字体加载确认（`fontLoaded=true`）、0 控制台报错；`desktop1440`、`desktop1280`、`mobile375` 与页脚实机截图核验通过；线上 HTTPS 核验新增字体及更新文件 SHA-256 与本地一致，`/icp/`、`www`、`hero.mp4` 均 200。
+- Deploy: 版本 `20261116a`，同步更新文件至 `C:\srv\www`（保留 `/icp/` 与视频，备份 `C:\srv\www-backup-20261115a.zip`）。
+- Rollback: 解压 `C:\srv\www-backup-20261115a.zip` 或回退本次 git 提交后同步 `C:\srv\www`。

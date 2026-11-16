@@ -8,20 +8,21 @@
 - Assets: `brand/`（mark、lockup 深浅两版 SVG，favicon.svg，1024 app 图标与 PNG 导出）
 - 官网实现：`deploy/jizeng-site.tar.gz` 内 `website/assets/brand/` 与 `assets/css/style.css`
 
-## Brand rules
-- 名称：极增商界（公司：上海极增科技有限公司）/ JIZENG TECHNOLOGY
-- 标识色（mark 渐变）：#0b6e5c → #14b593 → #7ff6dc；文字 #111111
-- 字体：中文 PingFang SC / Microsoft YaHei / Noto Sans SC（粗体 800）；英文 Helvetica Neue / Arial
+## Brand rules（2026-11-15 / 11-16 更新）
+- 名称：Growth Hub · 企业增长赋能平台（主办主体：上海领越人力资源服务中心）
+- Logo：纯双行文字标识 `Growth Hub`（`.logo-main`）+ `企业增长赋能平台`（`.logo-sub`，`--ink` `#0b8a72`，深色页脚自动切至 `#1ed6b0`）；已撤掉早期「双峰」三角标
+- 字体：中文 `Alibaba PuHuiTi` / `PingFang SC` / `Microsoft YaHei`；Logo 英文 `Growth Hub` 使用本地托管开源字体 `Audiowide`（SIL OFL 1.1，`website/assets/fonts/audiowide-latin-400-normal.woff2`，`font-weight: 400`）
 - 后台类 UI：Stripe 后台风格（白底、细分隔线、表格、单一强调色、浅灰侧栏），见 DECISIONS.md
 
-## 官网配色（2026-11-09 起）
-- 白底为主、黑底为辅（2026-11-09 实地对照英伟达官网：只有首屏和页脚是黑色）：**白色导航**（浅色版 mark-light.svg）；首屏图片 + 左侧加深渐变；中间区块白 #fff / 浅灰 #e7eaed 严格逐段交替（首屏后第一段为白），不再有黑色强调带；使命区、路线图、高亮价格卡均为浅色；底部「联系我们」条 + 页脚整体黑色。
-- 品牌色青绿 #1ed6b0 只做填充（按钮、徽标、进度点）；浅底上的强调文字用深青绿 #0b8a72（变量 --ink）。
-- 方角按钮（2px 圆角），无外发光；卡片白底细边框；样张、手机示意用中性阴影。
-- 实现：style.css 顶部 :root 为浅色变量，「深色作用域」选择器（.hero/.page-hero/.footer/.pcard/.phone/.toast）重设同名变量；组件只引用变量。HTML 引用 style.css / main.js 带 ?v=版本（当前 20261112a），改样式时同步更新，避免服务器 7 天缓存。
+## 官网配色与首屏规范（2026-11-09 至 2026-11-16）
+- 白底为主、黑底为辅：**白色导航**（`--nav-h: 66px`，7 个一级栏目 + 预约咨询）；首屏图片 + 左侧加深渐变；中间区块白 `#fff` / 浅灰 `#e7eaed` 严格逐段交替；底部「联系我们」条 + 页脚整体黑色。
+- 首屏（`.hero`）：4 屏轮播 + 底部 4 栏文字进度条（`.dots.hero-tabs`），不包含 `.hero-stats`；桌面端 `.slide .container` 采用 `padding-top: calc(var(--nav-h) + 24px); padding-bottom: 48px`，令正文居于可视高度偏中略下位置；眉标 `.slide .brand` 字号为 `clamp(17px, 1.6vw, 22px)`。
+- 品牌色青绿 `#1ed6b0` 只做填充（按钮、徽标、进度条）；浅底上的强调文字用深青绿 `#0b8a72`（变量 `--ink`）。
+- 卡片：`.card-box`（`.cards-grid` 三列 / 四列 / 两列）与 `.ncard` 均为白底圆角细边框 + 轻悬停反馈；价格卡 `.plan.hl` 白底配顶部青绿强调条。
+- 实现：style.css 顶部 `:root` 为浅色变量，「深色作用域」选择器（`.hero/.page-hero/.footer/.pcard/.phone/.toast`）重设同名变量。HTML 引用 `style.css` / `main.js` 带 `?v=20261116a`，改样式时同步更新，避免服务器 7 天缓存。
 
 ## Recent design work
+- 2026-11-16: 移除首屏 `.hero-stats` 并居中下移 `.slide .container`；左上角与页脚 `Growth Hub` 字标升级为本地自托管开源字体 `Audiowide`（SIL OFL-1.1），版本升至 `20261116a`。
+- 2026-11-15: 品牌调整为「Growth Hub 企业增长赋能平台」，7 栏导航 + 4 屏文字进度条首屏 + 全站 V1.0 对齐（`20261115g`）。
+- 2026-11-12: 首页六模块复用图片卡片，桌面 3 列、平板 2 列、手机 1 列。
 - 2026-11-09: 官网由纯黑（参考 51WORLD）改为白底为主、黑底为辅。
-- 2026-11-03: 品牌标识套件放入项目库，2026-11-04 复制到本地 brand/
-
-- 2026-11-12：首页六模块复用图片卡片，桌面 3 列、平板 2 列、手机 1 列；保留白灰交替与青绿品牌色，价格卡字号适配长价格。

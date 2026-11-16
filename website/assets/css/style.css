@@ -1,6 +1,11 @@
-/* 极增商界官网（2026-11-12）—— 白色导航、白灰正文、黑色首屏与页脚；六模块与分期产品规划共用组件；
-   粗体大字、居中区块标题、方角实心按钮、大图满版。品牌色：青绿 #1ed6b0（填充用），浅底上的文字用深青绿 --ink。
-   深色区块通过「深色作用域」重设变量，组件只引用变量，深浅两用。 */
+/* Growth Hub 企业增长赋能平台样式表 */
+@font-face {
+  font-family: "GrowthLogo";
+  src: url("../fonts/audiowide-latin-400-normal.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
   --bg: #fff;
   --bg-2: #f5f6f7;
@@ -41,7 +46,7 @@ ul { list-style: none; }
 .nav { position: fixed; inset: 0 0 auto; height: var(--nav-h); background: #000; z-index: 100; }
 .nav .container { height: 100%; display: flex; align-items: center; max-width: 1480px; padding: 0 28px; }
 .logo { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; white-space: nowrap; flex-shrink: 0; margin-right: 12px; }
-.logo-main { font-weight: 900; font-size: 20px; letter-spacing: .5px; }
+.logo-main { font-family: "GrowthLogo", "Alibaba PuHuiTi", "PingFang SC", sans-serif; font-weight: 400; font-size: 20px; letter-spacing: .8px; }
 .logo-sub { font-size: 10.5px; font-weight: 600; color: var(--ink); letter-spacing: 1.2px; margin-top: 3px; }
 .logo-mark { width: 34px; height: 34px; border-radius: 50%; background: #fff; color: #000; display: grid; place-items: center; font-size: 16px; font-weight: 900; }
 .nav-links { display: flex; flex: 1; justify-content: center; gap: 2px; height: 100%; }
@@ -84,7 +89,7 @@ ul { list-style: none; }
 .slide-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0, 0, 0, .74) 0%, rgba(0, 0, 0, .42) 55%, rgba(0, 0, 0, .18) 100%); }
 .slide.on .kb { animation: kb 12s ease-out forwards; }
 @keyframes kb { from { transform: scale(1.1); } to { transform: scale(1); } }
-.slide .container { position: relative; z-index: 2; max-width: 1440px; padding-bottom: 54px; }
+.slide .container { position: relative; z-index: 2; max-width: 1440px; padding-top: calc(var(--nav-h) + 24px); padding-bottom: 48px; }
 .slide .brand { display: flex; align-items: center; gap: 12px; font-size: clamp(17px, 1.6vw, 22px); font-weight: 500; font-style: normal; letter-spacing: 1.5px; color: rgba(255, 255, 255, .86); margin-bottom: 14px; }
 .slide .brand i { width: 64px; height: 64px; border-radius: 50%; background: #fff; color: #000; font-style: normal; font-weight: 900; font-size: 30px; display: grid; place-items: center; }
 .slide h1 { font-size: clamp(36px, 5vw, 72px); font-weight: 900; line-height: 1.2; letter-spacing: 1px; }
@@ -538,13 +543,9 @@ ul { list-style: none; }
 .field textarea { width: 100%; min-height: 92px; padding: 10px 12px; background: #fff; border: 1px solid #c9c9c9; color: #111; font: inherit; font-size: 14px; resize: vertical; }
 .field textarea:focus { outline: none; border-color: var(--accent); }
 .form-panel { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 34px 32px; box-shadow: 0 8px 28px rgba(0, 0, 0, .05); }
-.hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 680px; margin-top: 38px; border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 20px; }
-.hero-stats div b { display: block; font-size: 24px; font-weight: 900; color: var(--accent); }
-.hero-stats div span { font-size: 13px; color: #ccc; }
 @media (max-width: 1180px) { .cards-grid.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 900px) {
   .cards-grid, .cards-grid.two, .cards-grid.four { grid-template-columns: 1fr; }
-  .hero-stats { display: none; }
   .slide .container { padding-top: calc(var(--nav-h) + 24px); padding-bottom: 96px; }
   .dots.hero-tabs { bottom: 20px; width: calc(100vw - 40px); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 14px; }
   .dots.hero-tabs button { font-size: 12px; padding-bottom: 7px; }

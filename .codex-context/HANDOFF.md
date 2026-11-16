@@ -3,7 +3,7 @@
 项目：Growth Hub 企业增长赋能平台（主办主体：上海领越人力资源服务中心）。面向一人公司（OPC）与成长期中小企业的 AI 驱动企业增长赋能平台。
 
 - 本地路径：`/Users/c/Documents/极増科技本地`（GitHub：`Chris00312/opc-workbench`，`main`）
-- 当前状态（2026-11-15）：官网已完成会议纪要改版、7 栏一级导航（`首页 / 极增商界 / 极增智脑 / 培训活动 / 增长咨询 / 数据方案 / 关于我们`）、首屏 4 屏文字进度条及全站 V1.0 文档严格对齐，版本 `20261115g` 已部署上线；核心后台软件尚未开发。
+- 当前状态（2026-11-16）：官网已完成会议纪要改版、7 栏一级导航（`首页 / 极增商界 / 极增智脑 / 培训活动 / 增长咨询 / 数据方案 / 关于我们`）、首屏 4 屏文字进度条及全站 V1.0 文档严格对齐；已去掉首屏 `.hero-stats` 并居中下移布局，将左上及页脚「Growth Hub」英文字体升级为本地自托管开源 `Audiowide`（SIL OFL-1.1），版本 `20261116a` 已部署上线；核心后台软件尚未开发。
 - 官网：11 个主要静态页 + 4 个跳转页，原生 HTML/CSS/JS；本地预览 `python3 -m http.server 8000 --directory website`。
 - 发布：现有 Windows ECS nginx 静态站 `C:\srv\www`（保留 `C:\srv\www\icp\` 与视频），使用既有 SSH 部署身份；不使用根目录 Linux `deploy.sh`。域名 `https://talentchain.net` 与 `www`。
 - 最新备份：`C:\srv\www-backup-20261115a.zip`；21 个发布文件（15 HTML + CSS + JS + `img-08.jpg` + `CREDITS.md` + 2 lockup SVG）线上 HTTPS SHA-256 与本地一致。
