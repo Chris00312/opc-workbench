@@ -1,5 +1,5 @@
 /* Growth Hub 企业增长赋能平台公共导航、页脚、首屏轮播与演示表单交互（原生 JS，无第三方依赖）。
-   依据《产品与功能模块（完整版）V1.0》5.1 六大产品模块与备案主体对齐：上海领越人力资源服务中心。 */
+   依据《产品与功能模块（完整版）V1.0》5.1 六大产品模块与备案主体对齐：上海领越人力资源咨询服务中心。 */
 (function () {
   var page = document.body.getAttribute('data-page') || 'home';
 
@@ -7,7 +7,7 @@
     { id: 'insights', href: 'insights.html', name: '极增商界 · 内容服务平台' },
     { id: 'zhinao', href: 'zhinao.html', name: '极增智脑 · 四大智能体' },
     { id: 'workbench', href: 'workbench.html', name: '增长顾问 · 经营工作台' },
-    { id: 'academy', href: 'academy.html', name: '增长培训与主题活动' },
+    { id: 'academy', href: 'academy.html', name: '企业研习与主题活动' },
     { id: 'solution', href: 'solution.html', name: 'AI 增长数据赋能解决方案' },
     { id: 'consulting', href: 'consulting.html', name: '增长咨询服务' },
     { id: 'tools', href: 'tools.html', name: 'AI 增长赋能工具（九大工具集）' }
@@ -24,7 +24,7 @@
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116b" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
+    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116c" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
     '<ul class="nav-links">' +
       item(['home'], 'index.html', '首页', 'Growth Hub · AI 驱动企业增长赋能平台',
         '面向一人公司（OPC）与成长期中小企业，以媒体内容与极增智脑双轮驱动，连接六大核心产品模块。',
@@ -35,18 +35,18 @@
       item(['zhinao', 'workbench', 'tools'], 'zhinao.html', '极增智脑', '极增智脑 · 智能体、工作台与九大赋能工具集',
         '涵盖四大智能体、统一入口「增长顾问 · 经营工作台」与覆盖企业全经营场景的九大 AI 增长赋能工具集。',
         [['workbench.html', '增长顾问 · 经营工作台', '<span class="badge new">V1</span>'], ['zhinao.html#content', '内容生成智能体', '<span class="badge hot">MVP</span>'], ['zhinao.html#diagnose', '增长诊断智能体', '<span class="badge hot">MVP</span>'], ['zhinao.html#data', '数据洞察智能体'], ['zhinao.html#ops', '运营自动化智能体'], ['tools.html', 'AI 增长赋能工具（九大工具集）', '<span class="badge new">V1</span>']]) +
-      item(['academy'], 'academy.html', '培训活动', '增长培训服务与主题交流研讨会',
-        '三层九级成长课程与四大核心学习方向，配合季度主题交流、月度专题研讨会与周度垂直沙龙。',
-        [['academy.html#training', '三层九级增长培训体系'], ['academy.html#courses', '首席增长官 · 企业增长分析师'], ['academy.html#courses', '商业增长设计 · 商业模式创新'], ['academy.html#format', '线上录播 · 直播 · 小班工作坊'], ['academy.html#events', '主题交流与研讨会（季 / 月 / 周）'], ['academy.html#certification', '企业增长分析师能力认证规划']]) +
+      item(['academy'], 'academy.html', '研习活动', '管理咨询研习与主题交流研讨会',
+        '三层九级成长研习专题与四大核心方向，配合季度主题交流、月度专题研讨会与周度垂直沙龙。',
+        [['academy.html#training', '三层九级增长研习体系'], ['academy.html#courses', '首席增长官 · 企业增长分析方向'], ['academy.html#courses', '商业增长设计 · 商业模式创新'], ['academy.html#format', '专题直播 · 小班工作坊 · 系统内内训'], ['academy.html#events', '主题交流与研讨会（季 / 月 / 周）'], ['academy.html#certification', '增长实践能力评估参考（规划）']]) +
       item(['consulting'], 'consulting.html', '增长咨询', '增长咨询服务（AI 增长咨询工作台）',
         '按企业生命周期五大阶段划分战略咨询议题，采用「AI 辅助整理 + 专家主诊」模式，提供单次、季度与年度陪跑。',
         [['consulting.html#startup', '初创期企业增长战略咨询'], ['consulting.html#growth', '成长期企业增长战略咨询'], ['consulting.html#expansion', '扩张期企业增长战略咨询'], ['consulting.html#maturity', '成熟期企业增长战略咨询'], ['consulting.html#transform', '转型期企业增长战略咨询'], ['consulting.html#process', '咨询预约与六步交付流程']]) +
       item(['solution'], 'solution.html', '数据方案', 'AI 增长数据赋能解决方案',
         '围绕「数据诊断—模型构建—策略生成—效果追踪」四步流程，覆盖七大增长分析方向与三档交付方案。',
         [['solution.html#directions', '多业务（母合）与可持续增长分析'], ['solution.html#directions', '主导性业务与价值链增长分析'], ['solution.html#directions', '跨区域与利基市场增长分析'], ['solution.html#directions', '增长战略与模式匹配度分析'], ['solution.html#plans', '三档交付方案（诊断 · 建模 · 陪跑）'], ['solution.html#flow', '四步标准交付流程']]) +
-      item(['about', 'contact', 'credits'], 'about.html', '关于我们', '关于我们 · 上海领越人力资源服务中心',
-        '了解主办运营主体上海领越人力资源服务中心、平台定位与六大产品矩阵，以及联系方式、人才招募与商务合作。',
-        [['about.html#lingyue', '上海领越人力资源服务中心'], ['about.html#platform', 'Growth Hub 平台介绍'], ['about.html#business', '核心业务与产品矩阵'], ['contact.html#info', '联系我们与在线留言'], ['contact.html#jobs', '人才招募'], ['contact.html#business', '商务合作与渠道发展']]) +
+      item(['about', 'contact', 'credits'], 'about.html', '关于我们', '关于我们 · 上海领越人力资源咨询服务中心',
+        '了解主办运营主体上海领越人力资源咨询服务中心、平台定位与六大产品矩阵，以及联系方式、人才招募与商务合作。',
+        [['about.html#lingyue', '上海领越人力资源咨询服务中心'], ['about.html#platform', 'Growth Hub 平台介绍'], ['about.html#business', '核心业务与产品矩阵'], ['contact.html#info', '联系我们与在线留言'], ['contact.html#jobs', '人才招募'], ['contact.html#business', '商务合作与渠道发展']]) +
     '</ul>' +
     '<button class="nav-pill" data-open="contact">预约咨询</button>' +
     '<button class="menu-btn" id="menuBtn" aria-label="打开菜单"><span></span><span></span><span></span></button>' +
@@ -59,13 +59,13 @@
     '</div></section>' +
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
-      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116b" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
-        '<p>AI 驱动企业增长赋能平台，由上海领越人力资源服务中心主办运营。以媒体内容与极增智脑双轮驱动，连接内容、智能体、培训、研讨、数据方案与咨询服务。</p>' +
-        '<ul><li>主办单位：上海领越人力资源服务中心</li><li>联系邮箱：待补充</li><li>联系电话：待补充</li><li>办公地址：待补充</li></ul></div>' +
+      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116c" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
+        '<p>AI 驱动企业增长赋能平台，由上海领越人力资源咨询服务中心主办运营。以媒体内容与极增智脑双轮驱动，连接内容、智能体、管理研习、主题研讨、数据方案与咨询服务。</p>' +
+        '<ul><li>主办单位：上海领越人力资源咨询服务中心</li><li>联系邮箱：johnsuncq@aliyun.com</li><li>联系电话：021-57876227</li><li>注册地址：上海市青浦区赵巷镇沪青平公路 3398 号 1 幢 2 层 A 区 121 室</li></ul></div>' +
       '<div><h6>六大产品模块</h6><ul>' +
         '<li><a href="insights.html">内容服务平台（极增商界）</a></li>' +
         '<li><a href="zhinao.html">AI 智能体工具（极增智脑）</a></li>' +
-        '<li><a href="academy.html#training">增长培训服务</a></li>' +
+        '<li><a href="academy.html#training">企业研习与咨询工作坊</a></li>' +
         '<li><a href="academy.html#events">主题交流与研讨会</a></li>' +
         '<li><a href="solution.html">数据化增长方案</a></li>' +
         '<li><a href="consulting.html">增长咨询服务</a></li>' +
@@ -78,7 +78,7 @@
         '<li><a href="index.html#roadmap">产品建设路线图</a></li>' +
       '</ul></div>' +
       '<div><h6>关于与联系</h6><ul>' +
-        '<li><a href="about.html#lingyue">上海领越人力资源服务中心</a></li>' +
+        '<li><a href="about.html#lingyue">上海领越人力资源咨询服务中心</a></li>' +
         '<li><a href="about.html#platform">Growth Hub 平台介绍</a></li>' +
         '<li><a href="contact.html#info">联系方式与留言</a></li>' +
         '<li><a href="contact.html#jobs">人才招募</a></li>' +
@@ -86,7 +86,7 @@
         '<li><a href="credits.html">素材来源</a></li>' +
       '</ul></div>' +
     '</div>' +
-    '<div class="footer-bottom"><span>© 2026 上海领越人力资源服务中心 · Growth Hub 企业增长赋能平台　ICP 备案号：待备案</span><span>联系方式待补充；规划功能尚未上线，服务以正式合同为准　|　<a href="credits.html">图片与视频来源</a></span></div>' +
+    '<div class="footer-bottom"><span>© 2026 上海领越人力资源咨询服务中心 · Growth Hub 企业增长赋能平台　ICP 备案号：备案审核中</span><span>规划功能尚未上线，服务以正式合同为准　|　<a href="credits.html">图片与视频来源</a></span></div>' +
     '</div></footer>';
 
   var modals =

@@ -223,3 +223,9 @@ Rollback: b6f258c
 - Proof: `node --check website/assets/js/main.js` 通过；Playwright Chrome 11 个主页面 × `1440×900`、`1280×800`、`375×812` 检查 0 横向溢出、0 控制台/400+ 错误、`logo-wordmark` 双版加载完成（`naturalWidth=701`）；桌面与手机端及黑底页脚实机截图核验无白边；线上 HTTPS 核验更新文件 SHA-256 与本地一致，双版 Logo、`/icp/`、`www`、`hero.mp4` 均 200。
 - Deploy: 版本 `20261116b`，同步更新文件至 `C:\srv\www`（保留 `/icp/` 与视频，清理服务器临时 `assets\fonts\`，备份 `C:\srv\www-backup-20261115a.zip`）。
 - Rollback: 解压 `C:\srv\www-backup-20261115a.zip` 或回退本次 git 提交后同步 `C:\srv\www`。
+
+## 2026-11-16 阿里云备案主体全称补正、合规去敏与《组网方案建设书》产出
+- Done: 核验 `/icp/` 上传营业执照原件，将全站漏写「咨询」二字的主办主体统一修正为 **「上海领越人力资源咨询服务中心」**（`index.html`、`about.html`、`contact.html`、`main.js`），补齐核验固话 `021-57876227`、邮箱与注册住所；依据执照「教育信息咨询（不得从事教育中介、培训、家教）、系统内员工培训」经营范围，将全站公开「培训 / 课程 / 公开课 / 能力认证发证」调整为「研习活动 / 管理研习与工作坊 / 企业咨询式内训 / 实践能力评估参考」，资源缓存升至 `?v=20261116c` 并同步 `.codex-context/`；在临时制品目录制作带最新实机截图与阿里云推荐组网拓扑图的可打印签章版《growthhub.cn 网站建设与组网方案书》（Word + PDF，不入库）。
+- Proof: `node --check website/assets/js/main.js` 通过；全站敏感及非对齐词 grep 0 命中；Playwright Chrome 11 页 × `1440×900`、`1280×800`、`375×812` 检查 0 溢出、0 控制台/400+ 错误；PDF 各页图像渲染核查排版无乱码无截断；线上 HTTPS 23 个文件 SHA-256 与本地一致。
+- Deploy: 版本 `20261116c`，同步更新文件至 `C:\srv\www`。
+- Rollback: 回退本次 git 提交并同步 `C:\srv\www`。
