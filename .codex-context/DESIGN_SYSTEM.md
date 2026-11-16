@@ -19,7 +19,7 @@
 - 首屏（`.hero`）：4 屏轮播 + 底部 4 栏文字进度条（`.dots.hero-tabs`），不包含 `.hero-stats`；桌面端 `.slide .container` 采用 `padding-top: calc(var(--nav-h) + 24px); padding-bottom: 48px`，令正文居于可视高度偏中略下位置；眉标 `.slide .brand` 字号为 `clamp(17px, 1.6vw, 22px)`。
 - 品牌色青绿 `#1ed6b0` 只做填充（按钮、徽标、进度条）；浅底上的强调文字用深青绿 `#0b8a72`（变量 `--ink`）。
 - 卡片：`.card-box`（`.cards-grid` 三列 / 四列 / 两列）与 `.ncard` 均为白底圆角细边框 + 轻悬停反馈；价格卡 `.plan.hl` 白底配顶部青绿强调条。
-- 样式与脚本：`style.css` / `main.js` 带 `?v=20261116d`，改样式时同步更新，避免服务器 7 天缓存。
+- 样式与脚本：`style.css` / `main.js` 带 `?v=20261116e`，改样式时同步更新，避免服务器 7 天缓存。
 
 ## Recent design work
 - 2026-11-16: 移除首屏 `.hero-stats` 并居中下移 `.slide .container`；全站导航与页脚 `Growth Hub` 英文主标更换为 AI 生成去背双色精修 PNG 字标（V1），版本升至 `20261116b`。

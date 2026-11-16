@@ -24,7 +24,7 @@
 
   var header =
     '<header class="nav" id="nav"><div class="container">' +
-    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116d" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
+    '<a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台首页"><img class="logo-wordmark" src="assets/brand/logo-wordmark-light.png?v=20261116e" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
     '<ul class="nav-links">' +
       item(['home'], 'index.html', '首页', 'Growth Hub · AI 驱动企业增长赋能平台',
         '面向一人公司（OPC）与成长期中小企业，以媒体内容与极增智脑双轮驱动，连接六大核心产品模块。',
@@ -59,7 +59,7 @@
     '</div></section>' +
     '<footer class="footer"><div class="container">' +
     '<div class="footer-grid">' +
-      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116d" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
+      '<div class="about"><a class="logo" href="index.html" aria-label="Growth Hub 企业增长赋能平台"><img class="logo-wordmark" src="assets/brand/logo-wordmark-dark.png?v=20261116e" alt="Growth Hub" width="129" height="22"><span class="logo-sub">企业增长赋能平台</span></a>' +
         '<p>AI 驱动企业增长赋能平台，由上海领越人力资源咨询服务中心主办运营。以媒体内容与极增智脑双轮驱动，连接内容、智能体、管理研习、主题研讨、数据方案与咨询服务。</p>' +
         '<ul><li>主办单位：上海领越人力资源咨询服务中心</li><li>统一社会信用代码：91310118566597133M</li><li>联系邮箱：johnsuncq@aliyun.com</li><li>联系电话：021-57876227</li><li>注册地址：上海市青浦区赵巷镇沪青平公路 3398 号 1 幢 2 层 A 区 121 室</li></ul></div>' +
       '<div><h6>六大产品模块</h6><ul>' +
@@ -103,12 +103,6 @@
         '<button class="btn btn-primary btn-lg" style="width:100%;margin-top:6px">提交登记</button>' +
         '<p class="note" style="margin-top:12px">演示版：表单暂未接入后台，提交后不会真实发送。</p>' +
       '</form></div></div>' +
-    '<div class="modal" id="m-pay" role="dialog" aria-modal="true" aria-labelledby="mp-t"><div class="modal-box">' +
-      '<button class="modal-close" data-close aria-label="关闭">×</button>' +
-      '<h3 id="mp-t">开通 <span data-pay-name>标准方案</span></h3><p>在线支付将在依法取得相关增值电信业务许可后开通；当前服务均线下签订正式合同、对公结算。</p>' +
-      '<div class="pay"><div><i></i>微信支付</div><div><i></i>支付宝</div></div>' +
-      '<p class="note">当前未开通线上收款，请通过「预约咨询」登记意向，顾问将与您联系签约。</p>' +
-    '</div></div>' +
     '<div class="toast" id="toast"></div>';
 
   var h = document.getElementById('site-header');
@@ -183,14 +177,13 @@
   } else document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
 
   // 弹窗
-  function open(id, name) {
+  function open(id) {
     var m = document.getElementById('m-' + id); if (!m) return;
-    if (name) { var n = m.querySelector('[data-pay-name]'); if (n) n.textContent = name; }
     m.classList.add('open');
   }
   document.addEventListener('click', function (e) {
     var o = e.target.closest('[data-open]');
-    if (o) { e.preventDefault(); open(o.getAttribute('data-open'), o.getAttribute('data-name')); return; }
+    if (o) { e.preventDefault(); open(o.getAttribute('data-open')); return; }
     if (e.target.closest('[data-close]') || e.target.classList.contains('modal')) { var m = e.target.closest('.modal'); if (m) m.classList.remove('open'); }
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(function (m) { m.classList.remove('open'); }); });
