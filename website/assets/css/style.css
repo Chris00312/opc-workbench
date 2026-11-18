@@ -540,3 +540,38 @@ ul { list-style: none; }
   .dots.hero-tabs button { font-size: 12px; padding-bottom: 7px; }
   .form-panel { padding: 24px 20px; }
 }
+
+/* ---------- 2026-11-18 导航重排：顶部工具条 + 主导航 + 大面板下拉（依据老板《网站规划与调整》） ---------- */
+:root { --top-h: 32px; --head-h: 98px; }
+.topbar { position: fixed; inset: 0 0 auto; height: var(--top-h); background: #f3f5f6; border-bottom: 1px solid rgba(0, 0, 0, .06); z-index: 101; font-size: 12.5px; color: #666; }
+.topbar .container { height: 100%; display: flex; align-items: center; justify-content: space-between; max-width: 1480px; padding: 0 28px; }
+.topbar-brand { letter-spacing: 1px; color: #888; }
+.topbar-links { display: flex; align-items: center; gap: 22px; }
+.topbar-links a, .topbar-links button { color: #444; font-size: 12.5px; transition: color .2s; }
+.topbar-links a:hover, .topbar-links button:hover { color: var(--ink); }
+.nav { top: var(--top-h); }
+.drop { top: var(--head-h); }
+.nav-links > li > a { padding: 0 11px; }
+.m-only { display: none; }
+.drop .container { grid-template-columns: 280px 1fr; gap: 56px; }
+.drop-list.c2 { grid-template-columns: 1fr 1fr; }
+.drop-list.c3 { grid-template-columns: repeat(3, 1fr); }
+.drop-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 36px; align-content: start; }
+.drop-group h5 { font-size: 13px; color: var(--ink); letter-spacing: 1px; padding-bottom: 10px; border-bottom: 2px solid var(--accent); margin-bottom: 4px; }
+.drop-group a, .drop-group .soon { display: flex; align-items: center; gap: 8px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; transition: color .2s; }
+.drop-group a:hover { color: var(--ink); }
+.soon { color: var(--text-3); cursor: default; }
+.slide .container { padding-top: calc(var(--head-h) + 24px); }
+.search-input { width: 100%; height: 46px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 2px; font-size: 16px; }
+.search-input:focus { outline: none; border-color: var(--accent); }
+.search-results { margin-top: 14px; max-height: 320px; overflow-y: auto; }
+.search-results a { display: block; padding: 12px 2px; border-bottom: 1px solid var(--line); font-size: 15px; }
+.search-results a:hover { color: var(--ink); }
+@media (max-width: 1360px) { .nav-links > li > a { padding: 0 8px; font-size: 13.5px; } }
+@media (max-width: 1120px) {
+  :root { --top-h: 0px; --head-h: 66px; }
+  .topbar { display: none; }
+  .m-only { display: block; }
+  .m-only a, .m-only button { display: flex; align-items: center; width: 100%; height: 56px; padding: 0 4px; border-bottom: 1px solid var(--line); font-size: 16px; font-weight: 700; color: #111; text-align: left; }
+  .slide .container { padding-top: calc(var(--head-h) + 24px); }
+}
