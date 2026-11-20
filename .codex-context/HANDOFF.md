@@ -1,5 +1,7 @@
 # HANDOFF
 
+> **2026-11-20 更新：备案与官网主办主体已改为「上海极增科技有限公司」（法人沈健，网站负责人孙飚），详见 DECISIONS/AI_STATE/TODO 的同日条目；下文提到「领越」处为历史状态。**
+
 项目：Growth Hub 企业增长赋能平台（主办主体：上海领越人力资源咨询服务中心）。面向一人公司（OPC）与成长期中小企业的 AI 驱动企业增长赋能平台。
 
 - 本地路径：`/Users/c/Documents/极増科技本地`（GitHub：`Chris00312/opc-workbench`，`main`）
