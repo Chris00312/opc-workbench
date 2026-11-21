@@ -265,3 +265,8 @@ Rollback: b6f258c
 - Verified: JS 语法、git diff 与 Playwright 桌面及移动端交互检查通过。
 - Deploy: 提交 `1d0ed66` 已推送 GitHub main，随后发布 `20261121a` 到 Windows nginx 过渡站。HTTPS 返回的 18 个文件 SHA-256 与提交一致，两个备案上传页哈希与发布前一致。
 - Rollback: 解压 `C:\srv\www-backup-20261121a.zip` 覆盖官网对应文件。
+
+## 2026-11-21 官网导航与公众号精选
+- Done: 导航靠左，搜索缩小移到同一行右侧，固定注册和留言采用图标加文字。
+- Done: 首页精选使用三篇公众号正文首图，整张卡片直达对应原文。
+- Proof: 桌面与手机交互验证通过，逐篇核对跳转与首图。

@@ -82,19 +82,28 @@
   var brand = '<a class="logo site-brand" href="index.html"><span class="brand-name">Growth<span>Hub</span></span><span class="logo-sub">AI 驱动企业增长 · 赋能平台</span></a>';
   var email = 'johnsun@growthhub.com.cn';
 
+  function icon(path) {
+    return '<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' + path + '</svg>';
+  }
+
+  var accountLinks = '<button type="button" data-open="login">登录</button><a href="insights.html#member">注册</a>';
+  var searchIcon = icon('<circle cx="10.5" cy="10.5" r="5.5"/><path d="m15 15 4 4"/>');
+
   var header =
     '<header class="nav" id="nav"><div class="container">' + brand +
-      '<ul class="nav-links" id="primaryNavigation">' + navItems + '</ul>' +
-      '<button class="menu-btn" id="menuBtn" type="button" aria-label="导航菜单" aria-controls="primaryNavigation" aria-expanded="false"><span></span><span></span><span></span></button>' +
-    '</div></header>' +
-    '<div class="topbar"><div class="container">' +
-      '<form class="site-search" role="search">' +
-        '<input type="search" id="searchInput" aria-label="站内搜索" aria-controls="searchResults" placeholder="搜索栏目和内容" autocomplete="off" maxlength="80">' +
-        '<button type="submit">搜索</button>' +
-        '<div class="search-results" id="searchResults" aria-live="polite" hidden></div>' +
-      '</form>' +
-      '<div class="topbar-links"><button type="button" data-open="login">登录</button><a href="insights.html#member">注册</a></div>' +
-    '</div></div>';
+      '<ul class="nav-links" id="primaryNavigation">' + navItems +
+        '<li class="mobile-account">' + accountLinks + '</li>' +
+      '</ul>' +
+      '<div class="nav-tools">' +
+        '<form class="site-search" role="search">' +
+          '<input type="search" id="searchInput" aria-label="站内搜索" aria-controls="searchResults" placeholder="搜索" autocomplete="off" maxlength="80">' +
+          '<button type="submit" aria-label="搜索">' + searchIcon + '</button>' +
+          '<div class="search-results" id="searchResults" aria-live="polite" hidden></div>' +
+        '</form>' +
+        '<div class="nav-account">' + accountLinks + '</div>' +
+        '<button class="menu-btn" id="menuBtn" type="button" aria-label="导航菜单" aria-controls="primaryNavigation" aria-expanded="false"><span></span><span></span><span></span></button>' +
+      '</div>' +
+    '</div></header>';
 
   var footer =
     '<section class="contact"><div class="bg"><img data-media src="assets/media/img-04.jpg" alt="" loading="lazy"></div><div class="container">' +
@@ -143,6 +152,9 @@
       '</form></div></div>';
   }
 
+  var memberIcon = icon('<circle cx="9" cy="8" r="3"/><path d="M3.5 19v-1.5a4 4 0 0 1 4-4h3a4 4 0 0 1 4 4V19m4-12v6m-3-3h6"/>');
+  var messageIcon = icon('<path d="M20 15a2 2 0 0 1-2 2H9l-5 3V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zM8 9h8m-8 4h5"/>');
+
   var modals =
     '<div class="modal" id="m-contact" role="dialog" aria-modal="true" aria-labelledby="mc-t"><div class="modal-box">' +
       '<button class="modal-close" data-close aria-label="关闭">×</button>' +
@@ -164,7 +176,10 @@
       '<h3 id="title-login">会员登录</h3><p>会员登录正在筹备，您可以先登记开通意向。</p>' +
       '<a class="btn btn-primary" href="insights.html#member">查看会员登记</a>' +
     '</div></div>' +
-    '<aside class="quick-actions" aria-label="常用入口"><a href="insights.html#member">会员注册</a><button type="button" data-open="message">留言</button></aside>';
+    '<aside class="quick-actions" aria-label="常用入口">' +
+      '<a href="insights.html#member">' + memberIcon + '<span>会员注册</span></a>' +
+      '<button type="button" data-open="message">' + messageIcon + '<span>留言</span></button>' +
+    '</aside>';
 
 
   var h = document.getElementById('site-header');
@@ -214,11 +229,11 @@
     }
     si.addEventListener('input', showResults);
     si.addEventListener('focus', showResults);
-    search.addEventListener('submit', function (event) { event.preventDefault(); showResults(); });
+    search.addEventListener('submit', function (event) { event.preventDefault(); si.focus(); showResults(); });
     search.addEventListener('focusout', function (event) { if (!search.contains(event.relatedTarget)) sr.hidden = true; });
     sr.addEventListener('click', function (event) { if (event.target.closest('a')) sr.hidden = true; });
     search.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') { si.focus(); sr.hidden = true; }
+      if (event.key === 'Escape' && !sr.hidden) { event.stopPropagation(); si.focus(); sr.hidden = true; }
     });
   }
 

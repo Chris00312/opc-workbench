@@ -18,4 +18,6 @@
 | img-09.jpg | Pexels | Luis Quintero | https://www.pexels.com/photo/aerial-shot-of-panama-city-in-panama-14840760/ | Pexels License | 城市天际线 |
 | img-10.jpg | Pexels | Yan Krukau | https://www.pexels.com/photo/close-up-shot-of-2-person-shake-hands-7792841/ | Pexels License | 握手合作 |
 | logo-wordmark-light.png / dark.png | AI 生成（Growth Hub 内部配图 + 去背精修） | — | — | 自制可商用 | 导航与页脚 Growth Hub 品牌文字标识（2026-11-16 更新） |
-
+| wechat-tongwei.webp | 微信公众号 | 极增商界 | https://mp.weixin.qq.com/s/NGdippiyF62dkxr_-YZElw | 公众号原文配图 | 通威股份正文首图 |
+| wechat-business-insight.webp | 微信公众号 | 极增商界 | https://mp.weixin.qq.com/s/JwgRClpeYRneuC4eA8jKYw | 公众号原文配图 | 商界洞察正文首图 |
+| wechat-growth-method.webp | 微信公众号 | 极增商界 | https://mp.weixin.qq.com/s/LDFP_5gzYbQxt7oAIRlkZg | 公众号原文配图 | 增长方法论正文首图 |
