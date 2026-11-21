@@ -616,11 +616,19 @@ html { scroll-padding-top: calc(var(--nav-h) + 12px); }
 .modal-box { max-height: calc(100dvh - 32px); overflow: auto; }
 .contact .btn-line { color: #fff; border-color: #fff; }
 
+@media (min-width: 1121px) {
+  .nav .container { gap: 0; }
+  .nav .site-brand { margin-right: 30px; }
+  .nav-links { flex: 0 0 auto; }
+  .nav-tools { flex: 1; min-width: 0; margin-left: 0; padding-left: 8px; gap: 8px; }
+  .site-search { width: clamp(118px, calc(28vw - 193px), 208px); min-width: 0; margin-inline: auto; }
+}
+
 @media (min-width: 1121px) and (max-width: 1280px) {
-  .nav .container { gap: 11px; padding-inline: 20px; }
-  .site-brand { margin-right: 0; }
+  .nav .container { padding-inline: 20px; }
+  .nav .site-brand { margin-right: 11px; }
   .nav-links > li > a { gap: 4px; padding-inline: 7px; font-size: 13px; }
-  .nav-tools, .nav-account { gap: 8px; }
+  .nav-account { gap: 8px; }
 }
 
 @media (max-width: 1120px) {

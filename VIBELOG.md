@@ -272,3 +272,7 @@ Rollback: b6f258c
 - Proof: 桌面与手机交互验证通过，逐篇核对跳转与首图。
 - Deploy: 提交 `e2e4c8e` 已推送 GitHub main，过渡站发布 `20261121b`，18 个文件与发布包 SHA-256 一致。
 - Rollback: 服务器备份 `C:\srv\www-backup-20261121b.zip`。
+
+## 2026-11-21 搜索栏加宽居中
+- Done: 桌面搜索框宽度自适应，等距置于「联系我们」与「登录」之间。
+- Proof: Playwright 验证 11 个宽度下的导航和搜索跳转。
