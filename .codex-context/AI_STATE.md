@@ -14,11 +14,11 @@ Last Updated: 2026-11-20
 - 部署：现有阿里云 Windows ECS + nginx，站点 `C:\srv\www`；域名 `https://talentchain.net` 与 `www`，已有 HTTPS 自动续期；`/icp/` 上传页与 `icp-upload` 服务完整保留。
 
 ## Latest Run（2026-11-21 导航搜索）
-- result: `20261121c` 加宽桌面搜索框，等距放在「联系我们」与「登录」之间。
-- proof: Playwright 验证 320–1920px 共 11 个宽度，桌面两边间距相等，搜索结果可跳转。
+- result: `20261121c` 加宽桌面搜索框，等距放在「联系我们」与「登录」之间。提交 `10c1a5a` 已推送并发布。
+- proof: Playwright 验证 320–1920px 共 11 个宽度，桌面两边间距相等，搜索结果可跳转。线上 1440/1121/390px 复查通过，13 个文件哈希与发布包一致。
 - risks: 桌面窄窗口按可用宽度收缩。
-- rollback_point: 代码基线 `181f951`。
-- next_step: 推送 GitHub 并发布过渡站，校验页面与 CSS。
+- rollback_point: 代码基线 `181f951`；服务器备份 `C:\srv\www-backup-20261121c.zip`。
+- next_step: 继续跟进正式域名备案与技术收件配置。
 
 ## Latest Run（2026-11-21 导航与公众号精选）
 - result: `20261121b` 将导航左对齐、缩小搜索并放到同一行，右下角会员注册与留言使用图标和文字。精选改为三篇极增商界公众号原文，采用正文首图。提交 `e2e4c8e` 已推送并发布到过渡站。
