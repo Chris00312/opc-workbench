@@ -2,30 +2,16 @@
 
 ## 官网（当前主线）：`website/`
 
-极增商界定位为「面向一人公司（OPC）经济的 AI 驱动企业增长赋能平台」。2026-11-12 官网已按老板《产品与功能模块（完整版）V1.0》同步并部署；双轮驱动：媒体内容平台 × 极增智脑。
+GrowthHub 由上海极增科技有限公司主办，展示极增商界、极增智脑、企业增长数据分析与咨询服务。
 
-- 首页：双轮驱动、六大模块、目标用户、MVP / V1 / V2 路线图。
-- 企业研究 `research.html`：数据方案、五阶段增长咨询、专项报告入口。
-- 极增智脑 `zhinao.html`：四大智能体、九大工具集与订阅规划；`workbench.html` 为统一经营工作台规划。
-- 数据方案 `solution.html`：基础诊断 1.98 万、标准方案 9.8 万、深度陪跑 29.8 万；`report.html` 保留专项报告样张。
-- 培训活动 `academy.html`、内容会员 `insights.html`、素材来源 `credits.html`。
-- `studio.html`、`talent.html` 为旧页面跳转。
+- 首页：四屏平台导览、四类内容栏目与精选推荐、平台概览、会员意向与留言入口。
+- 极增商界 `insights.html`：商界洞察、前沿资讯、深度报告、公司消息与会员权益。
+- 极增智脑 `zhinao.html`、经营工作台 `workbench.html`、AI 工具 `tools.html`、数据方案 `solution.html` 与增长咨询 `consulting.html`。
+- 企业研习和主题交流位于 `academy.html`；联系方式与留言位于 `contact.html`。
 
-官网为原生 HTML/CSS/JS 静态站，无第三方依赖。核心软件尚未开发；规划能力已标注，预约/支付尚未接后台，联系方式、二维码与样张数据为示意。
+官网使用原生 HTML/CSS/JS。本地预览可运行 `python3 -m http.server 8000 --directory website`。搜索覆盖官网栏目和精选内容。留言及会员意向表单生成邮件草稿，由访客确认发送。账号、支付和实时业务数据仍在规划中。
 
-本地预览：`python3 -m http.server 8000 --directory website`。
-线上：[talentchain.net](https://talentchain.net)（过渡域名，HTTPS）。当前服务器为 Windows nginx，部署需备份后覆盖静态文件，保留 `/icp/`；根目录 `deploy.sh` 仅用于未来 Debian/Ubuntu 部署，默认仍发布旧 `site/`，官网需指定 `SITE_DIR=website`。
-
---- | --- |
-| `website/index.html` | 首页：首屏视频轮播、使命、产品平台、解决方案、生命周期路线图、极增商界、联系我们 |
-| `website/report.html` | 产品 1：企业分析报告（三档） |
-| `website/workbench.html` | 产品 2：经营工作台 |
-| `website/talent.html` | 产品 3：AI 人才测评（占位） |
-| `website/studio.html` | 产品 4：超级个体（占位） |
-| `website/credits.html` | 图片、视频来源（Pexels / Mixkit） |
-
-本地预览：`cd website && python3 -m http.server 8000`。部署：`SITE_DIR=website bash deploy.sh`。
-价格、联系方式、二维码、备案号、报告样张分数均为示意；支付和表单尚未接后台。
+[过渡站 talentchain.net](https://talentchain.net) 运行在现有 Windows nginx 服务器。发布时先备份再覆写官网文件，保留已压缩视频和备案上传页。正式域名 growthhub.cn 按备案流程推进。根目录 `deploy.sh` 用于 Debian/Ubuntu，默认发布旧 `site/`。
 
 ---
 
