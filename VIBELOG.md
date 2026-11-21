@@ -263,4 +263,5 @@ Rollback: b6f258c
 - Done: 首页品牌更新为 GrowthHub，补齐 8 个一级入口、站内搜索与移动端二级菜单。首页新增商界洞察、前沿资讯、深度报告、公司消息、精选轮播和可核对的平台栏目概览。
 - Done: 主办单位与工作联系方式统一，会员和留言提供邮件草稿流程。官网精选使用自有导读及报告样张节选。
 - Verified: JS 语法、git diff 与 Playwright 桌面及移动端交互检查通过。
-- Next: 推送 GitHub → 备份现有 Windows nginx 官网并发布静态文件 → 核对线上内容与备案上传页。
+- Deploy: 提交 `1d0ed66` 已推送 GitHub main，随后发布 `20261121a` 到 Windows nginx 过渡站。HTTPS 返回的 18 个文件 SHA-256 与提交一致，两个备案上传页哈希与发布前一致。
+- Rollback: 解压 `C:\srv\www-backup-20261121a.zip` 覆盖官网对应文件。
